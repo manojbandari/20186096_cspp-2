@@ -24,18 +24,16 @@ public class Solution
     @param      base      The base
     @param      exponent  The exponent
 
-    @return     {description_of_the_return_value}
+    @return     { description_of_the_return_value }
     */
     public static long power(final int base, final int exponent)
     {
         //return Math.pow(base,exponent);
-        if(exponent != 0)
+        if (exponent != 0)
         {
-            return base * (power(base, exponent - 1));
-        }
+            return base * (power(base, exponent - 1));}
         else
         {
-            return 1;
-        }
+            return 1;}
     }
 }
