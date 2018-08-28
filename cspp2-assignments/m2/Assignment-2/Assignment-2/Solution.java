@@ -4,13 +4,13 @@ import java.util.Scanner;
  * @author     : manojbandari.
  */
 public final class Solution {
+    static final int temp = 4;
     /**.
      * Constructs the object.
      */
     private Solution() {
     // we are not using this constructor.
     }
-    static final int temp = 4;
     /**.
     *Do not modify this main function.
     *@param      args  The arguments.
