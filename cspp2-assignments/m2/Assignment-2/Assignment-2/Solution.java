@@ -30,8 +30,8 @@ public final class Solution {
     *@param      c     { parameter_description }
     */
     public static void rootsOfQuadraticEquation(final int a, final int b, final int c) {
-        double firstroot = ( - b + Math.sqrt(b * b - 4 * a * c)) / (2 * a);
-        double secondroot = ( - b - Math.sqrt(b * b - 4 * a * c)) / (2 * a);
+        double firstroot = ( -b + Math.sqrt(b * b - 4 * a * c)) / (2 * a);
+        double secondroot = ( -b - Math.sqrt(b * b - 4 * a * c)) / (2 * a);
         System.out.println(firstroot + " " + secondroot);
     }
 }
