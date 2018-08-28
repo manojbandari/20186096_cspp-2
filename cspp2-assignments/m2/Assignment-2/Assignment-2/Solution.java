@@ -28,6 +28,7 @@ public final class Solution {
     *@param      a     { parameter_description }.
     *@param      b     { parameter_description }.
     *@param      c     { parameter_description }.
+    *@param      temp  { parameter_description }.
     */
     public static void
     rootsOfQuadraticEquation(final int a, final int b, final int c, final int temp) {
