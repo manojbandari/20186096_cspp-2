@@ -23,13 +23,11 @@ public class Solution {
 
     @return     { description_of_the_return_value }
     */
-    public static long power(final int base, final int exponent)
-    {
+    public static long power(final int base, final int exponent) {
         //return Math.pow(base,exponent);
         if (exponent != 0) {
             return base * (power(base, exponent - 1));
-        }
-        else {
+        } else {
             return 1;
         }
     }
