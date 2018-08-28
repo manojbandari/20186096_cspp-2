@@ -3,7 +3,7 @@
  */
 // import java.lang.Math;
 import java.util.Scanner;
-public class Solution{
+public class Solution {
     /*
     Do not modify this main function.
     @param      args  The arguments
