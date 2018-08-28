@@ -1,14 +1,14 @@
-// import java.lang.Math;
-import java.util.Scanner;
 /**
  * Class for solution.
  */
-public class Solution {
+// import java.lang.Math;
+import java.util.Scanner;
+public class Solution{
     /*
     Do not modify this main function.
     @param      args  The arguments
     */
-    public static void main(final String[] args) {
+    public final static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         int base = s.nextInt();
         int exponent = s.nextInt();
