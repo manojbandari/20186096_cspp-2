@@ -1,17 +1,17 @@
 import java.util.Scanner;
-/**
+/**.
  * Class for solution.
  * @author     : manojbandari.
  */
 public final class Solution {
-    /**
+    /**.
      * Constructs the object.
      */
     private Solution() {
     // we are not using this constructor.
     }
-    static final int x = 4;
-    /**
+    static final int temp = 4;
+    /**.
     *Do not modify this main function.
     *@param      args  The arguments.
     */
@@ -22,7 +22,7 @@ public final class Solution {
         int c = scan.nextInt();
         rootsOfQuadraticEquation(a, b, c);
     }
-    /**
+    /**.
     *Need to write the rootsOfQuadraticEquation function.
     *and print the output.
     *@param      a     { parameter_description }.
@@ -31,8 +31,8 @@ public final class Solution {
     */
     public static void
     rootsOfQuadraticEquation(final int a, final int b, final int c) {
-        double firstroot = (-b + Math.sqrt(b * b - x * a * c)) / (2 * a);
-        double secondroot = (-b - Math.sqrt(b * b - x * a * c)) / (2 * a);
+        double firstroot = (-b + Math.sqrt(b * b - temp * a * c)) / (2 * a);
+        double secondroot = (-b - Math.sqrt(b * b - temp * a * c)) / (2 * a);
         System.out.println(firstroot + " " + secondroot);
     }
 }
