@@ -31,7 +31,7 @@ public class Solution
         //return Math.pow(base,exponent);
         if(exponent != 0)
         {
-            return base*(power(base, exponent-1));
+            return base * (power(base, exponent - 1));
         }
         else
         {
