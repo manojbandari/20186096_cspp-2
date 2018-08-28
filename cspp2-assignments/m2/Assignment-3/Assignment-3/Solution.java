@@ -1,9 +1,9 @@
 import java.util.Scanner;
 /**
- * @author : manojbandari
+ * @author : manojbandari.
  */
 public final class Solution {
-    /*
+    /**
     *Private constructor.
     */
     private Solution() {
@@ -27,7 +27,7 @@ public final class Solution {
      * @param base The base
      * @param exponent The exponent
      *
-     * @return { description_of_the_return_value }
+     * @return Long power
      */
     public static long power(final int base, final int exponent) {
         //return Math.pow(base,exponent);
