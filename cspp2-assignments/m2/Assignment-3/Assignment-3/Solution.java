@@ -8,7 +8,7 @@ public class Solution {
     Do not modify this main function.
     @param      args  The arguments
     */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         int base = s.nextInt();
         int exponent = s.nextInt();
