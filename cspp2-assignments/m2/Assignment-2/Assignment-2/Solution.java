@@ -10,11 +10,11 @@ public final class Solution {
     private Solution() {
     // we are not using this constructor.
     }
+    static final int x = 4;
     /**
     *Do not modify this main function.
     *@param      args  The arguments.
     */
-    static int x = 4;
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int a = scan.nextInt();
