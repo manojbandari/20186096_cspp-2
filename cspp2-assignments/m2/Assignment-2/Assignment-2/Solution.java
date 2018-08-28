@@ -4,7 +4,7 @@ import java.util.Scanner;
  * @author     : manojbandari.
  */
 public final class Solution {
-    static final int temp = 4;
+    //static final int temp = 4;
     /**.
      * Constructs the object.
      */
@@ -20,7 +20,7 @@ public final class Solution {
         int a = scan.nextInt();
         int b = scan.nextInt();
         int c = scan.nextInt();
-        rootsOfQuadraticEquation(a, b, c);
+        rootsOfQuadraticEquation(a, b, c, 4);
     }
     /**.
     *Need to write the rootsOfQuadraticEquation function.
@@ -30,7 +30,7 @@ public final class Solution {
     *@param      c     { parameter_description }.
     */
     public static void
-    rootsOfQuadraticEquation(final int a, final int b, final int c) {
+    rootsOfQuadraticEquation(final int a, final int b, final int c, final int temp) {
         double firstroot = (-b + Math.sqrt(b * b - temp * a * c)) / (2 * a);
         double secondroot = (-b - Math.sqrt(b * b - temp * a * c)) / (2 * a);
         System.out.println(firstroot + " " + secondroot);
