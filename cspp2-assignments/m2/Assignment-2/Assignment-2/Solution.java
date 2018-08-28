@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.lang.Math;
+import java.lang.Math.*;
 /**
  * Class for solution.
  * @author     : manojbandari.
@@ -25,9 +25,9 @@ public final class Solution {
     /**
     *Need to write the rootsOfQuadraticEquation function.
     *and print the output.
-    *@param      a     { parameter_description }
-    *@param      b     { parameter_description }
-    *@param      c     { parameter_description }
+    *@param      a     { parameter_description }.
+    *@param      b     { parameter_description }.
+    *@param      c     { parameter_description }.
     */
     public static void rootsOfQuadraticEquation(final int a, final int b, final int c) {
         double firstroot = ( -b + Math.sqrt(b * b - 4 * a * c)) / (2 * a);
