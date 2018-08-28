@@ -4,7 +4,7 @@ import java.util.Scanner;
  */
 public final class Solution {
     /*
-    *Private constructor
+    *Private constructor.
     */
     private Solution() {
     // we are not using this constructor.
@@ -12,7 +12,7 @@ public final class Solution {
     /**
      * { function_description }
      *
-     * @param      args  The arguments
+     * @param args The arguments
      */
     public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
@@ -24,10 +24,10 @@ public final class Solution {
     /**
      * { function_description }
      *
-     * @param      base      The base
-     * @param      exponent  The exponent
+     * @param base The base
+     * @param exponent The exponent
      *
-     * @return     { description_of_the_return_value }
+     * @return { description_of_the_return_value }
      */
     public static long power(final int base, final int exponent) {
         //return Math.pow(base,exponent);
