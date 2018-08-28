@@ -9,11 +9,11 @@ public class Solution{
     @param      args  The arguments
     */
     public static void main(String[] args)
-    {
+    {   long result;
         Scanner s = new Scanner(System.in);
         int base = s.nextInt();
         int exponent = s.nextInt();
-        int result = power(base, exponent);
+        result = power(base, exponent);
         System.out.println(result);
     }
     /*
@@ -24,7 +24,7 @@ public class Solution{
 
     @return     { description_of_the_return_value }
     */
-    public static int power(final int base, final int exponent)
+    public static long power(final int base, final int exponent)
     {
         //return Math.pow(base,exponent);
         if (exponent != 0)
