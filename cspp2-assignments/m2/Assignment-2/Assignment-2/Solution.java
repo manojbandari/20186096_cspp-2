@@ -20,7 +20,7 @@ public final class Solution {
         int a = scan.nextInt();
         int b = scan.nextInt();
         int c = scan.nextInt();
-        rootsOfQuadraticEquation(a, b, c, 4);
+        rootsOfQuadraticEquation(a, b, c);
     }
     /**.
     *Need to write the rootsOfQuadraticEquation function.
@@ -28,12 +28,11 @@ public final class Solution {
     *@param      a     { parameter_description }.
     *@param      b     { parameter_description }.
     *@param      c     { parameter_description }.
-    *@param      temp  { parameter_description }.
     */
     public static void
-    rootsOfQuadraticEquation(final int a, final int b, final int c, final int temp) {
-        double firstroot = (-b + Math.sqrt(b * b - temp * a * c)) / (2 * a);
-        double secondroot = (-b - Math.sqrt(b * b - temp * a * c)) / (2 * a);
+    rootsOfQuadraticEquation(final int a, final int b, final int c) {
+        double firstroot = (-b + Math.sqrt(b * b - 2 * 2 * a * c)) / (2 * a);
+        double secondroot = (-b - Math.sqrt(b * b - 2 * 2 * a * c)) / (2 * a);
         System.out.println(firstroot + " " + secondroot);
     }
 }
