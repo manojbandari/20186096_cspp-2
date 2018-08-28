@@ -14,6 +14,7 @@ public final class Solution {
     *Do not modify this main function.
     *@param      args  The arguments.
     */
+    static int x = 4;
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int a = scan.nextInt();
@@ -30,10 +31,8 @@ public final class Solution {
     */
     public static void
     rootsOfQuadraticEquation(final int a, final int b, final int c) {
-        int x = 4;
-        double firstroot = ( -b + Math.sqrt(b * b - x * a * c)) / (2 * a);
-        double secondroot = ( -b - Math.sqrt(b * b - x * a * c)) / (2 * a);
+        double firstroot = (-b + Math.sqrt(b * b - x * a * c)) / (2 * a);
+        double secondroot = (-b - Math.sqrt(b * b - x * a * c)) / (2 * a);
         System.out.println(firstroot + " " + secondroot);
     }
 }
-
