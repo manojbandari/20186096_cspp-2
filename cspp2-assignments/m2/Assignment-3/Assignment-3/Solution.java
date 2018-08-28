@@ -10,7 +10,7 @@ public final class Solution {
     // we are not using this constructor.
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param args The arguments
      */
@@ -22,7 +22,7 @@ public final class Solution {
         System.out.println(result);
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param base The base
      * @param exponent The exponent
