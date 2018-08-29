@@ -38,10 +38,10 @@ public final class Solution {
         int count = 0;
         int temp = n;
         while (temp > 0) {
-            if (temp % 10 == 7) {
+            if (temp % (2 * 5) == 7) {
                 count = count + 1;
             }
-            temp = temp / 10;
+            temp = temp / (2 * 5);
         }
         return count;
     }
