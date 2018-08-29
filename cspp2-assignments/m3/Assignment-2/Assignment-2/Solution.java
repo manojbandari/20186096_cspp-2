@@ -7,8 +7,14 @@ import java.util.Scanner;
  * Do not modify this main function.
  */
 public final class Solution {
-    public static final int temp1 = 10;
-    public static final int temp2 = 7;
+    /**
+     * { global variable }.
+     */
+    public static final int tempvar = 10;
+    /**
+     * { global variable }.
+     */
+    public static final int tempval = 7;
     /**
      * Constructs the object.
      */
@@ -40,10 +46,10 @@ public final class Solution {
         int count = 0;
         int temp = n;
         while (temp > 0) {
-            if (temp % temp1 == temp2) {
+            if (temp % tempvar == tempval) {
                 count = count + 1;
             }
-            temp = temp / temp1;
+            temp = temp / tempvar;
         }
         return count;
     }
