@@ -10,11 +10,11 @@ public final class Solution {
     /**
      * { global variable }.
      */
-    public static final int tempvar = 10;
+    public static final int N_VALUE = 10;
     /**
      * { global variable }.
      */
-    public static final int tempval = 7;
+    public static final int N_VALUE1 = 7;
     /**
      * Constructs the object.
      */
@@ -46,10 +46,10 @@ public final class Solution {
         int count = 0;
         int temp = n;
         while (temp > 0) {
-            if (temp % tempvar == tempval) {
+            if (temp % N_VALUE == N_VALUE1) {
                 count = count + 1;
             }
-            temp = temp / tempvar;
+            temp = temp / N_VALUE;
         }
         return count;
     }
