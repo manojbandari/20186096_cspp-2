@@ -25,7 +25,7 @@ public final class Solution {
         System.out.println(count);
     }
     /**
-     * { function_description }
+     * { function_description }.
      * @param      n   { parameter_description }.
      * @return { description_of_the_return_value }.
      */
@@ -33,7 +33,7 @@ public final class Solution {
         int count = 0;
         while (n > 0) {
             if (n % 10 == 7) {
-                count ++ ;
+                count ++;
             }
             n = n / 10;
         }
