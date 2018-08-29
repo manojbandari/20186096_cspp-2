@@ -4,7 +4,7 @@
  */
 import java.util.Scanner;
 /*
- Do not modify this main function.
+*Do not modify this main function.
 */
 public final class Solution {
     private Solution(){
@@ -16,10 +16,10 @@ public final class Solution {
  * @param      args  The arguments.
  */
     public static void main(final String[] args) {
-        Scanner s=new Scanner(System.in);      
+        Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         int count = 0;
-        for (int i = 1 ; i < n ; i++) {
+        for (int i = 1; i < n; i++) {
             count += numbers(i);
         }
         System.out.println(count);
@@ -33,7 +33,7 @@ public final class Solution {
         int count = 0;
         while (n > 0) {
             if (n % 10 == 7) {
-                count ++;
+                count = count + 1;
             }
             n = n / 10;
         }
