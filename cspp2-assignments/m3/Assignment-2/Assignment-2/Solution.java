@@ -7,6 +7,8 @@ import java.util.Scanner;
  * Do not modify this main function.
  */
 public final class Solution {
+    public static final int n_temp = 10;
+    public static final int n_temp1 = 7;
     /**
      * Constructs the object.
      */
@@ -38,10 +40,10 @@ public final class Solution {
         int count = 0;
         int temp = n;
         while (temp > 0) {
-            if (temp % (2 * 5) == 7) {
+            if (temp % n_temp == n_temp1) {
                 count = count + 1;
             }
-            temp = temp / (2 * 5);
+            temp = temp / n_temp;
         }
         return count;
     }
