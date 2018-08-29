@@ -3,10 +3,13 @@
  * { item_description }.
  */
 import java.util.Scanner;
-/*
-*Do not modify this main function.
-*/
+/**
+ * Do not modify this main function.
+ */
 public final class Solution {
+    /**
+     * Constructs the object.
+     */
     private Solution(){
     //we are not using this constructor.
     }
@@ -24,10 +27,13 @@ public final class Solution {
         }
         System.out.println(count);
     }
+    
     /**
-     * { function_description }.
-     * @param      n   { parameter_description }.
-     * @return { description_of_the_return_value }.
+     * { function_description }
+     *
+     * @param      n     { parameter_description }.
+     *
+     * @return     { description_of_the_return_value }.
      */
     public static final int numbers(final int n) {
         int count = 0;
