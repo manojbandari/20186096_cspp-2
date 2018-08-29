@@ -10,14 +10,12 @@ public final class Solution {
     private Solution(){
     //we are not using this constructor.
     }
-
 /**
  * Fill the main function to.
  * print the number of 7's between 1 to n.
  * @param      args  The arguments.
  */
     public static void main(final String[] args) {
-
         Scanner s=new Scanner(System.in);      
         int n = s.nextInt();
         int count = 0;
@@ -26,19 +24,16 @@ public final class Solution {
         }
         System.out.println(count);
     }
-    
     /**
      * { function_description }
-     *
-     * @param      n     { parameter_description }.
-     *
-     * @return     { description_of_the_return_value }.
+     * @param      n   { parameter_description }.
+     * @return { description_of_the_return_value }.
      */
     public static final int numbers(int n) {
         int count = 0;
         while (n > 0) {
             if (n % 10 == 7) {
-                count++ ;
+                count ++ ;
             }
             n = n / 10;
         }
