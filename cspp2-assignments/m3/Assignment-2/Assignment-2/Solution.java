@@ -29,13 +29,14 @@ public final class Solution {
      * @param      n   { parameter_description }.
      * @return { description_of_the_return_value }.
      */
-    public static final int numbers(int n) {
+    public static final int numbers(final int n) {
         int count = 0;
-        while (n > 0) {
-            if (n % 10 == 7) {
+        int temp = n;
+        while (temp > 0) {
+            if (temp % 10 == 7) {
                 count = count + 1;
             }
-            n = n / 10;
+            temp = temp / 10;
         }
         return count;
     }
