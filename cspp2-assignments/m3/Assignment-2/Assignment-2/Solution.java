@@ -10,7 +10,7 @@ public final class Solution {
     /**
      * Constructs the object.
      */
-    private Solution(){
+    private Solution() {
     //we are not using this constructor.
     }
 /**
@@ -27,15 +27,14 @@ public final class Solution {
         }
         System.out.println(count);
     }
-    
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      n     { parameter_description }.
      *
      * @return     { description_of_the_return_value }.
      */
-    public static final int numbers(final int n) {
+    public static int numbers(final int n) {
         int count = 0;
         int temp = n;
         while (temp > 0) {
