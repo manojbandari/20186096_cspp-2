@@ -40,7 +40,7 @@ public final class Solution {
                     sum[i][j] = a1[i][j] + a2[i][j];
                 }
             }
-            for (int i = 0; i < r1 ; i++) {
+            for (int i = 0; i < r1; i++) {
                 for (int j = 0; j < c1; j++) {
                     if (j == c1 - 1) {
                         System.out.print(sum[i][j]);
@@ -49,8 +49,7 @@ public final class Solution {
                     }
                 }
                 System.out.println("");
-            }
-        }
+            }}
 
         else {
             System.out.println("not possible");
