@@ -28,7 +28,7 @@ public class Solution {
 			}
 			for(int i = 0; i < r1 ; i++) {
 				for(int j = 0; j < c1; j++) {
-					if(j < c1-1){
+					if(j == c1-1){
 						System.out.print(sum[i][j]);					
 					}
 					else{
