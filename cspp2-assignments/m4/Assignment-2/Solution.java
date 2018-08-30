@@ -32,7 +32,7 @@ public class Solution {
 						System.out.print(sum[i][j]);					
 					}
 					else{
-						System.out.println(sum[i][j]+" ");
+						System.out.println(sum[i][j]+"");
 					}
 				}
 				System.out.println("");
