@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /*
     Do not modify the main function
     */
@@ -32,6 +32,14 @@ public class Solution {
 
     }
     //Write reverseString function
+    
+    /**
+     * { Reverse function }.
+     *
+     * @param      s     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public static String reverseString(final String s) {
         String temp = "";
         for (int i = s.length() - 1; i >= 0; i--) {
