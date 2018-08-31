@@ -39,7 +39,7 @@ public class Solution {
      *
      * @return     { description_of_the_return_value }
      */
-    public static String binaryToDecimal(final String s) {
+    static String binaryToDecimal(final String s) {
         int value = 0;
         String temp = "";
         for (int i = s.length() - 1; i >= 0; i--) {
