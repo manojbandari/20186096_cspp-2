@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 public class FirstLast6 {
 	public static int N_temp = 6;
 	public static void main(String[] args) {
