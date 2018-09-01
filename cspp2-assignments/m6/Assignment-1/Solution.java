@@ -15,7 +15,7 @@ public final class Solution {
     /**
      * { global variable }.
      */
-    public static final int N_START = 3; 
+    public static final int N_START = 3;
     /**
      * Prints the odd composite numbers between 2 and n.
      *
@@ -63,6 +63,7 @@ public final class Solution {
         oddComposites(n);
     }
 }
+
 
 
 
