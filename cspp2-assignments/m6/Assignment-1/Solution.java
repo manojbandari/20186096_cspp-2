@@ -12,6 +12,7 @@ public final class Solution {
     private Solution() {
         //not used
     }
+    static int N_START = 3; 
     /**
      * Prints the odd composite numbers between 2 and n.
      *
@@ -20,7 +21,7 @@ public final class Solution {
     static void oddComposites(final int n) {
         int c = 0;
         int ch = 0;
-        for (int i = 3; i < n; i++) {
+        for (int i = N_START; i < n; i++) {
             if (i % 2 != 0) {
                 ch = prime(i);
                 if (ch > 1) {
@@ -59,4 +60,5 @@ public final class Solution {
         oddComposites(n);
     }
 }
+
 
