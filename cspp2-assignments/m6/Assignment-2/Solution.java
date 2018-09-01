@@ -13,6 +13,14 @@ final class Solution {
         //not used
     }
     /**
+     * { global variable }.
+     */
+    public static int N_VALUE = 100;
+    /**
+     * { global variable }.
+     */
+    public static int N_VALUE1 = 49;
+    /**
      * Function to round the
      * elements of a matrix to the nearest 100.
      *
@@ -22,15 +30,16 @@ final class Solution {
      *
      * @return     Matrix of the rounded elements
      */
-    static int[][] roundHundred(final int[][] a, final int rows, final int columns) {
+    static int[][] roundHundred(final int[][] a,
+                                final int rows, final int columns) {
         int[][] temp = new int[rows][columns];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                int c = a[i][j] / 100;
-                if (a[i][j] > (c * 100) + 49) {
-                    temp[i][j] = (c + 1) * 100;
+                int c = a[i][j] /N_VALUE;
+                if (a[i][j] > (c * N_VALUE) + N_VALUE1) {
+                    temp[i][j] = (c + 1) * N_VALUE;
                 } else {
-                    temp[i][j] = c * 100;
+                    temp[i][j] = c * N_VALUE;
                 }
 
 
