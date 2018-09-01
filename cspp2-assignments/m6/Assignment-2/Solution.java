@@ -35,7 +35,7 @@ final class Solution {
         int[][] temp = new int[rows][columns];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                int c = a[i][j] /N_VALUE;
+                int c = a[i][j] / N_VALUE;
                 if (a[i][j] > (c * N_VALUE) + N_VALUE1) {
                     temp[i][j] = (c + 1) * N_VALUE;
                 } else {
