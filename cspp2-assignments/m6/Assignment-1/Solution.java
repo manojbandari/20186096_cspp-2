@@ -12,7 +12,7 @@ public final class Solution {
     private Solution() {
         //not used
     }
-    public static final int N_START = 3; 
+    static int N_START = 3; 
     /**
      * Prints the odd composite numbers between 2 and n.
      *
@@ -60,5 +60,6 @@ public final class Solution {
         oddComposites(n);
     }
 }
+
 
 
