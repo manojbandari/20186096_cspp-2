@@ -30,7 +30,7 @@ final class Solution {
                 if (a[i][j] > (c * 100) + 49) {
                     temp[i][j] = (c + 1) * 100;
                 } else {
-                    temp[i][j] = c * 200;
+                    temp[i][j] = c * 100;
                 }
 
 
