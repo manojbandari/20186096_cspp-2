@@ -15,11 +15,11 @@ final class Solution {
     /**
      * { global variable }.
      */
-    public static int N_VALUE = 100;
+    public static final int N_VALUE = 100;
     /**
      * { global variable }.
      */
-    public static int N_VALUE1 = 49;
+    public static final int N_VALUE1 = 49;
     /**
      * Function to round the
      * elements of a matrix to the nearest 100.
