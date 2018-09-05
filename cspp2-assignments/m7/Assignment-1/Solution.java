@@ -19,8 +19,8 @@ class InputValidator {
         /**
         * { temp variable }.
         */
-        int temp = 5;
-        if (input.length() > temp) {
+        int temp = 6;
+        if (input.length() >= temp) {
             flag = 1;
         }
 
@@ -52,7 +52,7 @@ public final class Solution {
      *
      * @param args The arguments.
      */
-    public static void main(final String args[]) {
+    public static void main(final String[] args) {
         /**
          * It is the main class description.
          */
@@ -63,3 +63,4 @@ public final class Solution {
 
     }
 }
+
