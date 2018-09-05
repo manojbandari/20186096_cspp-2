@@ -31,6 +31,9 @@ public class List {
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
+    /**
+    *integer array.
+    */
     private int[] list;
     /*
      * What are the other class variables needed for creating a list?
@@ -55,6 +58,9 @@ public class List {
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
+    /**
+    *integer variable.
+    */
     private int size;
     /*
      * The purpose of the constructor is to initialize the
@@ -89,7 +95,7 @@ public class List {
      *
      * @param      item  The item
      */
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
         list[size++] = item;
     }
@@ -122,7 +128,7 @@ public class List {
      *
      * @param      index  The index
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         if (index >= 0 && index < size) {
@@ -149,7 +155,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public int get(int index) {
+    public int get(final int index) {
         // Replace the code below to write the code for get
         if (index < 0 || index > size) {
             return -1;
@@ -188,7 +194,7 @@ public class List {
     }
 
     /**
-     * Contains return true if the list has the item passed as an argument to
+     * Contains return true if the list has the item passed as an argument .
      * the method So, iterate through the list and return true if the item
      * exists and otherwise false
      *
@@ -196,7 +202,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         // Replace the code below
         return indexOf(item) != -1;
     }
@@ -209,7 +215,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public int indexOf(int item) {
+    public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
             if (item == list[i]) {
@@ -220,7 +226,7 @@ public class List {
     }
 
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      args  The arguments
      */
