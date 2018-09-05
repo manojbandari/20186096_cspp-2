@@ -19,7 +19,6 @@ import java.util.Scanner;
  */
 
 public final class Fibonacci {
-    
     /**
      * Constructs the object.
      */
@@ -62,4 +61,5 @@ public final class Fibonacci {
         System.out.println(fib(n));
     }
 }
+
 
