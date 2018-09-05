@@ -9,17 +9,17 @@ class InputValidator {
     /**
      * { flag variable }.
      */
-    private static int flag = 0;
+    private int flag = 0;
     /**
      * { temp variable }.
      */
-    private static int N_TEMP = 5;
+    public static int N_TEMP = 5;
     /**
      * Constructs the object.
      *
      * @param      input  The input
      */
-    public InputValidator(final String input) {
+    InputValidator(final String input) {
         if (input.length() > N_TEMP) {
             flag = 1;
         }
@@ -30,7 +30,7 @@ class InputValidator {
      *
      * @return     { return_value is boolean }.
      */
-    public static boolean validateData() {
+    boolean validateData() {
         if (flag == 1) {
             return true;
         }
@@ -48,7 +48,8 @@ public final class Solution {
 
     }
     /**
-     * { item_description }.
+     * { function_description }.
+     * @param args The arguments.
      */
     public static void main(final String args[]) {
         Scanner s = new Scanner(System.in);
