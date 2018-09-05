@@ -4,7 +4,10 @@ import java.util.Scanner;
  * @author : manojbandari.
  */
 public class List {
-    private static final int TEMP=10;
+    /**
+     * { variable temp }.
+     */
+    private static final int TEMP = 10;
     //Implement all the methods mentioned to build a ListADT
 
     /*
@@ -278,4 +281,5 @@ public class List {
         }
     }
 }
+
 
