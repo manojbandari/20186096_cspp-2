@@ -19,7 +19,7 @@ class InputValidator {
         /**
         * { temp variable }.
         */
-        int temp = 6;
+        final int temp = 6;
         if (input.length() >= temp) {
             flag = 1;
         }
