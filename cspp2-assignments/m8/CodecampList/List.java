@@ -4,6 +4,7 @@ import java.util.Scanner;
  * @author : manojbandari.
  */
 public class List {
+    private static final int TEMP=10;
     //Implement all the methods mentioned to build a ListADT
 
     /*
@@ -66,7 +67,6 @@ public class List {
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
      */
-    
     /**
      * Constructs the object.
      */
@@ -77,7 +77,7 @@ public class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-        list = new int[10];
+        list = new int[TEMP];
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
@@ -278,3 +278,4 @@ public class List {
         }
     }
 }
+
