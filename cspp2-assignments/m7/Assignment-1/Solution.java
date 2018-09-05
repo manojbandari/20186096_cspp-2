@@ -10,17 +10,14 @@ class InputValidator {
      * { flag variable }.
      */
     private int flag = 0;
-    /**
-     * { temp variable }.
-     */
-    public static int N_TEMP = 5;
+    private int temp = 5;
     /**
      * Constructs the object.
      *
      * @param      input  The input
      */
     InputValidator(final String input) {
-        if (input.length() > N_TEMP) {
+        if (input.length() > temp) {
             flag = 1;
         }
 
@@ -49,9 +46,13 @@ public final class Solution {
     }
     /**
      * { function_description }.
+     * 
      * @param args The arguments.
      */
     public static void main(final String args[]) {
+        /**
+         * It is the main class description.
+         */
         Scanner s = new Scanner(System.in);
         String input = s.next();
         InputValidator i = new InputValidator(input);
