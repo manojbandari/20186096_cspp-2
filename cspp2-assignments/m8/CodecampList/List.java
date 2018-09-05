@@ -251,7 +251,9 @@ public class List {
                 System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
                 break;
             case "get":
-                System.out.println(l.get(Integer.parseInt(tokens[1])));
+                if(l.get(Integer.parseInt(tokens[1]))!=-1) {
+                    System.out.println(l.get(Integer.parseInt(tokens[1])));
+                }
                 break;
             case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
