@@ -5,8 +5,7 @@ import java.util.Scanner;
  * @author     : manojbandari. Class for solution.
  * Class for solution.
  */
-public class Solution {
-    
+public final class Solution {
     /**
      * Constructs the object.
      */
@@ -15,7 +14,7 @@ public class Solution {
     }
 
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      args  The arguments
      */
@@ -73,4 +72,5 @@ public class Solution {
         }
     }
 }
+
 
