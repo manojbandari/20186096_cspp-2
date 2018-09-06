@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 public class List {
     //Implement all the methods mentioned to build a ListADT
-
+    private int TEMP = 10;
     /*
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
@@ -77,7 +77,7 @@ public class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-        list = new int[10];
+        list = new int[TEMP];
 
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
@@ -86,7 +86,7 @@ public class List {
         size = 0;
     }
 
-    /*
+    /**
      * Overloaded constructor with list capacity as argument The default
      * constructor sets the list capacity to 10 So, adding an item when the list
      * size is 10 raises a Index Out of Bounds Exception There will be some
@@ -103,7 +103,7 @@ public class List {
         list = new int[capacity];
     }
 
-    /*
+    /**
      * The add method does what the name suggests. Add an int item to the list.
      * The assumption is to store the item at the end of the list What is the
      * end of the list? Is it the same as the end of the array? Think about how
@@ -146,7 +146,7 @@ public class List {
      */
     
     /**
-     * { function_description }
+     * { function_description }.
      */
     public void resize() {
         list = Arrays.copyOf(list, size * 2);
@@ -209,7 +209,7 @@ public class List {
         }
     }
 
-    /*
+    /**
      * Get method has to return the items that is at the index position passed
      * as an argument to the method. If the item doesn't exist then return a -1
      * to indicate that there is no element at that index. How can an element
@@ -230,7 +230,7 @@ public class List {
         }
     }
 
-    /*
+    /**
      * What happens when you print an object using println? Java provides a
      * method named toString that is internally invoked when an object variable
      * is used in println. For example: List l = new List();
@@ -257,7 +257,7 @@ public class List {
         return str;
     }
 
-    /*
+    /**
      * Contains return true if the list has the item passed as an argument to
      * the method So, iterate through the list and return true if the item
      * exists and otherwise false
@@ -270,7 +270,7 @@ public class List {
         return indexOf(item) != -1;
     }
 
-    /*
+    /**
      * Returns the index of the first occurrence of the specified element in
      * this list, or -1 if this list does not contain the element.
      *
@@ -288,25 +288,24 @@ public class List {
     }
     /* Inserts all the elements of specified int array to the end of list */
     /**
-     * { item_description }
+     * { item_description }.
      */
-    public void addAll(int items[]) {
+    public void addAll(final int items[]) {
         for (int i = 0; i < items.length; i++) {
             add(items[i]);
         }
     }
 
     /*
-     Inserts the specified element at the specified index by moving all the
+     Inserts the specified element at the specified index by moving all the.
      elements to the right. The method returns void (nothing)
-    
      @param      index  The index
      @param      item   The item
     */
     public void add(final int index, final int item) {
         if (size == list.length) {
             System.out.println("No space to add");
-            return ;
+            return;
         }
         for (int i = size; i > index; i--) {
             list[i] = list[i - 1];
@@ -316,7 +315,7 @@ public class List {
     }
 
     /*
-     * Returns the count of occurances of a given item in the list
+     * Returns the count of occurances of a given item in the list.
      *
      * @param      item  The item
      *
@@ -335,7 +334,7 @@ public class List {
 
 
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      args  The arguments
      */
@@ -359,8 +358,10 @@ public class List {
                     if (t.length == 1) {
                         l.add(Integer.parseInt(tokens[1]));
                     } else {
-                        if (t.length > 1)
-                            l.add(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
+                        if (t.length > 1) {
+                            l.add(Integer.parseInt(t[0]),
+                                  Integer.parseInt(t[1]));
+                        }
                     }
                 }
                 break;
@@ -370,9 +371,10 @@ public class List {
             case "addAll":
                 if (tokens.length == 2) {
                     String[] t1 = tokens[1].split(",");
-                    int temp[] = new int[t1.length];
-                    for (int i = 0; i < temp.length; i++)
+                    int[] temp = new int[t1.length];
+                    for (int i = 0; i < temp.length; i++) {
                         temp[i] = Integer.parseInt(t1[i]);
+                    }
                     l.addAll(temp);
                 }
                 break;
@@ -400,6 +402,7 @@ public class List {
             case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
                 break;
+            default:
             }
         }
     }
