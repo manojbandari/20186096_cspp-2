@@ -315,8 +315,7 @@ public class List {
     */
     public void add(final int index, final int item) {
         if (size == list.length) {
-            System.out.println("No space to add");
-            return;
+            resize();
         }
         for (int i = size; i > index; i--) {
             list[i] = list[i - 1];
