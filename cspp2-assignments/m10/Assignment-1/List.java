@@ -7,7 +7,10 @@ import java.util.Arrays;
  */
 public class List {
     //Implement all the methods mentioned to build a ListADT
-    private int TEMP = 10;
+    /**
+    *global variable.
+    */
+    private static final int TEMP = 10;
     /*
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
@@ -33,6 +36,9 @@ public class List {
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
+    /**
+    *array
+    */
     private int[] list;
 
     /*
@@ -52,12 +58,14 @@ public class List {
      * So, to keep track of the size we need a variable called size
      * Again, we use private as we don't want that size variable
      * to be accessed by the methods that are outside of the List class.
-     *
      */
 
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
+    /**
+    *size variable.
+    */
     private int size;
 
     /*
@@ -144,7 +152,7 @@ public class List {
      * public method or private? Should the resize method return any values? You
      * know enough of Object Oriented Programming to answer these questions :-)
      */
-    
+
     /**
      * { function_description }.
      */
@@ -160,9 +168,9 @@ public class List {
      *
      * The method returns an int. Empty list should return 0.
      */
-    
+
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -192,7 +200,7 @@ public class List {
      */
 
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      index  The index
      */
@@ -231,7 +239,7 @@ public class List {
     }
 
     /**
-     * What happens when you print an object using println? Java provides a
+     * What happens when you print an object using println? Java provides a.
      * method named toString that is internally invoked when an object variable
      * is used in println. For example: List l = new List();
      * System.out.println(l); This statement is a shortcut for
@@ -246,8 +254,9 @@ public class List {
      * @return     String representation of the object.
      */
     public String toString() {
-        if (size == 0)
+        if (size == 0) {
             return "[]";
+        }
         String str = "[";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
@@ -267,7 +276,7 @@ public class List {
      * @return     { description_of_the_return_value }
      */
     public boolean contains(final int item) {
-        return indexOf(item) != -1;
+        return indexOf(item) >= 0;
     }
 
     /**
@@ -289,14 +298,16 @@ public class List {
     /* Inserts all the elements of specified int array to the end of list */
     /**
      * { item_description }.
+     *
+     * @param      items  The items
      */
-    public void addAll(final int items[]) {
+    public void addAll(final int[] items) {
         for (int i = 0; i < items.length; i++) {
             add(items[i]);
         }
     }
 
-    /*
+    /**
      Inserts the specified element at the specified index by moving all the.
      elements to the right. The method returns void (nothing)
      @param      index  The index
@@ -314,7 +325,7 @@ public class List {
         size++;
     }
 
-    /*
+    /**
      * Returns the count of occurances of a given item in the list.
      *
      * @param      item  The item
