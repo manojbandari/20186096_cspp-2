@@ -180,8 +180,9 @@ public class StringList implements StringListInterface {
             for (int i = index; i < size; i++) {
                 list[i] = list[i + 1];
             }
+            size--;
         } else {
-            System.out.println();
+            System.out.println("Invalid Position Exception");
         }
 
     }
@@ -199,7 +200,7 @@ public class StringList implements StringListInterface {
      */
     public String get(int index) {
         if (index < 0 || index >= size) {
-            return null;
+            return "-1";
         } else {
             return list[index];
         }
@@ -237,7 +238,7 @@ public class StringList implements StringListInterface {
         }
         str = str + list[i] + "]";
         return str;
-        
+
 
     }
 
