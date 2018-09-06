@@ -2,6 +2,9 @@ import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
 
+/**
+ * List of .
+ */
 public class List {
     //Implement all the methods mentioned to build a ListADT
 
@@ -64,6 +67,9 @@ public class List {
 
 
 
+    /**
+     * Constructs the object.
+     */
     public List() {
 
         // what are the two variables to be initialized here?
@@ -81,18 +87,16 @@ public class List {
     }
 
     /*
-     * Overloaded constructor with list capacity as argument
-     * The default constructor sets the list capacity to 10
-     * So, adding an item when the list size is 10
-     * raises a Index Out of Bounds Exception
-     * There will be some clients of the ADT that will require
-     * the list to contain n elements which is known
-     * at the time of creating the list.
+     * Overloaded constructor with list capacity as argument The default
+     * constructor sets the list capacity to 10 So, adding an item when the list
+     * size is 10 raises a Index Out of Bounds Exception There will be some
+     * clients of the ADT that will require the list to contain n elements which
+     * is known at the time of creating the list.
      *
-     * The overloaded constructor is a way to initialize a list with
-     * a list capacity of n items where n is given as an argument to
-     * constructor.
+     * The overloaded constructor is a way to initialize a list with a list
+     * capacity of n items where n is given as an argument to constructor.
      *
+     * @param      capacity  The capacity
      */
     public List(final int capacity) {
         size = 0;
@@ -100,15 +104,14 @@ public class List {
     }
 
     /*
-     * The add method does what the name suggests.
-     * Add an int item to the list.
-     * The assumption is to store the item at the end of the list
-     * What is the end of the list?
-     * Is it the same as the end of the array?
-     * Think about how you can use the size variable to add item
-     * to the list.
+     * The add method does what the name suggests. Add an int item to the list.
+     * The assumption is to store the item at the end of the list What is the
+     * end of the list? Is it the same as the end of the array? Think about how
+     * you can use the size variable to add item to the list.
      *
      * The method returns void (nothing)
+     *
+     * @param      item  The item
      */
     public void add(final int item) {
         //Inserts the specified element at the end of the zelist.
@@ -119,34 +122,31 @@ public class List {
     }
 
     /*
+     * Resize the list Sometimes the clients of the ADT won't know the expected
+     * list capacity To solve this the list has to grow dynamically when the
+     * maximum capacity is reached and there is no room to add items. So, how do
+     * we dynamically resize the list? Java doesn't support resize of array.
+     * Here are some options.
      *
-     * Resize the list
-     * Sometimes the clients of the ADT won't know the expected list capacity
-     * To solve this the list has to grow dynamically
-     * when the maximum capacity is reached and there is no room to add items.
-     * So, how do we dynamically resize the list?
-     * Java doesn't support resize of array. Here are some options.
+     * Option 1 Create a new array of the desired size, and copy the contents
+     * from the original array to the new array, using
+     * java.lang.System.arraycopy(...);
      *
-     * Option 1
-     * Create a new array of the desired size,
-     * and copy the contents from the original array to the new array,
-     * using java.lang.System.arraycopy(...);
+     * Option 2 Use java.util.Arrays.copyOf(...) methods which returns a bigger
+     * array, with the contents of the original array.
      *
-     * Option 2
-     * Use java.util.Arrays.copyOf(...) methods which returns a bigger array,
-     * with the contents of the original array.
+     * TODO Create a method called resize(). Resize should create an new array
+     * that is double the size of the old array. Then copy the contents of the
+     * old array to the new one.
      *
-     * TODO
-     * Create a method called resize(). Resize should create an new array that is
-     * double the size of the old array.
-     * Then copy the contents of the old array to the new one.
-     *
-     * When should the resize method be invoked and from where?
-     * Will the client invoke resize or is it internal to List class?
-     * Should the resize be public method or private?
-     * Should the resize method return any values?
-     * You know enough of Object Oriented Programming to answer these questions :-)
-     *
+     * When should the resize method be invoked and from where? Will the client
+     * invoke resize or is it internal to List class? Should the resize be
+     * public method or private? Should the resize method return any values? You
+     * know enough of Object Oriented Programming to answer these questions :-)
+     */
+    
+    /**
+     * { function_description }
      */
     public void resize() {
         list = Arrays.copyOf(list, size * 2);
@@ -159,6 +159,12 @@ public class List {
      * to the objects outside the list
      *
      * The method returns an int. Empty list should return 0.
+     */
+    
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
      */
     public int size() {
         return size;
@@ -185,6 +191,11 @@ public class List {
      * The method returns void (nothing)
      */
 
+    /**
+     * { function_description }
+     *
+     * @param      index  The index
+     */
     public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
@@ -199,15 +210,17 @@ public class List {
     }
 
     /*
-     * Get method has to return the items that is
-     * at the index position passed as an argument to the method.
-     * If the item doesn't exist then return a -1 to indicate that
-     * there is no element at that index.
-     * How can an element not be there at a given position?
-     * Well, if the position is greater than the number of items
-     * in the list then that would mean the item doesn't exist.
-     * How do we check if the position is greater than the
-     * number of items in the list? Would size variable be useful?
+     * Get method has to return the items that is at the index position passed
+     * as an argument to the method. If the item doesn't exist then return a -1
+     * to indicate that there is no element at that index. How can an element
+     * not be there at a given position? Well, if the position is greater than
+     * the number of items in the list then that would mean the item doesn't
+     * exist. How do we check if the position is greater than the number of
+     * items in the list? Would size variable be useful?
+     *
+     * @param      index  The index
+     *
+     * @return     { description_of_the_return_value }
      */
     public int get(final int index) {
         if (index < 0 || index >= size) {
@@ -218,24 +231,19 @@ public class List {
     }
 
     /*
-     * What happens when you print an object using println?
-     * Java provides a method named toString that is internally
-     * invoked when an object variable is used in println.
-     * For example:
-     * List l = new List();
-     * System.out.println(l);
-     * This statement is a shortcut for
+     * What happens when you print an object using println? Java provides a
+     * method named toString that is internally invoked when an object variable
+     * is used in println. For example: List l = new List();
+     * System.out.println(l); This statement is a shortcut for
      * System.out.println(l.toString());
      *
-     * So, implement the toString method to display the items
-     * in the list in the square brackets notation.
-     * i.e., if the list has numbers 1, 2, 3
-     * return the string [1,2,3]
-     * Caution: The array may be having other elements
-     * Example: [1,2,3,0,0,0,0,0,0,0]
-     * toString should only return the items in the list and
-     * not all the elements of the array.
+     * So, implement the toString method to display the items in the list in the
+     * square brackets notation. i.e., if the list has numbers 1, 2, 3 return
+     * the string [1,2,3] Caution: The array may be having other elements
+     * Example: [1,2,3,0,0,0,0,0,0,0] toString should only return the items in
+     * the list and not all the elements of the array.
      *
+     * @return     String representation of the object.
      */
     public String toString() {
         if (size == 0)
@@ -250,19 +258,25 @@ public class List {
     }
 
     /*
-     * Contains return true if the list has
-     * the item passed as an argument to the method
-     * So, iterate through the list and return true if
-     * the item exists and otherwise false
+     * Contains return true if the list has the item passed as an argument to
+     * the method So, iterate through the list and return true if the item
+     * exists and otherwise false
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
      */
     public boolean contains(final int item) {
-        return indexOf(item) == -1;
+        return indexOf(item) != -1;
     }
 
     /*
-     * Returns the index of the first occurrence
-     * of the specified element in this list,
-     * or -1 if this list does not contain the element.
+     * Returns the index of the first occurrence of the specified element in
+     * this list, or -1 if this list does not contain the element.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
      */
     public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
@@ -272,8 +286,10 @@ public class List {
         }
         return -1;
     }
-    /*Inserts all the elements of specified int
-     array to the end of list*/
+    /* Inserts all the elements of specified int array to the end of list */
+    /**
+     * { item_description }
+     */
     public void addAll(int items[]) {
         for (int i = 0; i < items.length; i++) {
             add(items[i]);
@@ -281,10 +297,12 @@ public class List {
     }
 
     /*
-       Inserts the specified element at the specified index
-    by moving all the elements to the right.
-           The method returns void (nothing)
-        */
+     Inserts the specified element at the specified index by moving all the
+     elements to the right. The method returns void (nothing)
+    
+     @param      index  The index
+     @param      item   The item
+    */
     public void add(final int index, final int item) {
         if (size == list.length) {
             System.out.println("No space to add");
@@ -297,7 +315,13 @@ public class List {
         size++;
     }
 
-    /* Returns the count of occurances of a given item in the list*/
+    /*
+     * Returns the count of occurances of a given item in the list
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int count(final int item) {
         int count = 0;
         for (int i = 0; i < size; i++) {
@@ -310,6 +334,11 @@ public class List {
 
 
 
+    /**
+     * { function_description }
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
