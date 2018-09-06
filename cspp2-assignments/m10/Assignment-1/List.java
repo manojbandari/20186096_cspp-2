@@ -326,9 +326,7 @@ public class List {
         }
         list[index] = item;
         size++;
-        if (index == 0) {
-            System.out.println("Invalid Position Exception");
-        }
+
     }
 
     /**
@@ -378,6 +376,9 @@ public class List {
                         if (t.length > 1) {
                             l.add(Integer.parseInt(t[0]),
                                   Integer.parseInt(t[1]));
+                            if (Integer.parseInt(t[0]) == 0) {
+                                System.out.println("Invalid Position Exception");
+                            }
                         }
                     }
                 }
