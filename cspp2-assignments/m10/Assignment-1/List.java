@@ -317,6 +317,9 @@ public class List {
         if (size == list.length) {
             resize();
         }
+        if (index < 0 ) {
+            System.out.println("Negative Index Exception");
+        }
         for (int i = size; i > index; i--) {
             list[i] = list[i - 1];
         }
@@ -368,10 +371,10 @@ public class List {
                     if (t.length == 1) {
                         l.add(Integer.parseInt(tokens[1]));
                     } else {
-                        for (int i = 0; i < t.length; i++) {
-                            l.add(Integer.parseInt(t[i]));
+                        if (t.length > 1) {
+                            l.add(Integer.parseInt(t[0]),
+                                  Integer.parseInt(t[1]));
                         }
-
                     }
                 }
                 break;
