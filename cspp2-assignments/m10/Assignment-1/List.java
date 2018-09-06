@@ -368,11 +368,10 @@ public class List {
                     if (t.length == 1) {
                         l.add(Integer.parseInt(tokens[1]));
                     } else {
-                        System.out.println("Negative Index Exception");
-                       /* if (t.length > 1) {
-                            l.add(Integer.parseInt(t[0]),
-                                  Integer.parseInt(t[1]));
-                        }*/
+                        for (int i = 0; i < t.length; i++) {
+                            l.add(Integer.parseInt(t[i]));
+                        }
+
                     }
                 }
                 break;
