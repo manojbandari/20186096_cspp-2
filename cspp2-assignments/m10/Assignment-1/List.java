@@ -373,6 +373,8 @@ public class List {
                                   Integer.parseInt(t[1]));
                         }
                     }
+                } else {
+                    System.out.println("Negative Index Exception");
                 }
                 break;
             case "count":
