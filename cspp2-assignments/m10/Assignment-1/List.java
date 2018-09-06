@@ -317,7 +317,7 @@ public class List {
         if (size == list.length) {
             resize();
         }
-        if (index < 0 ) {
+        if (index < 0) {
             System.out.println("Negative Index Exception");
             return;
         }
@@ -326,6 +326,9 @@ public class List {
         }
         list[index] = item;
         size++;
+        if (index == 0) {
+            System.out.println("Invalid Position Exception");
+        }
     }
 
     /**
@@ -421,5 +424,6 @@ public class List {
         }
     }
 }
+
 
 
