@@ -51,7 +51,7 @@ class Student {
      *
      * @return     { description_of_the_return_value }
      */
-    public int hashcode() {
+    public int hashCode() {
         return 0;
     }
 
