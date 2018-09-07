@@ -73,7 +73,6 @@ public class List {
      * The purpose of the constructor is to initialize the class variables with
      * some default values.
      */
-    
     /**
      * Constructs the object.
      */
@@ -141,7 +140,6 @@ public class List {
      * [1,3,0,0,0,0,0,0,0,0] The method returns void (nothing)
      *
      */
-    
     /**
      * { remove method}.
      *
@@ -271,10 +269,8 @@ public class List {
     second parameter indicates the endIndex. Returns null and print
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
-    
     @param      start  The start
     @param      end    The end
-    
     @return     { description_of_the_return_value }
     */
     public List subList(final int start, final int end) {
@@ -305,19 +301,12 @@ public class List {
     /**
     Returns a boolean indicating whether the parameter i.e a List object is.
     exactly matching with the given list or not.
-    
     @param      list  The list
-    
     @return     { description_of_the_return_value }
     */
     public boolean equals(final List list) {
         // Replace the code below
         return this.toString().equals(list.toString());
-        /*
-        * Removes all the elements from list
-        * Think about this case and make the method
-        * the simpler.
-        */
     }
     /**
      * { function_description }.
@@ -397,18 +386,22 @@ public class List {
                 if (tokens.length == 2) {
                     String[] t2 = tokens[1].split(",");
                     int[] a = new int[t2.length];
-                    for (int i = 0; i < t2.length; i++)
+                    for (int i = 0; i < t2.length; i++) {
                         a[i] = Integer.parseInt(t2[i]);
+                    }
                     l.removeAll(a);
                 }
                 break;
             case "subList": {
-                if (tokens.length != 2) break;
+                if (tokens.length != 2) {
+                    break;
+                }
                 String[] arrstring3 = tokens[1].split(",");
                 List object = l.subList(Integer.parseInt(arrstring3[0]),
                                         Integer.parseInt(arrstring3[1]));
-                if (object != null)
+                if (object != null) {
                     System.out.println(object);
+                }
                 break;
             }
             case "equals":
@@ -422,7 +415,7 @@ public class List {
                 }
                 break;
             case "clear":
-                l.clear();
+                l.clear() ;
                 break;
             default:
                 break;
