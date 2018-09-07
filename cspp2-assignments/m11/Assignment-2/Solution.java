@@ -17,7 +17,7 @@ class Student {
      * @param      name  The name
      */
     public Student(String name) {
-    //A constructor used to initialize the instance variables
+        //A constructor used to initialize the instance variables
         this.name = name;
     }
 
@@ -27,7 +27,7 @@ class Student {
      * @return     The name.
      */
     public String getName() {
-    //Getter method which returns the value of instance variable
+        //Getter method which returns the value of instance variable
         return this.name;
     }
 
@@ -40,7 +40,7 @@ class Student {
      */
     @Override
     public boolean equals(final Object other) {
-    //This method is to check if two students names are equal or not
+        //This method is to check if two students names are equal or not
         if (!(other instanceof Student)) {
             return false;
         }
@@ -543,8 +543,8 @@ public class Solution {
             break;
 
         case "O":
-        //This case will be executed for Student type list
-        //i.e to store List of Student Objects
+            //This case will be executed for Student type list
+            //i.e to store List of Student Objects
             executeListStudent(stdin);
             break;
         default:
