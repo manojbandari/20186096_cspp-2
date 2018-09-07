@@ -304,7 +304,7 @@ public class List {
     @param      list  The list
     @return     { description_of_the_return_value }
     */
-    private boolean equals(final List list) {
+    protected boolean equals(final List list) {
         // Replace the code below
         return this.toString().equals(list.toString());
     }
