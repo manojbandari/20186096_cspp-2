@@ -241,11 +241,11 @@ public class List {
 				}
 				return sublist;
 			} else {
-				System.out.println("Index Out Of Bounds Exception");
+				System.out.println("Index Out of Bounds Exception");
 				return null;
 			}
 		} else {
-			System.out.println("Index Out Of Bounds Exception");
+			System.out.println("Index Out of Bounds Exception");
 			return null;
 		}
 	}
