@@ -182,7 +182,7 @@ public class List {
 	 */
 	public boolean contains(int item) {
 		// Replace the code below
-		return indexOf(item) >= 0;
+		return indexOf(item) == -1;
 	}
 	/*
 	 * Returns the index of the first occurrence of the specified element in
@@ -211,10 +211,12 @@ public class List {
 	 array.
 	*/
 	public void removeAll(int[] newArray) {
-		for (int i = 0; i < list.length; i++) {
+		for (int i = 0; i < newArray.length; i++) {
 			int index = indexOf(newArray[i]);
+			int index1 = indexOf(newArray[i]);
 			if (index != -1)
 				remove(index);
+				remove(index1);
 		}
 		// write the logic
 
@@ -256,12 +258,11 @@ public class List {
 		if (size() != list.size()) {
 			return false;
 		}
-		int count=0;
 		for (int i = 0; i < size; i++) {
 			if (list.contains(this.list[i]));
-				count +=1;
+				return false;
 		}
-		return count==list.size(); 
+		return true;
 	}
 	/*
 	* Removes all the elements from list
