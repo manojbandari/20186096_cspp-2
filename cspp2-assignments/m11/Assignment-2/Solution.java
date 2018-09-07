@@ -33,15 +33,6 @@ class Student {
     /**
      * { function_description }.
      *
-     * @return     { description_of_the_return_value }
-     */
-    public int hashcode() {
-        return 0;
-    }
-
-    /**
-     * { function_description }.
-     *
      * @param      other  The other
      * @return     { description_of_the_return_value }
      */
@@ -54,6 +45,14 @@ class Student {
 
         Student that = (Student) other;
         return this.getName().equals(that.getName());
+    }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int hashcode() {
+        return 0;
     }
 
     /**
@@ -209,7 +208,7 @@ public final class Solution {
                 break;
             case "indexOf":
                 if (tokens.length == 2) {
-                    System.out.println(l.indexOf(Double.parseDouble(tokens[1])));
+                System.out.println(l.indexOf(Double.parseDouble(tokens[1])));
                 }
                 break;
             case "get":
@@ -219,7 +218,7 @@ public final class Solution {
                 break;
             case "contains":
                 if (tokens.length == 2) {
-                    System.out.println(l.contains(Double.parseDouble(tokens[1])));
+                System.out.println(l.contains(Double.parseDouble(tokens[1])));
                 }
                 break;
             case "addAll":
