@@ -30,7 +30,6 @@ class Student {
         //Getter method which returns the value of instance variable
         return this.name;
     }
-    
     /**
      * { function_description }.
      *
@@ -210,8 +209,7 @@ public final class Solution {
                 break;
             case "indexOf":
                 if (tokens.length == 2) {
-                    System.out.println(l.indexOf(Double.parseDouble
-                                                            (tokens[1])));
+                    System.out.println(l.indexOf(Double.parseDouble(tokens[1])));
                 }
                 break;
             case "get":
@@ -221,8 +219,7 @@ public final class Solution {
                 break;
             case "contains":
                 if (tokens.length == 2) {
-                    System.out.println(l.contains(Double.parseDouble
-                                                        (tokens[1])));
+                    System.out.println(l.contains(Double.parseDouble(tokens[1])));
                 }
                 break;
             case "addAll":
