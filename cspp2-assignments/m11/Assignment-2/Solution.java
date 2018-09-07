@@ -10,7 +10,7 @@ class Student {
     /**
      * {string name}.
      */
-    public String name;
+    private String name;
     /**
      * Constructs the object.
      *
@@ -32,7 +32,9 @@ class Student {
     }
     
     /**
-     * Constructs the object.
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
      */
     public int hashcode() {
         return 0;
@@ -42,7 +44,6 @@ class Student {
      * { function_description }.
      *
      * @param      other  The other
-     *
      * @return     { description_of_the_return_value }
      */
     @Override
@@ -210,7 +211,7 @@ public final class Solution {
             case "indexOf":
                 if (tokens.length == 2) {
                     System.out.println(l.indexOf(Double.parseDouble
-                                                (tokens[1])));
+                                                            (tokens[1])));
                 }
                 break;
             case "get":
@@ -221,7 +222,7 @@ public final class Solution {
             case "contains":
                 if (tokens.length == 2) {
                     System.out.println(l.contains(Double.parseDouble
-                                                  (tokens[1])));
+                                                        (tokens[1])));
                 }
                 break;
             case "addAll":
@@ -238,8 +239,9 @@ public final class Solution {
                 if (tokens.length == 2) {
                     String[] t2 = tokens[1].split(",");
                     Double[] a = new Double[t2.length];
-                    for (int i = 0; i < t2.length; i++)
+                    for (int i = 0; i < t2.length; i++) {
                         a[i] = Double.parseDouble(t2[i]);
+                    }
                     l.removeAll(a);
                 }
                 break;
@@ -340,7 +342,9 @@ public final class Solution {
                 }
                 break;
             case "subList":
-                if (tokens.length != 2) break;
+                if (tokens.length != 2) {
+                    break;
+                }
                 String[] arrstring3 = tokens[1].split(",");
                 List object = l.subList(Integer.parseInt(arrstring3[0]),
                                         Integer.parseInt(arrstring3[1]));
@@ -442,7 +446,7 @@ public final class Solution {
                 if (tokens.length == 2) {
                     String[] lt = tokens[1].split(",");
                     List l2 = new List();
-                    for (int k = 0; k < lt.length; k++ ) {
+                    for (int k = 0; k < lt.length; k++) {
                         l2.add((lt[k]));
                     }
                     System.out.println(l.equals(l2));
@@ -525,7 +529,7 @@ public final class Solution {
                     l.removeAll(students);
                 }
                 break;
-            case "subList": {
+            case "subList":
                 if (tokens.length != 2) {
                     break;
                 }
@@ -536,7 +540,6 @@ public final class Solution {
                     System.out.println(object);
                 }
                 break;
-            }
             case "equals":
                 if (tokens.length == 2) {
                     String[] lt = tokens[1].split(",");
