@@ -229,11 +229,11 @@ public class List {
 	public List subList(int start, int end) {
 		// write the logic for subList
 		List sublist = new List();
-		if (start == end) {
-			return sublist;
-		}
 		if (start >= 0 && end>=0) {
-			if (start < end) {
+			if (start == end) {
+				return sublist;
+			}
+			else if (start < end) {
 				for (int i = start; i < end; i++) {
 					sublist.add(list[i]);
 				}
