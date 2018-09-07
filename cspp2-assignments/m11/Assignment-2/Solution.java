@@ -50,10 +50,11 @@ class Student {
      * { function_description }.
      *
      * @return     { description_of_the_return_value }
-     */
+     
+    @Override
     public int hashcode() {
         return 0;
-    }
+    }*/
 
     /**
      * Returns a string representation of the object.
