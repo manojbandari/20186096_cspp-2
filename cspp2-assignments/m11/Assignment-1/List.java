@@ -236,14 +236,15 @@ public class List {
 				return sublist;
 			} else if (start == end) {
 				return sublist;
-			} else {
-				System.out.println("Index Out Of Bounds Exception");
+			} else if (start > end) {
+				System.out.println("Invalid Position Exception");
 				return null;
 			}
 		} else {
-			System.out.println("Invalid Position Exception");
+			System.out.println("Index Out Of Bounds Exception");
 			return null;
 		}
+		return null;
 	}
 	/*
 	Returns a boolean indicating whether the parameter i.e a List object is
