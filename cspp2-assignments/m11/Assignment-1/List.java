@@ -233,7 +233,8 @@ public class List {
         List sublist = new List();
         if (start >= 0 && end>=0) {
             if (start == end) {
-                return sublist;
+                System.out.println("Index Out of Bounds Exception");
+                return null;
             }
             else if (start < end) {
                 for (int i = start; i < end; i++) {
