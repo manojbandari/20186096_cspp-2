@@ -415,7 +415,7 @@ public class List {
                 }
                 break;
             case "clear":
-                l.clear() ;
+                l.clear( );
                 break;
             default:
                 break;
