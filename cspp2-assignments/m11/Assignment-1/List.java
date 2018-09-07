@@ -232,7 +232,7 @@ public class List {
 		if (start == end) {
 			return sublist;
 		}
-		if (start >= 0) {
+		if (start >= 0 && end>=0) {
 			if (start < end) {
 				for (int i = start; i < end; i++) {
 					sublist.add(list[i]);
