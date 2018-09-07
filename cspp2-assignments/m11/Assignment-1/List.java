@@ -255,7 +255,8 @@ public class List {
 	*/
 	public boolean equals(List list) {
 		// Replace the code below
-		if (size() != list.size()) {
+		return this.toString()==toString();
+		/*if (size() != list.size()) {
 			return false;
 		}
 		for (int i = 0; i < size; i++) {
@@ -263,12 +264,13 @@ public class List {
 				return true;
 		}
 		return false;
-	}
+	}*/
 	/*
 	* Removes all the elements from list
 	* Think about this case and make the method
 	* the simpler.
 	*/
+	}
 	public void clear() {
 		// write the logic for clear.
 		size = 0;
