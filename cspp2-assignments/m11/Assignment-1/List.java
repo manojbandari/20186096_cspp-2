@@ -301,12 +301,12 @@ public class List {
     /**
     Returns a boolean indicating whether the parameter i.e a List object is.
     exactly matching with the given list or not.
-    @param      list  The list
+    @param      list1  The list
     @return     { description_of_the_return_value }
     */
-    protected boolean equals(final List list) {
+    public boolean equals(final List list1) {
         // Replace the code below
-        return this.toString().equals(list.toString());
+        return this.toString().equals(list1.toString());
     }
     /**
      * { function_description }.
