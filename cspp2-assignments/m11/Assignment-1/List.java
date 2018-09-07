@@ -228,14 +228,14 @@ public class List {
 	public List subList(int start, int end) {
 		// write the logic for subList
 		List sublist = new List();
-		if (start >= 0 && end < size) {
+		if (start >= 0 && start < size) {
 			if (start < end) {
 				for (int i = start; i < end; i++) {
 					sublist.add(list[i]);
 				}
 				return sublist;
 			} else if (start == end) {
-				return null;
+				return sublist;
 			} else if (start > end) {
 				System.out.println("Invalid Position Exception");
 				return null;
