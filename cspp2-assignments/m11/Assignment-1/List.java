@@ -236,6 +236,10 @@ public class List {
                 System.out.println("Index Out of Bounds Exception");
                 return null;
             }
+            if (size==0) {
+                System.out.println("Index Out of Bounds Exception");
+                return null;
+            }
             else if (start < end) {
                 for (int i = start; i < end; i++) {
                     sublist.add(list[i]);
