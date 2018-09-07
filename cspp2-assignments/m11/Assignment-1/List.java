@@ -142,7 +142,7 @@ public class List {
 	 */
 	public int get(int index) {
 		// Replace the code below to write the code for get
-		if (index < 0 || index >= size) {
+		if (index < 0 && index >= size) {
 			return -1;
 		} else {
 			return list[index];
@@ -259,9 +259,8 @@ public class List {
 		for (int i = 0; i < size; i++) {
 			if (list.contains(this.list[i]));
 				return true;
-
 		}
-		return true;
+		return false;
 	}
 	/*
 	* Removes all the elements from list
