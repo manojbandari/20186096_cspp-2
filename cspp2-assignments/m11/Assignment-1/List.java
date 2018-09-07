@@ -231,7 +231,7 @@ public class List {
 		if (start == end) {
 			return sublist;
 		}
-		if (start >= 0 && end < size) {
+		if (start >= 0) {
 			if (start < end) {
 				for (int i = start; i < end; i++) {
 					sublist.add(list[i]);
@@ -250,10 +250,13 @@ public class List {
 	Returns a boolean indicating whether the parameter i.e a List object is
 	exactly matching with the given list or not.
 	*/
-	public boolean equals(List list ) {
+	public boolean equals(List other) {
 		// Replace the code below
-		for (int i=0;i<list.size();i++) {
-			return list.contains(i);
+		if (this==other) {
+			return true;
+		}
+		for (int i=0;i<size;i++) {
+			return this.contains(i);
 		}
 		return false;
 	}
