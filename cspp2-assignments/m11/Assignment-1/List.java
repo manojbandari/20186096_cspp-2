@@ -256,11 +256,12 @@ public class List {
 		if (size() != list.size()) {
 			return false;
 		}
+		int count=0;
 		for (int i = 0; i < size; i++) {
 			if (list.contains(this.list[i]));
-				return true;
+				count +=1;
 		}
-		return false;
+		return count==list.size(); 
 	}
 	/*
 	* Removes all the elements from list
