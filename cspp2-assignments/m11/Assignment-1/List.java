@@ -304,7 +304,7 @@ public class List {
     @param      list  The list
     @return     { description_of_the_return_value }
     */
-    public boolean equals(final List list) {
+    public boolean equals(List list) {
         // Replace the code below
         return this.toString().equals(list.toString());
     }
@@ -392,7 +392,7 @@ public class List {
                     l.removeAll(a);
                 }
                 break;
-            case "subList": 
+            case "subList":
                 if (tokens.length != 2) {
                     break;
                 }
