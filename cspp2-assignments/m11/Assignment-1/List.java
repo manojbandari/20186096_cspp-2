@@ -235,7 +235,7 @@ public class List {
 				}
 				return sublist;
 			} else if (start == end) {
-				return sublist;
+				return null;
 			} else if (start > end) {
 				System.out.println("Invalid Position Exception");
 				return null;
