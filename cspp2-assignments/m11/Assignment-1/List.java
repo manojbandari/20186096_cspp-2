@@ -304,7 +304,7 @@ public class List {
     @param      list  The list
     @return     { description_of_the_return_value }
     */
-    public boolean equals(List list) {
+    public boolean equals(final List list) {
         // Replace the code below
         return this.toString().equals(list.toString());
     }
@@ -407,7 +407,7 @@ public class List {
                 if (tokens.length == 2) {
                     String[] lt = tokens[1].split(",");
                     List l2 = new List();
-                    for (int k = 0; k < lt.length; k++ ) {
+                    for (int k = 0; k < lt.length; k++) {
                         l2.add(Integer.parseInt(lt[k]));
                     }
                     System.out.println(l.equals(l2));
