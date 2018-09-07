@@ -182,7 +182,7 @@ public class List {
 	 */
 	public boolean contains(int item) {
 		// Replace the code below
-		return indexOf(item) == -1;
+		return indexOf(item) != -1;
 	}
 	/*
 	 * Returns the index of the first occurrence of the specified element in
@@ -213,10 +213,10 @@ public class List {
 	public void removeAll(int[] newArray) {
 		for (int i = 0; i < newArray.length; i++) {
 			int index = indexOf(newArray[i]);
-			int index1 = indexOf(newArray[i]);
-			if (index != -1)
+			while (index != -1) {
 				remove(index);
-				remove(index1);
+				index = indexOf(newArray[i]);
+			}
 		}
 		// write the logic
 
@@ -255,16 +255,7 @@ public class List {
 	*/
 	public boolean equals(List list) {
 		// Replace the code below
-		return this.toString()==toString();
-		/*if (size() != list.size()) {
-			return false;
-		}
-		for (int i = 0; i < size; i++) {
-			if (list.contains(this.list[i]));
-				return true;
-		}
-		return false;
-	}*/
+		return this.toString().equals(list.toString());
 	/*
 	* Removes all the elements from list
 	* Think about this case and make the method
