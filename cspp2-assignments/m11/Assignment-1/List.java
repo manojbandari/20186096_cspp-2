@@ -213,7 +213,8 @@ public class List {
 	public void removeAll(int[] newArray) {
 		for (int i = 0; i < newArray.length; i++) {
 			int index = indexOf(newArray[i]);
-			remove(index);
+			if (index != -1)
+				remove(index);
 		}
 		// write the logic
 
@@ -250,13 +251,15 @@ public class List {
 	Returns a boolean indicating whether the parameter i.e a List object is
 	exactly matching with the given list or not.
 	*/
-	public boolean equals(List other) {
+	public boolean equals(List list) {
 		// Replace the code below
-		if (this==other) {
-			return true;
+		if (size() != list.size()) {
+			return false;
 		}
-		for (int i=0;i<size;i++) {
-			return this.contains(i);
+		for (int i = 0; i < size; i++) {
+			if (list.contains(this.list[i]));
+			return true;
+
 		}
 		return false;
 	}
