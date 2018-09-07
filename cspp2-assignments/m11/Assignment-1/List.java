@@ -228,15 +228,16 @@ public class List {
 	public List subList(int start, int end) {
 		// write the logic for subList
 		List sublist = new List();
-		if (start >= 0 && start < size) {
+		if (start == end) {
+			return sublist;
+		}
+		if (start >= 0 && end < size) {
 			if (start < end) {
 				for (int i = start; i < end; i++) {
 					sublist.add(list[i]);
 				}
 				return sublist;
-			} else if (start == end) {
-				return sublist;
-			} else if (start > end) {
+			} else {
 				System.out.println("Invalid Position Exception");
 				return null;
 			}
@@ -244,7 +245,6 @@ public class List {
 			System.out.println("Index Out Of Bounds Exception");
 			return null;
 		}
-		return null;
 	}
 	/*
 	Returns a boolean indicating whether the parameter i.e a List object is
@@ -252,9 +252,8 @@ public class List {
 	*/
 	public boolean equals(List list ) {
 		// Replace the code below
-		List that = (List) list;
-		if (this.list == that.list) {
-			return true;
+		for (int i=0;i<list.size();i++) {
+			return list.contains(i);
 		}
 		return false;
 	}
