@@ -1,20 +1,46 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-import java.util.Arrays;
 //A Class is implemented for Student details
-class Student {
-    private String name;
 
-    public Student(String name) {//A constructor used to initialize the instance variables
+/**
+ *@author : manojbandari.
+ * Class for student.
+ */
+class Student {
+    /**
+     * {string name}.
+     */
+    private String name;
+    /**
+     * Constructs the object.
+     *
+     * @param      name  The name
+     */
+    public Student(String name) {
+    //A constructor used to initialize the instance variables
         this.name = name;
     }
 
-    public String getName() {//Getter method which returns the value of instance variable
+    /**
+     * Gets the name.
+     *
+     * @return     The name.
+     */
+    public String getName() {
+    //Getter method which returns the value of instance variable
         return this.name;
     }
 
+    /**
+     * { function_description }.
+     *
+     * @param      other  The other
+     *
+     * @return     { description_of_the_return_value }
+     */
     @Override
-    public boolean equals(Object other) { //This method is to check if two students names are equal or not
+    public boolean equals(final Object other) {
+    //This method is to check if two students names are equal or not
         if (!(other instanceof Student)) {
             return false;
         }
@@ -23,13 +49,31 @@ class Student {
         return this.getName().equals(that.getName());
     }
 
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         return this.name;
     }
 }
 
+/**
+ * Class for solution.
+ */
 public class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
 
+    }
+    /**
+     * { function_description }
+     *
+     * @param      stdin  The stdin
+     */
     public static void executeListInteger(Scanner stdin) {
         List<Integer> l = new List();
         while (stdin.hasNext()) {
@@ -95,7 +139,8 @@ public class Solution {
             case "subList": {
                 if (tokens.length != 2) break;
                 String[] arrstring3 = tokens[1].split(",");
-                List object = l.subList(Integer.parseInt(arrstring3[0]), Integer.parseInt(arrstring3[1]));
+                List object = l.subList(Integer.parseInt(arrstring3[0]),
+                                        Integer.parseInt(arrstring3[1]));
                 if (object != null)
                     System.out.println(object);
                 break;
@@ -183,7 +228,8 @@ public class Solution {
             case "subList": {
                 if (tokens.length != 2) break;
                 String[] arrstring3 = tokens[1].split(",");
-                List object = l.subList(Integer.parseInt(arrstring3[0]), Integer.parseInt(arrstring3[1]));
+                List object = l.subList(Integer.parseInt(arrstring3[0]),
+                                        Integer.parseInt(arrstring3[1]));
                 if (object != null)
                     System.out.println(object);
                 break;
@@ -271,7 +317,8 @@ public class Solution {
             case "subList": {
                 if (tokens.length != 2) break;
                 String[] arrstring3 = tokens[1].split(",");
-                List object = l.subList(Integer.parseInt(arrstring3[0]), Integer.parseInt(arrstring3[1]));
+                List object = l.subList(Integer.parseInt(arrstring3[0]),
+                                        Integer.parseInt(arrstring3[1]));
                 if (object != null)
                     System.out.println(object);
                 break;
@@ -353,7 +400,8 @@ public class Solution {
             case "subList": {
                 if (tokens.length != 2) break;
                 String[] arrstring3 = tokens[1].split(",");
-                List object = l.subList(Integer.parseInt(arrstring3[0]), Integer.parseInt(arrstring3[1]));
+                List object = l.subList(Integer.parseInt(arrstring3[0]),
+                                        Integer.parseInt(arrstring3[1]));
                 if (object != null)
                     System.out.println(object);
                 break;
@@ -443,7 +491,8 @@ public class Solution {
             case "subList": {
                 if (tokens.length != 2) break;
                 String[] arrstring3 = tokens[1].split(",");
-                List object = l.subList(Integer.parseInt(arrstring3[0]), Integer.parseInt(arrstring3[1]));
+                List object = l.subList(Integer.parseInt(arrstring3[0]),
+                                        Integer.parseInt(arrstring3[1]));
                 if (object != null)
                     System.out.println(object);
                 break;
@@ -493,7 +542,9 @@ public class Solution {
             executeListDouble(stdin);
             break;
 
-        case "O"://This case will be executed for Student type list i.e to store List of Student Objects
+        case "O":
+        //This case will be executed for Student type list
+        //i.e to store List of Student Objects
             executeListStudent(stdin);
             break;
         default:
