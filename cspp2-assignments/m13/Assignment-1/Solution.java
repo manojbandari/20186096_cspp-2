@@ -13,7 +13,7 @@ class Set {
     */
     public int[] set;
     public int size;
-    
+
     /**
      * Constructs the object.
      */
@@ -83,15 +83,15 @@ class Set {
     }
     public Set intersection(Set value) {
         Set set1 = new Set();
-        for(int i=0;i<size;i++) {
-            for(int j=0; j<value.size();j++) {
-                if(this.set[i]==value.set[j]) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < value.size(); j++) {
+                if (this.set[i] == value.set[j]) {
                     set1.add(this.set[i]);
-               }
+                }
             }
         }
         return set1;
-       // return this.retainAll(value.set);
+        // return this.retainAll(value.set);
     }
 
     /**
@@ -119,20 +119,20 @@ class Set {
         return set[index];
     }
     public int[][] cartesianProduct(Set value) {
-        int len= this.size*value.size();
+        int len = this.size * value.size();
         int[][] matrix = new int[len][2];
-        if(value.size()==0 || size==0) {
+        if (value.size() == 0 || size == 0) {
             return null;
         }
         int k = 0;
-        for(int i=0;i<size;i++) {
-            for(int j=0;j<value.size();j++) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < value.size(); j++) {
                 /*int[] k = new int[2];
                 k[0]=set[i];
                 k[1]=0;*/
-                if(k<len) {
-                    matrix[k][0]=set[i];
-                    matrix[k][1]=value.get(j);
+                if (k < len) {
+                    matrix[k][0] = set[i];
+                    matrix[k][1] = value.get(j);
                     k++;
                 }
 
@@ -141,7 +141,7 @@ class Set {
         return matrix;
 
     }
-    
+
     public String toString() {
         if (size == 0) {
             return "{}";
@@ -220,14 +220,14 @@ public final class Solution {
                 }
                 break;
             case "intersection":
-            s = new Set();
-            Set t = new Set();
-            intArray = intArray(tokens[1]);
-            s.add(intArray);
-            intArray = intArray(tokens[2]);
-            t.add(intArray);
-            System.out.println(s.intersection(t));
-            break;
+                s = new Set();
+                Set t = new Set();
+                intArray = intArray(tokens[1]);
+                s.add(intArray);
+                intArray = intArray(tokens[2]);
+                t.add(intArray);
+                System.out.println(s.intersection(t));
+                break;
             case "retainAll":
                 s = new Set();
                 intArray = intArray(tokens[1]);
@@ -236,17 +236,17 @@ public final class Solution {
                 System.out.println(s.retainAll(intArray));
                 break;
             case "cartesianProduct":
-            s = new Set();
-            t = new Set();
-            intArray = intArray(tokens[1]);
-            s.add(intArray);
-            intArray = intArray(tokens[2]);
-            t.add(intArray);
-            System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
-            break;
+                s = new Set();
+                t = new Set();
+                intArray = intArray(tokens[1]);
+                s.add(intArray);
+                intArray = intArray(tokens[2]);
+                t.add(intArray);
+                System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
+                break;
             default:
                 break;
-            
+
             }
         }
     }
