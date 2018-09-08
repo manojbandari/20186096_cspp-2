@@ -81,8 +81,8 @@ class Set {
     public void resize() {
         set = Arrays.copyOf(set, size * 2);
     }
-    /*public int[] intersection(Set value) {
-        Set set1 = new Set();
+    public Set intersection(Set value) {
+       /* Set set1 = new Set();
         for(int i=0;i<size;i++) {
             for(int j=0; j<value.size();i++) {
                 if(this.set[i]==value.set[j]) {
@@ -90,8 +90,9 @@ class Set {
                }
             }
         }
-        return set1;
-    }*/
+        return set1;*/
+        return this.retainAll(value.set);
+    }
 
     /**
      * { function_description }.
