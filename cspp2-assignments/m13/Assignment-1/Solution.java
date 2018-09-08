@@ -84,7 +84,7 @@ class Set {
     public Set intersection(Set value) {
         Set set1 = new Set();
         for(int i=0;i<size;i++) {
-            for(int j=0; j<value.size();i++) {
+            for(int j=0; j<value.size();j++) {
                 if(this.set[i]==value.set[j]) {
                     set1.add(this.set[i]);
                }
