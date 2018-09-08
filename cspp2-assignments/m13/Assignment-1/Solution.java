@@ -130,11 +130,9 @@ class Set {
                 /*int[] k = new int[2];
                 k[0]=set[i];
                 k[1]=0;*/
-                if (k < len) {
                     matrix[k][0] = set[i];
                     matrix[k][1] = value.get(j);
                     k++;
-                }
 
             }
         }
