@@ -20,17 +20,17 @@ class Set {
         return size;
     }
     public boolean contains(int element) {
-       /* for(int i=0; i<size;i++) {
-            if(set[i]==value) {
+        for(int i=0; i<size;i++) {
+            if(set[i]==element) {
                 return true;
             }
         }
-        return false;*/
-        for (int i = 0; i < this.elements.length; i++) {
+        return false;
+        /*for (int i = 0; i < this.elements.length; i++) {
         if (this.elements[i] == element)
             return true;
         }
-        return false;
+        return false;*/
     }
     public void add(int[] value) {
         for(int i=0;i<value.length;i++) {
