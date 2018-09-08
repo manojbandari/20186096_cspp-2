@@ -119,7 +119,7 @@ class Set {
         return set[index];
     }
     public int[][] cartesianProduct(Set value) {
-        int[][] matrix = new int[size][value.size()];
+        int[][] matrix = new int[size][2];
         if(value.size()==0 || size==0) {
             return null;
         }
