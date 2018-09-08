@@ -82,7 +82,7 @@ class Set {
         set = Arrays.copyOf(set, size * 2);
     }
     public Set intersection(Set value) {
-       /* Set set1 = new Set();
+        Set set1 = new Set();
         for(int i=0;i<size;i++) {
             for(int j=0; j<value.size();i++) {
                 if(this.set[i]==value.set[j]) {
@@ -90,8 +90,8 @@ class Set {
                }
             }
         }
-        return set1;*/
-        return this.retainAll(value.set);
+        return set1;
+       // return this.retainAll(value.set);
     }
 
     /**
@@ -234,9 +234,10 @@ public final class Solution {
             intArray = intArray(tokens[2]);
             t.add(intArray);
             System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
-            break;*/
+            break;
             default:
                 break;
+            */
             }
         }
     }
