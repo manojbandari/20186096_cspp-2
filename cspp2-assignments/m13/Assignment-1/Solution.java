@@ -64,7 +64,7 @@ class Set {
     public Set retainAll(int[] value) {
         Set set1 = new Set();
         if (value.length==0 || size==0) {
-            return null;
+            return set1;
         }
         for(int i=0;i<size;i++) {
             for(int j=0; j<value.length;j++) {
