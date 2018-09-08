@@ -103,6 +103,19 @@ class Set {
         return matrix;
 
     }
+    public String toString() {
+        // Replace the code below
+        if (size == 0) {
+            return "{}";
+        }
+        String str = "{";
+        int i = 0;
+        for (i = 0; i < size - 1; i++) {
+            str = str + set[i] + ",";
+        }
+        str = str + set[i] + "}";
+        return str;
+    }
 
 }
 /**
