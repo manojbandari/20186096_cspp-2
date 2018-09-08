@@ -115,17 +115,26 @@ class Set {
         }
         return set1;
     }
+    public int get(int index) {
+        return set[index];
+    }
     public int[][] cartesianProduct(Set value) {
         int[][] matrix = new int[size][value.size()];
         if(value.size()==0 || size==0) {
             return null;
         }
+        int k = 0;
         for(int i=0;i<size;i++) {
             for(int j=0;j<value.size();j++) {
                 /*int[] k = new int[2];
                 k[0]=set[i];
                 k[1]=0;*/
-                matrix[i][j]=set[i];
+                if(k<value.size) {
+                    matrix[k][0]=set[i];
+                    matrix[k][1]=value.get(j);
+                    k++;
+                }
+
             }
         }
         return matrix;
