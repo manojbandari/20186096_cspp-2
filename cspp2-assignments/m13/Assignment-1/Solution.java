@@ -11,8 +11,8 @@ class Set {
     //Good luck :-)
     /**
     */
-    public int[] set;
-    public int size;
+    private int[] set;
+    private int size;
 
     /**
      * Constructs the object.
