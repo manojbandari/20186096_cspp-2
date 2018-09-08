@@ -118,7 +118,7 @@ class Set {
         String str = "{";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
-            str = str + set[i] + ",";
+            str = str + set[i] + ", ";
         }
         str = str + set[i] + "}";
         return str;
