@@ -85,8 +85,8 @@ class Set {
         Set set1 = new Set();
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < value.size(); j++) {
-                if (this.set[i] == value.set[j]) {
-                    set1.add(this.set[i]);
+                if (set[i] == value.set[j]) {
+                    set1.add(set[i]);
                 }
             }
         }
@@ -119,13 +119,13 @@ class Set {
         return set[index];
     }
     public int[][] cartesianProduct(Set value) {
-        int[][] matrix = new int[size * value.size()][2];
-        if (value.size() == 0 || size == 0) {
+        int[][] matrix = new int[size * value.size][2];
+        if (value.size == 0 || size == 0) {
             return null;
         }
         int k = 0;
         for (int i = 0; i < size; i++) {
-            for (int j = 0; j < value.size(); j++) {
+            for (int j = 0; j < value.size; j++) {
                 /*int[] k = new int[2];
                 k[0]=set[i];
                 k[1]=0;*/
