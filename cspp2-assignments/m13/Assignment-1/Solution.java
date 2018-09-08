@@ -67,7 +67,7 @@ class Set {
             return null;
         }
         for(int i=0;i<size;i++) {
-            for(int j=0; j<value.length;i++) {
+            for(int j=0; j<value.length;j++) {
                 if(set[i]==value[j]) {
                     set1.add(value[j]);
                }
