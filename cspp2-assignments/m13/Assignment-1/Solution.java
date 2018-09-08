@@ -210,7 +210,7 @@ public final class Solution {
                     s.add(intArray);
                 }
                 break;
-            /*case "intersection":
+            case "intersection":
             s = new Set();
             Set t = new Set();
             intArray = intArray(tokens[1]);
@@ -218,7 +218,7 @@ public final class Solution {
             intArray = intArray(tokens[2]);
             t.add(intArray);
             System.out.println(s.intersection(t));
-            break;*/
+            break;
             case "retainAll":
                 s = new Set();
                 intArray = intArray(tokens[1]);
