@@ -115,7 +115,7 @@ class Set {
         }
         return set1;
     }
-    /*public int[][] cartesianProduct(Set value) {
+    public int[][] cartesianProduct(Set value) {
         int[][] matrix = new int[size][value.size()];
         if(value.size()==0 || size==0) {
             return null;
@@ -124,14 +124,14 @@ class Set {
             for(int j=0;j<value.size();j++) {
                 /*int[] k = new int[2];
                 k[0]=set[i];
-                k[1]=0;
+                k[1]=0;*/
                 matrix[i][j]=set[i];
             }
         }
         return matrix;
 
     }
-    }*/
+    
     public String toString() {
         if (size == 0) {
             return "{}";
@@ -144,7 +144,6 @@ class Set {
         str = str + set[i] + "}";
         return str;
     }
-
 }
 /**
  * Solution class for code-eval.
@@ -226,7 +225,7 @@ public final class Solution {
                 intArray = intArray(tokens[2]);
                 System.out.println(s.retainAll(intArray));
                 break;
-            /*case "cartesianProduct":
+            case "cartesianProduct":
             s = new Set();
             t = new Set();
             intArray = intArray(tokens[1]);
@@ -237,7 +236,7 @@ public final class Solution {
             break;
             default:
                 break;
-            */
+            
             }
         }
     }
