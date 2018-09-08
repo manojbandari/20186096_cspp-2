@@ -37,7 +37,14 @@ class Set {
             if(size == set.length) {
                 resize();
             }
-            set[size++]=value[i];
+            int count=0;
+            for(int j=0;j<size;j++)
+                if(value[i]==set[j]){
+                    count+=1;
+                }
+            if(count==0){
+                set[size++]=value[i];
+            }
         }
     }
     public void add(int value) {
