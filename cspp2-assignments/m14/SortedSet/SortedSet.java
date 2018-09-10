@@ -4,7 +4,7 @@ public class SortedSet extends Set {
 			resize();
 		}
 		if(size()==0) {
-			this.set[0]=value;
+			set[0]=value;
 			size++;
 		}
 		else {
@@ -19,12 +19,12 @@ public class SortedSet extends Set {
             	for(k=0;k<size();k++) {
             		if(value < get(k)) {
             			for(int z=k;z<size();z++)
-            				this.set[k+1]=this.set[k];
+            				set[z+1]=set[z];
+            			set[k]=value;
+            			size++;
+            			break;
 
             		}
-            		this.set[k]=value;
-            		size++;
-            		break;
             	}
             }
             
