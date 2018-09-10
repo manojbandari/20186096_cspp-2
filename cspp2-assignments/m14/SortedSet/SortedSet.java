@@ -1,6 +1,6 @@
 public class SortedSet extends Set {
 	public void add(int value) {
-		if(size==set.length) {
+		if(size()==this.set.length) {
 			resize();
 		}
 		for (int i = 0; i < size(); i++) {
@@ -15,8 +15,8 @@ public class SortedSet extends Set {
 				{	for(int k=i;k<size();k++) {
 						set[i+1]=set[i];
 					} 
-					this.set[i]= value;
-					this.size++;
+					set[i]= value;
+					size++;
 					break;
 			}
 		}
