@@ -1,8 +1,8 @@
 public class SortedSet extends Set {
-	SortedSet() {
+	/*SortedSet() {
         set = new int[10];
         size = 0;
-    }
+    }*/
 	public void add(int value) {
 		if(size==set.length) {
 			resize();
@@ -21,9 +21,6 @@ public class SortedSet extends Set {
 	}
 	public void addAll(int[] value) {
         for (int i = 0; i < value.length; i++) {
-            if (size == set.length) {
-                resize();
-            }
             int count = 0;
             for (int j = 0; j < size; j++)
                 if (value[i] == set[j]) {
@@ -43,12 +40,12 @@ public class SortedSet extends Set {
 		return -1;
 	}
 	public Set subSet(int fromElement, int toElement){
-		Set subset= new Set();
+		SortedSet subset= new SortedSet();
 		int start= indexOf(fromElement);
 		int end= indexOf(toElement);
 		if(start < end) {
 			for(int i=start;i<end;i++) {
-				add(set[i]);
+				subset.add(set[i]);
 			}
 		}
 		else {
