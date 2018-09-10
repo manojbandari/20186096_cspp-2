@@ -22,7 +22,7 @@ public class SortedSet extends Set {
 		}
 	}
 	set[0]=value;
-	System.out.println(value);
+	size++;
 }
 	public void addAll(int[] value) {
         for(int i=0;i<value.length;i++){
