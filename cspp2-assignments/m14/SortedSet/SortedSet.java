@@ -53,7 +53,9 @@ public class SortedSet extends Set {
 					flag=i;
 			}
 		}
-		return flag;
+		if (flag==0)
+			return flag;
+		return flag+1;
 	}
 	public Set subSet(int fromElement, int toElement){
 		SortedSet subset= new SortedSet();
