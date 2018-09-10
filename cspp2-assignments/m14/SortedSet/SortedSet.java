@@ -53,28 +53,14 @@ public class SortedSet extends Set {
 					flag=i;
 			}
 		}
-		return flag;
+		return flag+1;
 	}
 	public Set subSet(int fromElement, int toElement){
 		SortedSet subset= new SortedSet();
 		int start= indexOf(fromElement);
 		int end= indexOf(toElement);
 		if(size()!=0) {
-			if(start==-1) {
-				for(int i=0;i<end;i++) {
-					subset.add(get(i));
-				}
-				return subset;
-
-			}
-			else if(end==-1) {
-				for(int i=start;i<size();i++) {
-					subset.add(get(i));
-				}
-				return subset;
-
-			}
-			else if(start<end) {
+		 	if(start<end) {
 				for(int i=start;i<end;i++) {
 					subset.add(get(i));
 				}
