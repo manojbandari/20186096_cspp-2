@@ -59,6 +59,10 @@ public class SortedSet extends Set {
 		SortedSet subset= new SortedSet();
 		int start= indexOf(fromElement);
 		int end= indexOf(toElement);
+		if(start > end) {
+			System.out.println("Invalid Arguments to Subset Exception");
+            return null;
+		}
 		if(end==1) {
 			return subset;
 		}
@@ -80,9 +84,10 @@ public class SortedSet extends Set {
 		return subSet(get(0),toElement);
 	}
 	public int last(){
-		if(size()==0) {
-			return -1;
-		}
+		if (size() == 0) {
+            System.out.println("Set Empty Exception");
+            return -1;
+        }
 		return set[size-1];
 	}
 }
