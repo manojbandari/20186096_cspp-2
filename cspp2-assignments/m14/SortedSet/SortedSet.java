@@ -23,8 +23,9 @@ public class SortedSet extends Set {
             			set[k]=value;
             			size++;
             			break;
-
             		}
+            	set[size]=value;
+            	size++;
             	}
             }
             
