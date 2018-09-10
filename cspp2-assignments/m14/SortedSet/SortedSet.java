@@ -56,6 +56,8 @@ public class SortedSet extends Set {
 		}
 		if (flag==0&&get(element)==-1)
 			return flag;
+		else if(flag==0)
+			return flag;
 		return flag+1;
 	}
 	public Set subSet(int fromElement, int toElement){
