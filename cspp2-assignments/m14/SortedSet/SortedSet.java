@@ -3,6 +3,11 @@ public class SortedSet extends Set {
 		if(size()==this.set.length) {
 			resize();
 		}
+		if(size()==0) {
+			set[0]=value;
+			size++;
+		}
+		else {
 		for (int i = 0; i < size(); i++) {
             int count = 0;
             for (int j = 0; j < size(); j++) {
@@ -10,19 +15,19 @@ public class SortedSet extends Set {
                     count += 1;
                 }
             }
-            if (count == 0) {
-				if(!(value > get(i)))
-				{	for(int k=i;k<size();k++) {
-						set[k+1]=set[k];
-					} 
-					set[i]= value;
-					size++;
-					break;
-			}
+            if(count==0) {
+            	for(int k=0;k<size();k++) {
+            		if(value < get(k)) {
+            			set[k+1]=set[k];
+            		}
+            	}
+            	set[i]=value;
+            	size++;
+            }
+            
 		}
 	}
-	set[0]=value;
-	size++;
+	
 }
 	public void addAll(int[] value) {
         for(int i=0;i<value.length;i++){
