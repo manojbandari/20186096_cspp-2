@@ -54,18 +54,19 @@ public class SortedSet extends Set {
 		SortedSet subset= new SortedSet();
 		int start= indexOf(fromElement);
 		int end= indexOf(toElement);
+		System.out.println(start+" "+end);
 		if(start==-1 || end==-1) {
 			return subset; 
 		}
 		if(start < end) {
 			for(int i=start;i<end;i++) {
-				subset.add(set[i]);
+				subset.add(get(i));
 			}
 		}
 		else {
 			System.out.println("Invalid Arguemnts to Subset Exception");
 		}
-		return null;
+		return subset;
 	}
 	public Set headSet(int toElement) {
 		return subSet(get(0),toElement);
