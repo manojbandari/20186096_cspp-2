@@ -226,8 +226,6 @@ public final class Solution {
                 Set m = s.subSet(Integer.parseInt(elements[0]), Integer.parseInt(elements[1]));
                 if (m != null) {
                     System.out.println(m);
-                } else {
-                    System.out.println("Invalid Arguments to Subset Exception");
                 }
                 break;
             case "headSet":
@@ -243,3 +241,4 @@ public final class Solution {
         }
     }
 }
+
