@@ -213,6 +213,15 @@ public final class Solution {
                     s.add(intArray);
                 }
                 break;
+            case "addAll" :
+                intArray = intArray(tokens[1]);
+                if (intArray.length == 1) {
+                    s.add(intArray[0]);
+                } else {
+                    s.add(intArray);
+                }
+                break;
+
             /*case "intersection":
                 s = new Set();
                 Set t = new Set();
