@@ -21,6 +21,7 @@ public class SortedSet extends Set {
 			}
 		}
 	}
+	set[0]=value;
 }
 	public void addAll(int[] value) {
         for(int i=0;i<value.length;i++){
