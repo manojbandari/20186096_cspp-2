@@ -62,6 +62,7 @@ public class SortedSet extends Set {
 			for(int i=start;i<end;i++) {
 				subset.add(get(i));
 			}
+			return subset;
 		}
 		else {
 			System.out.println("Invalid Arguemnts to Subset Exception");
