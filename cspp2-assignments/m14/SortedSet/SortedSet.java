@@ -1,31 +1,22 @@
 public class SortedSet extends Set {
-	/*SortedSet() {
-        set = new int[10];
-        size = 0;
-    }*/
-    public int[] set;
-    public int size;
-    SortedSet() {
-    	set = new int[10];
-        size = 0;
-    }
 	public void add(int value) {
 		if(size==set.length) {
 			resize();
 		}
 		for (int i = 0; i < size(); i++) {
             int count = 0;
-            for (int j = 0; j < size(); j++)
-                if (value == set[j]) {
+            for (int j = 0; j < size(); j++) {
+                if (value == get(j)){
                     count += 1;
                 }
+            }
             if (count == 0) {
-				if(!(value > set[i]))
-				{	for(int j=i;j<size();j++) {
-						set[j+1]=set[j];
+				if(!(value > get(i)))
+				{	for(int k=i;k<size();k++) {
+						set[i+1]=set[i];
 					} 
-					set[i]= value;
-					size++;
+					this.set[i]= value;
+					this.size++;
 					break;
 			}
 		}
@@ -38,7 +29,7 @@ public class SortedSet extends Set {
     }
 	public int indexOf(int element) {
 		for(int i=0;i<size();i++) {
-			if(set[i]==element) {
+			if(get(i)==element) {
 				return i;
 			}
 		}
@@ -48,6 +39,9 @@ public class SortedSet extends Set {
 		SortedSet subset= new SortedSet();
 		int start= indexOf(fromElement);
 		int end= indexOf(toElement);
+		if(start==-1 || end==-1) {
+			return subset; 
+		}
 		if(start < end) {
 			for(int i=start;i<end;i++) {
 				subset.add(set[i]);
@@ -59,7 +53,7 @@ public class SortedSet extends Set {
 		return null;
 	}
 	public Set headSet(int toElement) {
-		return subSet(0,toElement);
+		return subSet(get(0),toElement);
 	}
 	public int last(){
 		if(size()==0) {

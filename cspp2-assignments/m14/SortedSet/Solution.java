@@ -11,8 +11,8 @@ class Set {
     //Good luck :-)
     /**
     */
-    public int[] set;
-    public int size;
+    protected int[] set;
+    protected int size;
 
     /**
      * Constructs the object.
@@ -117,7 +117,6 @@ class Set {
             }
         }
         return matrix;
-
     }*/
 
     public String toString() {
@@ -225,10 +224,13 @@ public final class Solution {
             case "subSet":
                 String[] elements=tokens[1].split(",");
                 System.out.println(s.subSet(Integer.parseInt(elements[0]), Integer.parseInt(elements[1])));
+                break;
             case "headSet":
                 System.out.println(s.headSet(Integer.parseInt(tokens[1])));
+                break;
             case "last":
                 System.out.println(s.last());
+                break;
             default:
                 break;
 
