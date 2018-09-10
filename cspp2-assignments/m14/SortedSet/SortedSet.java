@@ -7,15 +7,15 @@ public class SortedSet extends Set {
 		if(size==set.length) {
 			resize();
 		}
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i < size(); i++) {
             int count = 0;
-            for (int j = 0; j < size; j++)
+            for (int j = 0; j < size(); j++)
                 if (value == set[j]) {
                     count += 1;
                 }
             if (count == 0) {
 				if(!(value > set[i]))
-				{	for(int j=i;j<size;j++) {
+				{	for(int j=i;j<size();j++) {
 						set[j+1]=set[j];
 					} 
 					set[i]= value;
@@ -31,7 +31,7 @@ public class SortedSet extends Set {
         }
     }
 	public int indexOf(int element) {
-		for(int i=0;i<size;i++) {
+		for(int i=0;i<size();i++) {
 			if(set[i]==element) {
 				return i;
 			}
@@ -56,7 +56,7 @@ public class SortedSet extends Set {
 		return subSet(0,toElement);
 	}
 	public int last(){
-		if(size==0) {
+		if(size()==0) {
 			return 0;
 		}
 		return set[size-1];
