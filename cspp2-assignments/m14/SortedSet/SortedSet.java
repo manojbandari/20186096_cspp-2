@@ -15,6 +15,7 @@ public class SortedSet extends Set {
                 }
             }
             int k;
+            int flag=0;
             if(count==0) {
             	for(k=0;k<size();k++) {
             		if(value < get(k)) {
@@ -24,12 +25,15 @@ public class SortedSet extends Set {
             			}
             			set[k]=value;
             			size++;
+            			flag=1;
             			break;
             		}
             	}
-            	System.out.println(value);
-            	set[k]=value;
-            	size++;
+            	if(flag==0) {
+            		System.out.println(value);
+            		set[k]=value;
+            		size++;
+            	}
             }
             
 		}
