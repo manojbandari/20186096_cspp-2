@@ -19,7 +19,6 @@ public class SortedSet extends Set {
             if(count==0) {
             	for(k=0;k<size();k++) {
             		if(value < get(k)) {
-            			System.out.println(" inside :"+value);
             			for(int z=size()-1;z>=k;z--) {
             				set[z+1]=set[z];
             			}
@@ -30,7 +29,6 @@ public class SortedSet extends Set {
             		}
             	}
             	if(flag==0) {
-            		System.out.println(value);
             		set[k]=value;
             		size++;
             	}
