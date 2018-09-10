@@ -232,15 +232,7 @@ public final class Solution {
                 }
                 break;
             case "headSet":
-
-                Set n=s.headSet(Integer.parseInt(tokens[1]));
-                if(n==null) {
-                    System.out.println("{}");
-                    System.out.println("Set Empty Exception");
-                }
-                else {
-                    System.out.println(n);
-                }
+                System.out.println(s.headSet(Integer.parseInt(tokens[1])));
                 break;
             case "last":
                 System.out.println(s.last());

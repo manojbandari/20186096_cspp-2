@@ -76,19 +76,7 @@ public class SortedSet extends Set {
 		System.out.println("Invalid Arguemnts to Subset Exception");
 		return subset;
 	}
-	public int index(int element) {
-		int i;
-		for(i=0;i<size();i++) {
-			if(get(i)==element) {
-				return i;
-			}
-	}
-	return -1;
-}
 	public Set headSet(int toElement) {
-		if(index(toElement)<0) {
-			return null;
-		}
 		return subSet(get(0),toElement);
 	}
 	public int last(){
