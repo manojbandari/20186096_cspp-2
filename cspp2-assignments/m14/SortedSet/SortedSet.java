@@ -57,7 +57,7 @@ public class SortedSet extends Set {
 	}
 	public Set subSet(int fromElement, int toElement){
 		SortedSet subset= new SortedSet();
-		if(size()==1 && set[0]==toElement) {
+		if((size()==1 && set[0]==toElement)||get(toElement)==-1) {
 			return subset;
 		}
 		int start= indexOf(fromElement);
