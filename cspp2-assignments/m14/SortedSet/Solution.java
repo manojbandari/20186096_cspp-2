@@ -49,39 +49,24 @@ class Set {
      *
      * @param      value  The value
      */
-    public void add(int[] value) {
-        for (int i = 0; i < value.length; i++) {
-            if (size == set.length) {
-                resize();
-            }
-            int count = 0;
-            for (int j = 0; j < size; j++)
-                if (value[i] == set[j]) {
-                    count += 1;
-                }
-            if (count == 0) {
-                set[size++] = value[i];
-            }
-        }
-    }
     /**
      * { function_description }
      *
      * @param      value  The value
      */
-    public void add(int value) {
+    /*public void add(int value) {
         if (size == set.length) {
             resize();
         }
         set[size++] = value;
-    }
+    }*/
     /**
      * { function_description }
      */
     public void resize() {
         set = Arrays.copyOf(set, size * 2);
     }
-    public Set intersection(Set value) {
+    /*public Set intersection(Set value) {
         Set set1 = new Set();
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < value.size(); j++) {
@@ -90,9 +75,8 @@ class Set {
                 }
             }
         }
-        return set1;
+        return set1 };*/
         // return this.retainAll(value.set);
-    }
 
     /**
      * { function_description }.
@@ -101,7 +85,7 @@ class Set {
      *
      * @return     { description_of_the_return_value }
      */
-    public Set retainAll(int[] value) {
+    /*public Set retainAll(int[] value) {
         Set set1 = new Set();
         if (value.length == 0 || size == 0) {
             return set1;
@@ -114,11 +98,11 @@ class Set {
             }
         }
         return set1;
-    }
+    }*/
     public int get(int index) {
         return set[index];
     }
-    public int[][] cartesianProduct(Set value) {
+    /*public int[][] cartesianProduct(Set value) {
         int[][] matrix = new int[size * value.size][2];
         if (value.size == 0 || size == 0) {
             return null;
@@ -134,7 +118,7 @@ class Set {
         }
         return matrix;
 
-    }
+    }*/
 
     public String toString() {
         if (size == 0) {
@@ -206,20 +190,11 @@ public final class Solution {
                 System.out.println(s);
                 break;
             case "add":
-                int[] intArray = intArray(tokens[1]);
-                if (intArray.length == 1) {
-                    s.add(intArray[0]);
-                } else {
-                    s.add(intArray);
-                }
+                s.add(Integer.parseInt(tokens[1]));
                 break;
             case "addAll" :
-                intArray = intArray(tokens[1]);
-                if (intArray.length == 1) {
-                    s.add(intArray[0]);
-                } else {
-                    s.add(intArray);
-                }
+                int[] intArray = intArray(tokens[1]);
+                s.addAll(intArray);
                 break;
 
             /*case "intersection":
