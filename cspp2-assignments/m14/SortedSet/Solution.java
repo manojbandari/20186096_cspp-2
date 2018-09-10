@@ -54,12 +54,12 @@ class Set {
      *
      * @param      value  The value
      */
-    /*public void add(int value) {
+    public void add(int value) {
         if (size == set.length) {
             resize();
         }
         set[size++] = value;
-    }*/
+    }
     /**
      * { function_description }
      */
@@ -99,6 +99,14 @@ class Set {
         }
         return set1;
     }*/
+    
+    /**
+     * { function_description }.
+     *
+     * @param      index  The index
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int get(int index) {
         return set[index];
     }
@@ -119,6 +127,11 @@ class Set {
         return matrix;
     }*/
 
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         if (size == 0) {
             return "{}";
@@ -229,11 +242,10 @@ public final class Solution {
                 }
                 break;
             case "headSet":
-                Set n=s.headSet(Integer.parseInt(tokens[1]));
-                if(n!=null) {
+                Set n = s.headSet(Integer.parseInt(tokens[1]));
+                if (n != null) {
                     System.out.println(n);
-                }
-                else {
+                } else {
                     System.out.println("{}");
                 }
                 break;
