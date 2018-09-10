@@ -1,4 +1,8 @@
 public class SortedSet extends Set {
+	SortedSet() {
+        set = new int[10];
+        size = 0;
+    }
 	public void add(int value) {
 		if(size==set.length) {
 			resize();
