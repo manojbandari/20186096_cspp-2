@@ -18,8 +18,9 @@ public class SortedSet extends Set {
             	int k;
             	for(k=0;k<size();k++) {
             		if(value < get(k)) {
-            			for(int z=k;z<size();z++)
+            			for(int z=size()-1;z<k;z--)
             				set[z+1]=set[z];
+
             			set[k]=value;
             			size++;
             			break;
