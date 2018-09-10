@@ -13,7 +13,7 @@ public class SortedSet extends Set {
             if (count == 0) {
 				if(!(value > get(i)))
 				{	for(int k=i;k<size();k++) {
-						set[i+1]=set[i];
+						set[k+1]=set[k];
 					} 
 					set[i]= value;
 					size++;
