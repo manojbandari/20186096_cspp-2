@@ -6,6 +6,7 @@ public class SortedSet extends Set {
 		if(size()==0) {
 			set[0]=value;
 			size++;
+			System.out.println(value);
 		}
 		else {
 		for (int i = 0; i < size(); i++) {
