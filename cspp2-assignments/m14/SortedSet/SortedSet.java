@@ -3,6 +3,8 @@ public class SortedSet extends Set {
         set = new int[10];
         size = 0;
     }*/
+    public int[] set;
+    public int size;
     SortedSet() {
     	super();
     }
