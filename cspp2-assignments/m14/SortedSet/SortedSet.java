@@ -3,6 +3,9 @@ public class SortedSet extends Set {
         set = new int[10];
         size = 0;
     }*/
+    SortedSet() {
+    	super();
+    }
 	public void add(int value) {
 		if(size==set.length) {
 			resize();
