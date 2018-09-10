@@ -54,7 +54,6 @@ public class SortedSet extends Set {
 		SortedSet subset= new SortedSet();
 		int start= indexOf(fromElement);
 		int end= indexOf(toElement);
-		System.out.println(start+" "+end);
 		if(start==-1 || end==-1) {
 			return subset; 
 		}
