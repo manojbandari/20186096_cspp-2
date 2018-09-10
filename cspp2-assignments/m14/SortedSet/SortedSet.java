@@ -6,10 +6,8 @@ public class SortedSet extends Set {
 		if(size()==0) {
 			set[0]=value;
 			size++;
-			System.out.println(value);
 		}
 		else {
-		for (int i = 0; i < size(); i++) {
             int count = 0;
             for (int j = 0; j < size(); j++) {
                 if (value == get(j)){
@@ -17,17 +15,19 @@ public class SortedSet extends Set {
                 }
             }
             if(count==0) {
-            	for(int k=0;k<size();k++) {
+            	int k;
+            	for(k=0;k<size();k++) {
             		if(value < get(k)) {
-            			set[k+1]=set[k];
+            			for(int z=k;z<size();z++)
+            				set[k+1]=set[k];
+
             		}
+            		set[k]=value;
+            		size++;
             	}
-            	set[i]=value;
-            	size++;
             }
             
 		}
-	}
 	
 }
 	public void addAll(int[] value) {
