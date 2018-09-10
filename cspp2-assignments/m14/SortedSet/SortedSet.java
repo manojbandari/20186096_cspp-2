@@ -59,16 +59,24 @@ public class SortedSet extends Set {
 				for(int i=0;i<end;i++) {
 					subset.add(get(i));
 				}
+				return subset;
+
 			}
 			else if(end==-1) {
 				for(int i=start;i<size();i++) {
 					subset.add(get(i));
 				}
+				return subset;
+
 			}
 			else if(start<end) {
 				for(int i=start;i<end;i++) {
 					subset.add(get(i));
+				return subset;
 			}
+		}
+		else {
+			System.out.println("Invalid Arguments to Subset Exception");
 			return subset;
 		}
 	}
