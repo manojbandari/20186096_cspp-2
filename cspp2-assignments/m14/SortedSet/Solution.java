@@ -223,7 +223,13 @@ public final class Solution {
                 break;*/
             case "subSet":
                 String[] elements=tokens[1].split(",");
-                System.out.println(s.subSet(Integer.parseInt(elements[0]), Integer.parseInt(elements[1])));
+                Set m=s.subSet(Integer.parseInt(elements[0]), Integer.parseInt(elements[1]));
+                if(m!=null) {
+                    System.out.println(m);
+                }
+                else {
+                    System.out.println("Invalid Arguments to Subset Exception");
+                }
                 break;
             case "headSet":
                 System.out.println(s.headSet(Integer.parseInt(tokens[1])));
