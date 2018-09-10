@@ -72,7 +72,7 @@ public class SortedSet extends Set {
 			return subset;
 		}
 	}
-		System.out.println("Invalid Arguemnts to Subset Exception");
+		//System.out.println("Invalid Arguemnts to Subset Exception");
 		return subset;
 	}
 	public Set headSet(int toElement) {
