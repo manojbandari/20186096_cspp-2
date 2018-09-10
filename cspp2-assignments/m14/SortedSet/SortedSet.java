@@ -7,28 +7,27 @@ public class SortedSet extends Set {
 		if(size==set.length) {
 			resize();
 		}
-
-		for(int i=0;i<size;i++) {
-			if(!(value > set[i]))
-			{	for(int j=i;j<size;j++) {
-					set[j+1]=set[j];
-				} 
-				set[i]= value;
-				size++;
-				break;
-			}
-		}
-	}
-	public void addAll(int[] value) {
-        for (int i = 0; i < value.length; i++) {
+		for (int i = 0; i < size; i++) {
             int count = 0;
             for (int j = 0; j < size; j++)
-                if (value[i] == set[j]) {
+                if (value == set[j]) {
                     count += 1;
                 }
             if (count == 0) {
-                add(value[i]);
-            }
+				if(!(value > set[i]))
+				{	for(int j=i;j<size;j++) {
+						set[j+1]=set[j];
+					} 
+					set[i]= value;
+					size++;
+					break;
+			}
+		}
+	}
+}
+	public void addAll(int[] value) {
+        for(int i=0;i<value.length;i++){
+        	add(value[i]);
         }
     }
 	public int indexOf(int element) {
