@@ -26,6 +26,7 @@ public class SortedSet extends Set {
             			size++;
             			break;
             		}
+            		break;
             	}
             	System.out.println(value);
             	set[k]=value;
