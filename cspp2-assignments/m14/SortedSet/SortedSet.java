@@ -54,9 +54,7 @@ public class SortedSet extends Set {
 					flag=i;
 			}
 		}
-		if (flag==0&&get(element)==-1)
-			return flag;
-		else if(flag==0)
+		if(flag==0)
 			return flag;
 		return flag+1;
 	}
