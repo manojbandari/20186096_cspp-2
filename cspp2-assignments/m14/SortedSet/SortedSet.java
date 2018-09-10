@@ -57,14 +57,14 @@ public class SortedSet extends Set {
 	}
 	public Set subSet(int fromElement, int toElement){
 		SortedSet subset= new SortedSet();
+		if(size()==1 && set[0]==toElement) {
+			return subset;
+		}
 		int start= indexOf(fromElement);
 		int end= indexOf(toElement);
 		if(start > end) {
 			System.out.println("Invalid Arguments to Subset Exception");
             return null;
-		}
-		if(size()==1 && set[0]==toElement) {
-			return subset;
 		}
 		if(size()!=0) {
 		 	if(start<end) {
