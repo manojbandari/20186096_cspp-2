@@ -76,7 +76,7 @@ class Set {
             }
         }
         return set1 };*/
-        // return this.retainAll(value.set);
+    // return this.retainAll(value.set);
 
     /**
      * { function_description }.
@@ -222,12 +222,11 @@ public final class Solution {
                 System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
                 break;*/
             case "subSet":
-                String[] elements=tokens[1].split(",");
-                Set m=s.subSet(Integer.parseInt(elements[0]), Integer.parseInt(elements[1]));
-                if(m!=null) {
+                String[] elements = tokens[1].split(",");
+                Set m = s.subSet(Integer.parseInt(elements[0]), Integer.parseInt(elements[1]));
+                if (m != null) {
                     System.out.println(m);
-                }
-                else {
+                } else {
                     System.out.println("Invalid Arguments to Subset Exception");
                 }
                 break;
