@@ -77,7 +77,7 @@ public class SortedSet extends Set {
 		return subset;
 	}
 	public Set headSet(int toElement) {
-		if(get(toElement)<=0) {
+		if(get(toElement)==0) {
 			return null;
 		}
 		return subSet(get(0),toElement);
