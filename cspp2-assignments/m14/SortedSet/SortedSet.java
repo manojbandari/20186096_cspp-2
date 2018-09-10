@@ -56,9 +56,6 @@ public class SortedSet extends Set {
 		return flag+1;
 	}
 	public Set subSet(int fromElement, int toElement){
-		if(fromElement==toElement) {
-			System.out.println("Set Empty Exception");
-		}
 		SortedSet subset= new SortedSet();
 		int start= indexOf(fromElement);
 		int end= indexOf(toElement);
@@ -80,6 +77,9 @@ public class SortedSet extends Set {
 		return subset;
 	}
 	public Set headSet(int toElement) {
+		if(get(toElement)<=0) {
+			return null;
+		}
 		return subSet(get(0),toElement);
 	}
 	public int last(){
