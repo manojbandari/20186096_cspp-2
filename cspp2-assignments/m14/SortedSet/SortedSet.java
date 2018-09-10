@@ -59,7 +59,9 @@ public class SortedSet extends Set {
 		SortedSet subset= new SortedSet();
 		int start= indexOf(fromElement);
 		int end= indexOf(toElement);
-		
+		if(end==0) {
+			return subset;
+		}
 		if(size()!=0) {
 		 	if(start<end) {
 				for(int i=start;i<end;i++) {
