@@ -18,14 +18,12 @@ public class SortedSet extends Set {
             if(count==0) {
             	for(k=0;k<size();k++) {
             		if(value < get(k)) {
+            			System.out.println(" inside :"+value);
             			for(int z=size()-1;z>k;z--) {
             				set[z+1]=set[z];
             			}
             			set[k]=value;
             			size++;
-            			for(int m=0;m<size();m++) {
-            				System.out.println(set[m]);
-            			}
             		}
             	}
             	System.out.println(value);
