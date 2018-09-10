@@ -6,7 +6,8 @@ public class SortedSet extends Set {
     public int[] set;
     public int size;
     SortedSet() {
-    	super();
+    	set = new int[10];
+        size = 0;
     }
 	public void add(int value) {
 		if(size==set.length) {
