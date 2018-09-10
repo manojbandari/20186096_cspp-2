@@ -45,6 +45,7 @@ public class SortedSet extends Set {
 	public int indexOf(int element) {
 		int i;
 		int flag = 0;
+		int k=0;
 		for(i=0;i<size();i++) {
 			if(get(i)==element) {
 				return i;
@@ -53,7 +54,7 @@ public class SortedSet extends Set {
 					flag=i;
 			}
 		}
-		if (flag==0)
+		if (flag==0&&get(element)==-1)
 			return flag;
 		return flag+1;
 	}
@@ -86,9 +87,6 @@ public class SortedSet extends Set {
 		return subset;
 	}
 	public Set headSet(int toElement) {
-		if(get(0)==toElement) {
-			return null;
-		}
 		return subSet(get(0),toElement);
 	}
 	public int last(){
