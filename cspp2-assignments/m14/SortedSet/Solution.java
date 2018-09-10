@@ -229,10 +229,12 @@ public final class Solution {
                 }
                 break;
             case "headSet":
-
                 Set n=s.headSet(Integer.parseInt(tokens[1]));
                 if(n!=null) {
                     System.out.println(n);
+                }
+                else {
+                    System.out.println("{}");
                 }
                 break;
             case "last":
