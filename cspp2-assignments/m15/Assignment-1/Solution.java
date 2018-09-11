@@ -82,8 +82,16 @@ class Solution {
 		}
 		return count;
 	}
-	public boolean equals(List other) {
-		return this.toString().equals(other.toString());
+	public boolean equals(Solution other) {
+		if(size!=other.size) {
+			return false;
+		}
+		for(int i=0;i<this.size;i++) {
+			if(list[i]!=other.list[i]) {
+				return false;
+			}
+		}
+		return true;
 	}
 	public String toString() {
 		if (size == 0) {
