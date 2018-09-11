@@ -119,7 +119,7 @@ class Solution {
 				if (a.length == 2) {
 					l.add(Integer.parseInt(a[0]), Integer.parseInt(a[1]));
 				} else if (a.length == 1) {
-					l.add(Integer.parseInt(tokens[1]));
+					l.add(Integer.parseInt(a[0]));
 				}
 				break;
 			case "size":
