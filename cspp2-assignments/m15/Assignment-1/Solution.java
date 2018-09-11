@@ -22,7 +22,10 @@ class InvalidPositionException extends Exception {
  * Class for solution.
  */
 class Solution {
-    public final int TEMP = 10;
+    /**
+     * { var_description }.
+     */
+    public static final int TEMP = 10;
     /**
      * { var_description }.
      */
@@ -217,7 +220,7 @@ class Solution {
         }
         String str = "[";
         int i = 0;
-        for ( i = 0; i < size - 1; i++) {
+        for (i = 0; i < size - 1; i++) {
             str = str + list[i] + ",";
         }
         str = str + list[i] + "]";
@@ -233,7 +236,8 @@ class Solution {
      *
      * @throws     IndexOutOfBoundsException  { exception_description }
      */
-    public Solution subList(final int start, final int end) throws IndexOutOfBoundsException {
+    public Solution subList(final int start,
+                            final int end) throws IndexOutOfBoundsException {
         if (start < 0 || end < 0 || start > end || size == 0) {
             throw new IndexOutOfBoundsException();
         }
@@ -323,7 +327,8 @@ class Solution {
                 }
                 String[] d = tokens[1].split(",");
                 try {
-                    System.out.println(l.subList(Integer.parseInt(d[0]), Integer.parseInt(d[1])));
+                    System.out.println(l.subList(Integer.parseInt(d[0]),
+                                                Integer.parseInt(d[1])));
                 } catch (Exception e3) {
                     System.out.println("Index Out of Bounds Exception");
                 }
@@ -350,3 +355,4 @@ class Solution {
         }
     }
 }
+
