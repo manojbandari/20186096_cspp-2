@@ -55,7 +55,7 @@ class Solution {
 	}
 	public void remove(int index) throws InvalidPositionException {
 		/*int m = indexOf(element);*/
-		if(index<0 || index>=size) {
+		if(index<0 || index>size) {
 			throw new InvalidPositionException();
 		}
 		for (int i = index; i < size; i++) {
