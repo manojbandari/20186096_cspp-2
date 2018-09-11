@@ -7,7 +7,7 @@ import java.util.Arrays;
  * Exception for signaling invalid position errors.
  */
 class InvalidPositionException extends Exception {
-    
+
     /**
      * Returns a string representation of the object.
      *
@@ -22,7 +22,7 @@ class InvalidPositionException extends Exception {
  * Class for solution.
  */
 class Solution {
-    public final int TEMP=10;
+    public final int TEMP = 10;
     /**
      * { var_description }.
      */
@@ -31,7 +31,7 @@ class Solution {
      * { var_description }.
      */
     private int size;
-    
+
     /**
      * Constructs the object.
      */
@@ -39,7 +39,7 @@ class Solution {
         list = new int[TEMP];
         size = 0;
     }
-    
+
     /**
      * { function_description }.
      *
@@ -51,7 +51,7 @@ class Solution {
         }
         list[size++] = element;
     }
-    
+
     /**
      * { function_description }.
      *
@@ -66,14 +66,14 @@ class Solution {
         list[i] = element;
         size++;
     }
-    
+
     /**
      * { function_description }.
      */
     public void resize() {
         list = Arrays.copyOf(list, size * 2);
     }
-    
+
     /**
      * { function_description }.
      *
@@ -82,7 +82,7 @@ class Solution {
     public int size() {
         return size;
     }
-    
+
     /**
      * { function_description }.
      */
