@@ -107,9 +107,6 @@ class Solution {
 		}
 		return newlist;
 	}
-	public int[] print() {
-		return this.list;
-	}
 	public static void main(String[] args) {
 		Solution l = new Solution();
 		Scanner stdin = new Scanner(new BufferedInputStream(System.in));
@@ -203,7 +200,7 @@ class Solution {
 				}
 				break;
 			case "print":
-				System.out.println(l.print());
+				System.out.println(l);
 			case "clear":
 				l.clear();
 				break;
