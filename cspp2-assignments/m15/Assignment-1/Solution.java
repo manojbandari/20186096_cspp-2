@@ -91,7 +91,7 @@ public class Solution {
      */
     public void clear() {
         size = 0;
-        list = new int[10];
+        list = new int[TEMP];
     }
     /**
      * { function_description }.
