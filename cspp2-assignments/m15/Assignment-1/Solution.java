@@ -70,7 +70,12 @@ class Solution {
 	}
 	public void removeAll(int[] arr) throws InvalidPositionException {
 		for (int i = 0; i < arr.length; i++) {
-			remove(indexOf(arr[i]));
+			for(int j=0;j<size;j++) {
+				if(arr[i]==list[j]) {
+					remove(i);
+					j--;
+				}
+			}
 		}
 	}
 	public int count(int element) {
