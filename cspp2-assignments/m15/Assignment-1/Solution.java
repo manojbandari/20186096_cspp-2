@@ -194,7 +194,7 @@ class Solution {
 				try {
 					System.out.println(l.subList(Integer.parseInt(d[0]), Integer.parseInt(d[1])));
 				} catch (Exception e3) {
-					System.out.println("Index Out Of Bounds Exception");
+					System.out.println("Index Out of Bounds Exception");
 				}
 				break;
 			case "equals":
