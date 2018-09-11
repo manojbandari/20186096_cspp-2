@@ -58,10 +58,12 @@ class Solution {
 		if(index<0 && index>size) {
 			throw new InvalidPositionException();
 		}
-		for (int i = index; i < size; i++) {
-			list[i] = list[i + 1];
+		while(get(index)!=-1) {
+			for (int i = index; i < size; i++) {
+				list[i] = list[i + 1];
+			}
+			size--;
 		}
-		size--;
 	}
 	public void addAll(int[] arr) {
 		for (int i = 0; i < arr.length; i++) {
