@@ -55,7 +55,7 @@ class Solution {
 	}
 	public void remove(int index) throws InvalidPositionException {
 		/*int m = indexOf(element);*/
-		if(index<0 || index>size) {
+		if(index<0 || index>=size) {
 			throw new InvalidPositionException();
 		}
 		for (int i = index; i < size; i++) {
@@ -105,7 +105,7 @@ class Solution {
 		return newlist;
 	}
 	public int[] print() {
-		return list;
+		return this.list;
 	}
 	public static void main(String[] args) {
 		Solution l = new Solution();
@@ -170,7 +170,7 @@ class Solution {
 				}
 			}
 			catch(Exception e1) {
-				System.out.println("Invalid Position Exception");
+				System.out.println("InvalidPositionException");
 			}
 				break;
 			case "count":
