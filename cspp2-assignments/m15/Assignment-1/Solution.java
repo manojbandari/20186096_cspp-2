@@ -201,6 +201,7 @@ class Solution {
 				break;
 			case "print":
 				System.out.println(l);
+				break;
 			case "clear":
 				l.clear();
 				break;
