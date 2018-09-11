@@ -1,8 +1,8 @@
 import java.util.*;
 import java.io.*;
 class InvalidPositionException extends Exception {
-	InvalidPositionException(String s) {
-		super(s);
+	public String toString() {
+		return "Invalid Position Exception";
 	}
 }
 class Solution {
@@ -53,9 +53,12 @@ class Solution {
 		}
 		return -1;
 	}
-	public void remove(int element) {
-		int m = indexOf(element);
-		for (int i = m; i < size; i++) {
+	public void remove(int index) throws InvalidPositionException {
+		/*int m = indexOf(element);*/
+		if(index<0 || index>=size) {
+			throw new InvalidPositionException();
+		}
+		for (int i = index; i < size; i++) {
 			list[i] = list[i + 1];
 		}
 		size--;
@@ -65,7 +68,7 @@ class Solution {
 			add(arr[i]);
 		}
 	}
-	public void removeAll(int[] arr) {
+	public void removeAll(int[] arr) throws InvalidPositionException {
 		for (int i = 0; i < arr.length; i++) {
 			remove(arr[i]);
 		}
@@ -101,7 +104,10 @@ class Solution {
 		}
 		return newlist;
 	}
-	public static void main(String[] args) throws InvalidPositionException {
+	public int[] print() {
+		return list;
+	}
+	public static void main(String[] args) {
 		Solution l = new Solution();
 		Scanner stdin = new Scanner(new BufferedInputStream(System.in));
 		while (stdin.hasNext()) {
@@ -120,9 +126,13 @@ class Solution {
 				System.out.println(l.size());
 				break;
 			case "remove":
-				if (tokens.length == 2) {
-					l.remove(Integer.parseInt(tokens[1]));
-					throw new InvalidPositionException("InvalidPositionException");
+				try {
+					if (tokens.length == 2) {
+						l.remove(Integer.parseInt(tokens[1]));
+					}
+				}
+				catch(Exception e){
+					System.out.println("Invalid Position Exception");
 				}
 				break;
 			case "get":
@@ -149,6 +159,7 @@ class Solution {
 				}
 				break;
 			case "removeAll":
+			try {
 				if (tokens.length == 2) {
 					String[] c = tokens[1].split(",");
 					int[] temp = new int[c.length];
@@ -157,6 +168,10 @@ class Solution {
 					}
 					l.removeAll(temp);
 				}
+			}
+			catch(Exception e1) {
+				System.out.println("Invalid Position Exception");
+			}
 				break;
 			case "count":
 				if (tokens.length == 2) {
@@ -170,8 +185,8 @@ class Solution {
 				String[] d = tokens[1].split(",");
 				try {
 					System.out.println(l.subList(Integer.parseInt(d[0]), Integer.parseInt(d[1])));
-				} catch (ArrayIndexOutOfBoundsException e) {
-					System.out.println("ArrayIndexOutOfBoundsException");
+				} catch (ArrayIndexOutOfBoundsException e3) {
+					System.out.println("Index Out Of Bounds Exception");
 				}
 				break;
 			case "equals":
@@ -184,6 +199,8 @@ class Solution {
 					System.out.println(l.equals(l2));
 				}
 				break;
+			case "print":
+				System.out.println(l.print());
 			case "clear":
 				l.clear();
 				break;
