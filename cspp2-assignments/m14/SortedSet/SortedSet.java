@@ -1,3 +1,6 @@
+import java.io.BufferedInputStream;
+import java.util.Scanner;
+import java.util.Arrays;
 public class SortedSet extends Set {
 	public void add(int value) {
 		if(size()==this.set.length) {
@@ -42,7 +45,59 @@ public class SortedSet extends Set {
         	add(value[i]);
         }
     }
-	public int indexOf(int element) {
+    /**
+     * subset.
+     *
+     * @param      start  The start
+     * @param      end    The end
+     *
+     * @return     from start to end returns elements.
+     */
+    public int[] subSet(final int start, final int end) {
+        if (start > end) {
+            System.out.println("Invalid Arguments to Subset Exception");
+            return null;
+        }
+        int[] result = new int[size];
+        int k = 0;
+        for (int i = 0; i < size; i++) {
+            if (set[i] >= start) {
+                for (int j = i; j < size; j++) {
+                    if (set[j] < end) {
+                        result[k++] = set[i];
+                    }
+                    break;
+                }
+            }
+        }
+        return Arrays.copyOf(result, k);
+    }
+    /**
+     * headset function.
+     *
+     * @param      end   The end
+     *
+     * @return     returms elements.
+     */
+    public int[] headSet(final int end) {
+        int[] result = new int[size];
+        int temp = 0;
+        for (int i = 0; i < size; i++) {
+            if (set[i] < end) {
+                result[i] = set[i];
+                temp++;
+            }
+        }
+        return Arrays.copyOf(result, temp);
+    }
+    public int last(){
+		if (size() == 0) {
+            System.out.println("Set Empty Exception");
+            return -1;
+        }
+		return set[size-1];
+	}
+	/*public int indexOf(int element) {
 		int i;
 		int flag = 0;
 		int k=0;
@@ -88,12 +143,6 @@ public class SortedSet extends Set {
 	}
 	public Set headSet(int toElement) {
 		return subSet(get(0),toElement);
-	}
-	public int last(){
-		if (size() == 0) {
-            System.out.println("Set Empty Exception");
-            return -1;
-        }
-		return set[size-1];
-	}
+	}*/
+	
 }

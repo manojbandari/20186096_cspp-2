@@ -235,6 +235,35 @@ public final class Solution {
                 System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
                 break;*/
             case "subSet":
+                if (tokens.length != 2) {
+                    break;
+                }
+                String[] arrstring3 = tokens[1].split(",");
+                int[] object = s.subSet(Integer.parseInt(arrstring3[0]),
+                                        Integer.parseInt(arrstring3[1]));
+                if (object != null) {
+                    System.out.println(Arrays.toString(object).replace("[",
+                        "{").replace("]", "}"));
+                }
+                break;
+            case "headSet":
+                if (tokens.length != 2) {
+                    break;
+                }
+                int[] obj = s.headSet(Integer.parseInt(tokens[1]));
+                if (obj != null) {
+                    System.out.println(Arrays.toString(obj).replace("[",
+                        "{").replace("]", "}"));
+                }
+                break;
+            case "last":
+                if (tokens.length != 1) {
+                    break;
+                }
+                int temp = s.last();
+                System.out.println(temp);
+                break;
+            /*case "subSet":
                 String[] elements = tokens[1].split(",");
                 Set m = s.subSet(Integer.parseInt(elements[0]), Integer.parseInt(elements[1]));
                 if (m != null) {
@@ -251,7 +280,7 @@ public final class Solution {
                 break;
             case "last":
                 System.out.println(s.last());
-                break;
+                break;*/
             default:
                 break;
 
