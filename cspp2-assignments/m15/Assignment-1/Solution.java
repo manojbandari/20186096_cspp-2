@@ -21,7 +21,7 @@ class InvalidPositionException extends Exception {
 /**
  * Class for solution.
  */
-class Solution {
+public class Solution {
     /**
      * { var_description }.
      */
