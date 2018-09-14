@@ -125,13 +125,13 @@ class ShoppingCart {
 					System.out.println(cart[i].getProductName() + " " + cart[i].getQuantity() + " " + catalog[j].getUnitPrice());
 			}
 		}
-		System.out.println("totalAmount:" + totalAmount());
+		System.out.println("totalAmount: " + totalAmount());
 		System.out.println("Total:" + totalAmount());
 		float discount = totalAmount() * couponcode;
 		System.out.println("Disc%:" + discount);
 		float finalAmount = totalAmount() - discount;
 		System.out.println("Tax:" + (finalAmount * 15 / 100));
-		System.out.println("Payable amount:" + getPayableAmount());
+		System.out.println("Payable amount: " + getPayableAmount());
 	}
 
 }
