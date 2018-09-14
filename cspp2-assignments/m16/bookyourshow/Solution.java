@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * Class for show.
+ */
 class Show {
     String moviename;
     String timedate;
@@ -10,6 +13,9 @@ class Show {
         this.seats = c;
     }
 }
+/**
+ * Class for patron.
+ */
 class Patron {
     String Patronname;
     String Mobilenumber;
@@ -30,17 +36,33 @@ class BookYourShow {
     int size = 0;
     int patronsize = 0;
 
+    /**
+     * Constructs the object.
+     */
     public BookYourShow() {
         this.movielist = new Show[10];
         this.patronlist = new Patron[10];
         this.size = 0;
     }
 
+    /**
+     * Adds a show.
+     *
+     * @param      k     { parameter_description }
+     */
     public void addAShow(Show k) {
         movielist[size++] = k;
     }
 
 
+    /**
+     * Gets a show.
+     *
+     * @param      a     { parameter_description }
+     * @param      b     { parameter_description }
+     *
+     * @return     A show.
+     */
     public Show getAShow(String a, String b) {
         for (int i = 0; i < size; i++) {
             if ((movielist[i].moviename).equals(a)) {
@@ -52,6 +74,14 @@ class BookYourShow {
         return null;
     }
 
+    /**
+     * { function_description }
+     *
+     * @param      a     { parameter_description }
+     * @param      b     { parameter_description }
+     * @param      c     { parameter_description }
+     * @param      d     { parameter_description }
+     */
     public void bookAShow(String a, String b, Patron c, String[] d) {
         int cnt = 0;
         if (size == 0) {
@@ -86,6 +116,15 @@ class BookYourShow {
         }
     }
 
+    /**
+     * { function_description }
+     *
+     * @param      a     { parameter_description }
+     * @param      b     { parameter_description }
+     * @param      c     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public boolean printTicket(String a, String b, String c) {
         for (int i = 0; i < patronsize; i++) {
             if (c.equals(patronlist[i].Mobilenumber)) {
@@ -100,6 +139,9 @@ class BookYourShow {
         return false;
 
     }
+    /**
+     * Shows all.
+     */
     public void showAll() {
         if (movielist.length > 0) {
             for (int i = 0; i < size; i++) {
@@ -119,7 +161,17 @@ class BookYourShow {
 
     }
 }
+
+/**
+ * Class for solution.
+ */
 class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+
+    }
     /**
      * main method to drive program.
      *
