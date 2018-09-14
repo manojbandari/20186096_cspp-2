@@ -50,16 +50,16 @@ class Item {
      *
      * @param      productName  The product name
      */
-    public void setProductName(final String productName) {
-        this.productName = productName;
+    public void setProductName(final String productName1) {
+        this.productName = productName1;
     }
     /**
      * Sets the quanity.
      *
      * @param      quantity  The quantity
      */
-    public void setQuanity(final int quantity) {
-        this.quantity = quantity;
+    public void setQuanity(final int quantity1) {
+        this.quantity = quantity1;
 
     }
     /**
@@ -69,11 +69,11 @@ class Item {
      * @param      quantity     The quantity
      * @param      unitPrice    The unit price
      */
-    Item(final String productName, 
-                final int quantity, final  float unitPrice) {
-        this.productName = productName;
-        this.quantity = quantity;
-        this.unitPrice = unitPrice;
+    Item(final String productName1,
+        final int quantity1, final  float unitPrice1) {
+        this.productName = productName1;
+        this.quantity = quantity1;
+        this.unitPrice = unitPrice1;
     }
 
     /**
@@ -83,7 +83,7 @@ class Item {
      */
     public String toString() {
         return this.getProductName() + " "
-               +this.getQuantity() + " " + this.getUnitPrice();
+               + this.getQuantity() + " " + this.getUnitPrice();
 
     }
 }
@@ -92,7 +92,10 @@ class Item {
  * Class for shopping cartesian.
  */
 class ShoppingCart {
-    public final int TEMP=100;
+    /**
+     * { var_description }.
+     */
+    private final int TEMP = 100;
     /**
      *  catalog size.
      */
@@ -147,9 +150,9 @@ class ShoppingCart {
     public void addToCart(final Item item) {
         for (int i = 0; i < cartSize; i++) {
             if (cart[i].getProductName().
-                equals(item.getProductName())) {
+                    equals(item.getProductName())) {
                 cart[i].setQuanity(cart[i].getQuantity()
-                                  + item.getQuantity());
+                                   + item.getQuantity());
                 return;
             }
         }
@@ -162,9 +165,9 @@ class ShoppingCart {
     public void showCatalog() {
         for (int i = 0; i < catalogSize; i++) {
             System.out.println(
-                    catalog[i].getProductName()
-                    + " " + catalog[i].getQuantity()
-                    + " " + catalog[i].getUnitPrice());
+                catalog[i].getProductName()
+                + " " + catalog[i].getQuantity()
+                + " " + catalog[i].getUnitPrice());
         }
     }
 
@@ -257,7 +260,7 @@ class ShoppingCart {
         for (int i = 0; i < cartSize; i++) {
             for (int j = 0; j < catalogSize; j++) {
                 if (cart[i].getProductName().
-                    equals(catalog[j].getProductName())) {
+                        equals(catalog[j].getProductName())) {
                     System.out.println(cart[i].getProductName()
                                        + " " + cart[i].getQuantity()
                                        + " " + catalog[j].getUnitPrice());
@@ -278,7 +281,7 @@ class ShoppingCart {
 /**
  * Class for solution.
  */
-public class Solution {
+class Solution {
     public static void main(final String[] args) {
         ShoppingCart s = new ShoppingCart();
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
@@ -289,8 +292,8 @@ public class Solution {
             case "Item":
                 String[] check = tokens[1].split(",");
                 s.addToCatalog(new Item(check[0],
-                                Integer.parseInt(check[1]),
-                                Float.parseFloat(check[2])));
+                                        Integer.parseInt(check[1]),
+                                        Float.parseFloat(check[2])));
                 break;
             case "catalog":
                 s.showCatalog();
@@ -298,7 +301,7 @@ public class Solution {
             case "add":
                 String[] check1 = tokens[1].split(",");
                 s.addToCart(new Item(check1[0],
-                            Integer.parseInt(check1[1]), 0.0f));
+                                     Integer.parseInt(check1[1]), 0.0f));
                 break;
             case "show":
                 s.showCart();
@@ -313,7 +316,7 @@ public class Solution {
             case "remove":
                 String[] check2 = tokens[1].split(",");
                 s.removeFromCart(new Item(check2[0],
-                                 Integer.parseInt(check2[1]), 0.0f));
+                                          Integer.parseInt(check2[1]), 0.0f));
                 break;
             case "coupon":
                 s.applyCoupon(tokens[1]);
