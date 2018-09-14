@@ -32,14 +32,23 @@ class BookYourShow {
      * Constructs the object.
      */
     private Show[] movielist;
+    /**
+     * array variable.
+     */
     private Patron[] patronlist;
+    /**
+     * int variable.
+     */
     private int size = 0;
+    /**
+     * int variabale.
+     */
     private int patronsize = 0;
 
     /**
      * Constructs the object.
      */
-    public BookYourShow() {
+    BookYourShow() {
         this.movielist = new Show[10];
         this.patronlist = new Patron[10];
         this.size = 0;
@@ -75,14 +84,15 @@ class BookYourShow {
     }
 
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      a     { parameter_description }
      * @param      b     { parameter_description }
      * @param      c     { parameter_description }
      * @param      d     { parameter_description }
      */
-    public void bookAShow(final String a, final String b, final  Patron c, final String[] d) {
+    public void bookAShow(final String a, final String b,
+                          final  Patron c, final String[] d) {
         int cnt = 0;
         if (size == 0) {
             System.out.println("No show");
@@ -117,7 +127,7 @@ class BookYourShow {
     }
 
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      a     { parameter_description }
      * @param      b     { parameter_description }
@@ -125,13 +135,13 @@ class BookYourShow {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean printTicket(final String a,final String b,final  String c) {
+    public boolean printTicket(final String a, final String b, final  String c) {
         for (int i = 0; i < patronsize; i++) {
             if (c.equals(patronlist[i].Mobilenumber)) {
                 for (int j = 0; j < size; j++) {
-                    if (b.equals(movielist[j].timedate) 
-                        && a.equals(movielist[j].moviename)) {
-                        System.out.println(patronlist[i].Mobilenumber 
+                    if (b.equals(movielist[j].timedate)
+                            && a.equals(movielist[j].moviename)) {
+                        System.out.println(patronlist[i].Mobilenumber
                                            + " " + a + " " + b);
                         return true;
                     }
