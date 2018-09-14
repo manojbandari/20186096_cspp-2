@@ -1,48 +1,126 @@
-import java.util.*;
-import java.io.*;
+/**
+ * @author: manojbandari.
+ */
+import java.util.Scanner;
+import java.io.BufferedInputStream;
 
+/**
+ * Class for item.
+ */
 class Item {
+	/**
+	 * { var_description }.
+	 */
 	private String productName;
+	/**
+	 * { var_description }.
+	 */
 	private int quantity;
+	/**
+	 * { var_description }.
+	 */
 	private float unitPrice;
+
+	/**
+	 * Gets the product name.
+	 *
+	 * @return     The product name.
+	 */
 	public String getProductName() {
 		return productName;
 	}
+	/**
+	 * Gets the quantity.
+	 *
+	 * @return     The quantity.
+	 */
 	public int getQuantity() {
 		return quantity;
 	}
+	/**
+	 * Gets the unit price.
+	 *
+	 * @return     The unit price.
+	 */
 	public float getUnitPrice() {
 		return unitPrice;
 	}
-	public void setProductName(String productName) {
+	/**
+	 * Sets the product name.
+	 *
+	 * @param      productName  The product name
+	 */
+	public void setProductName(final String productName) {
 		this.productName = productName;
 	}
-	public void setQuanity(int quantity) {
+	/**
+	 * Sets the quanity.
+	 *
+	 * @param      quantity  The quantity
+	 */
+	public void setQuanity(final int quantity) {
 		this.quantity = quantity;
 
 	}
-	Item(String productName, int quantity, float unitPrice) {
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      productName  The product name
+	 * @param      quantity     The quantity
+	 * @param      unitPrice    The unit price
+	 */
+	public Item(final String productName, 
+		        final int quantity, final  float unitPrice) {
 		this.productName = productName;
 		this.quantity = quantity;
 		this.unitPrice = unitPrice;
 	}
-	/*Item(String productName,int quantity) {
-		this.productName=productName;
-		this.quantity=quantity;
-	}*/
+
+	/**
+	 * Returns a string representation of the object.
+	 *
+	 * @return     String representation of the object.
+	 */
 	public String toString() {
-		return this.getProductName() + " " + this.getQuantity() + " " + this.getUnitPrice();
+		return this.getProductName() + " " +
+			   this.getQuantity() + " " + this.getUnitPrice();
 
 	}
 }
+
+/**
+ * Class for shopping cartesian.
+ */
 class ShoppingCart {
-	int catalogSize;
-	int cartSize;
-	Item[] catalog;
-	Item[] cart;
-	boolean flag;
-	float couponcode;
-	ShoppingCart() {
+	/**
+	 *  catalog size.
+	 */
+	private int catalogSize;
+	/**
+	 * cart size.
+	 */
+	private int cartSize;
+	/**
+	 * { var_description }.
+	 */
+	private Item[] catalog;
+	/**
+	 * { var_description }.
+	 */
+	private Item[] cart;
+	/**
+	 * { var_description }.
+	 */
+	private boolean flag;
+	/**
+	 * { var_description }.
+	 */
+	private float couponcode;
+
+	/**
+	 * Constructs the object.
+	 */
+	public ShoppingCart() {
 		catalog = new Item[100];
 		cart = new Item[100];
 		catalogSize = 0;
@@ -50,10 +128,22 @@ class ShoppingCart {
 		flag = false;
 		couponcode = 0.0f;
 	}
-	public void addToCatalog(Item item) {
+
+	/**
+	 * Adds to catalog.
+	 *
+	 * @param      item  The item
+	 */
+	public void addToCatalog(final Item item) {
 		catalog[catalogSize++] = item;
 	}
-	public void addToCart(Item item) {
+
+	/**
+	 * Adds to cartesian.
+	 *
+	 * @param      item  The item
+	 */
+	public void addToCart(final Item item) {
 		for (int i = 0; i < cartSize; i++) {
 			if (cart[i].getProductName().equals(item.getProductName())) {
 				cart[i].setQuanity(cart[i].getQuantity() + item.getQuantity());
@@ -62,21 +152,38 @@ class ShoppingCart {
 		}
 		cart[cartSize++] = item;
 	}
+
+	/**
+	 * Shows the catalog.
+	 */
 	public void showCatalog() {
 		for (int i = 0; i < catalogSize; i++) {
-			System.out.println(catalog[i].getProductName() + " " + catalog[i].getQuantity() + " " + catalog[i].getUnitPrice());
+			System.out.println(catalog[i].getProductName()
+							  + " " + catalog[i].getQuantity()
+							  + " " + catalog[i].getUnitPrice());
 		}
 	}
+
+	/**
+	 * Shows the cartesian.
+	 */
 	public void showCart() {
 		for (int i = 0; i < cartSize; i++) {
-			System.out.println(cart[i].getProductName() + " " + cart[i].getQuantity());
+			System.out.println(cart[i].getProductName()
+							   + " " + cart[i].getQuantity());
 		}
 	}
-	public void removeFromCart(Item item) {
+
+	/**
+	 * Removes a from cartesian.
+	 *
+	 * @param      item  The item
+	 */
+	public void removeFromCart(final Item item) {
 		for (int i = 0; i < cartSize; i++) {
 			if (cart[i].getProductName().equals(item.getProductName())) {
-				if (cart[i].getQuantity()==item.getQuantity()) {
-					for(int j=i;j<cartSize;j++)
+				if (cart[i].getQuantity() == item.getQuantity()) {
+					for (int j = i; j < cartSize; j++)
 						cart[j] = cart[j + 1];
 					cartSize--;
 					return;
@@ -85,6 +192,12 @@ class ShoppingCart {
 			}
 		}
 	}
+
+	/**
+	 * { function_description }.
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public float totalAmount() {
 		float sum = 0.0f;
 		for (int i = 0; i < cartSize; i++) {
@@ -95,6 +208,12 @@ class ShoppingCart {
 		}
 		return sum;
 	}
+
+	/**
+	 * Gets the payable amount.
+	 *
+	 * @return     The payable amount.
+	 */
 	public float getPayableAmount() {
 		float totalAmount = totalAmount();
 		float discount = totalAmount * couponcode;
@@ -102,7 +221,13 @@ class ShoppingCart {
 		float payableAmount = finalAmount + (finalAmount * 15 / 100);
 		return payableAmount;
 	}
-	public void applyCoupon(String coupon) {
+
+	/**
+	 * { function_description }.
+	 *
+	 * @param      coupon  The coupon
+	 */
+	public void applyCoupon(final String coupon) {
 		if (flag == false) {
 			if (coupon.equals("IND10")) {
 				couponcode = 0.1f;
@@ -119,12 +244,17 @@ class ShoppingCart {
 			flag = true;
 		}
 	}
+	/**
+	 * { function_description }.
+	 */
 	public void printInvoice() {
 		System.out.println("Name   quantity   Price");
 		for (int i = 0; i < cartSize; i++) {
 			for (int j = 0; j < catalogSize; j++) {
 				if (cart[i].getProductName().equals(catalog[j].getProductName()))
-					System.out.println(cart[i].getProductName() + " " + cart[i].getQuantity() + " " + catalog[j].getUnitPrice());
+					System.out.println(cart[i].getProductName()
+									   + " " + cart[i].getQuantity()
+									   + " " + catalog[j].getUnitPrice());
 			}
 		}
 		//System.out.println("totalAmount: " + totalAmount());
@@ -137,8 +267,12 @@ class ShoppingCart {
 	}
 
 }
-class Solution {
-	public static void main(String[] args) {
+
+/**
+ * Class for solution.
+ */
+public class Solution {
+	public static void main(final String[] args) {
 		ShoppingCart s = new ShoppingCart();
 		Scanner stdin = new Scanner(new BufferedInputStream(System.in));
 		int testCases = Integer.parseInt(stdin.nextLine());
@@ -147,7 +281,8 @@ class Solution {
 			switch (tokens[0]) {
 			case "Item":
 				String[] check = tokens[1].split(",");
-				s.addToCatalog(new Item(check[0], Integer.parseInt(check[1]), Float.parseFloat(check[2])));
+				s.addToCatalog(new Item(check[0], Integer.parseInt(check[1]),
+							            Float.parseFloat(check[2])));
 				break;
 			case "catalog":
 				s.showCatalog();
