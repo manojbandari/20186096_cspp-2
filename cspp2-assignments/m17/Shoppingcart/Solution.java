@@ -57,6 +57,7 @@ class ShoppingCart {
 		for (int i = 0; i < cartSize; i++) {
 			if (cart[i].getProductName().equals(item.getProductName())) {
 				cart[i].setQuanity(cart[i].getQuantity() + item.getQuantity());
+				return;
 			}
 		}
 		cart[cartSize++] = item;
