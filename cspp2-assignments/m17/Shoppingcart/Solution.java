@@ -78,6 +78,7 @@ class ShoppingCart {
 					for(int j=i;j<cartSize;j++)
 						cart[j] = cart[j + 1];
 					cartSize--;
+					return;
 				}
 				cart[i].setQuanity(cart[i].getQuantity() - item.getQuantity());
 			}
