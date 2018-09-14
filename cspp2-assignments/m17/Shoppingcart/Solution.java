@@ -92,6 +92,7 @@ class Item {
  * Class for shopping cartesian.
  */
 class ShoppingCart {
+    public final int TEMP=100;
     /**
      *  catalog size.
      */
@@ -121,8 +122,8 @@ class ShoppingCart {
      * Constructs the object.
      */
     ShoppingCart() {
-        catalog = new Item[100];
-        cart = new Item[100];
+        catalog = new Item[TEMP];
+        cart = new Item[TEMP];
         catalogSize = 0;
         cartSize = 0;
         flag = false;
@@ -205,8 +206,9 @@ class ShoppingCart {
         float sum = 0.0f;
         for (int i = 0; i < cartSize; i++) {
             for (int j = 0; j < catalogSize; j++) {
-                if (cart[i].getProductName().equals(catalog[j].getProductName()))
+                if (cart[i].getProductName().equals(catalog[j].getProductName())) {
                     sum = sum + (cart[i].getQuantity() * catalog[j].getUnitPrice());
+                }
             }
         }
         return sum;
@@ -254,10 +256,12 @@ class ShoppingCart {
         System.out.println("Name   quantity   Price");
         for (int i = 0; i < cartSize; i++) {
             for (int j = 0; j < catalogSize; j++) {
-                if (cart[i].getProductName().equals(catalog[j].getProductName()))
+                if (cart[i].getProductName().
+                    equals(catalog[j].getProductName())) {
                     System.out.println(cart[i].getProductName()
                                        + " " + cart[i].getQuantity()
                                        + " " + catalog[j].getUnitPrice());
+                }
             }
         }
         //System.out.println("totalAmount: " + totalAmount());
@@ -284,15 +288,17 @@ public class Solution {
             switch (tokens[0]) {
             case "Item":
                 String[] check = tokens[1].split(",");
-                s.addToCatalog(new Item(check[0], Integer.parseInt(check[1]),
-                                        Float.parseFloat(check[2])));
+                s.addToCatalog(new Item(check[0],
+                                Integer.parseInt(check[1]),
+                                Float.parseFloat(check[2])));
                 break;
             case "catalog":
                 s.showCatalog();
                 break;
             case "add":
                 String[] check1 = tokens[1].split(",");
-                s.addToCart(new Item(check1[0], Integer.parseInt(check1[1]), 0.0f));
+                s.addToCart(new Item(check1[0],
+                            Integer.parseInt(check1[1]), 0.0f));
                 break;
             case "show":
                 s.showCart();
@@ -306,13 +312,16 @@ public class Solution {
                 break;
             case "remove":
                 String[] check2 = tokens[1].split(",");
-                s.removeFromCart(new Item(check2[0], Integer.parseInt(check2[1]), 0.0f));
+                s.removeFromCart(new Item(check2[0],
+                                 Integer.parseInt(check2[1]), 0.0f));
                 break;
             case "coupon":
                 s.applyCoupon(tokens[1]);
                 break;
             case "print":
                 s.printInvoice();
+                break;
+            default:
                 break;
             }
         }
