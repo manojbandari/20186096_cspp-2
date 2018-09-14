@@ -4,9 +4,26 @@ import java.util.Scanner;
  * Class for show.
  */
 class Show {
-    String moviename;
-    String timedate;
-    String[] seats;
+    /**
+     * { var_description }.
+     */
+    public String moviename;
+    /**
+     * { var_description }.
+     */
+    public String timedate;
+    /**
+     * { var_description }.
+     */
+    public String[] seats;
+    
+    /**
+     * Constructs the object.
+     *
+     * @param      a     { parameter_description }
+     * @param      b     { parameter_description }
+     * @param      c     { parameter_description }
+     */
     public Show(final String a, final String b, final String[] c) {
         this.moviename = a;
         this.timedate = b;
@@ -17,8 +34,20 @@ class Show {
  * Class for patron.
  */
 class Patron {
+    /**
+     * { var_description }.
+     */
     String Patronname;
+    /**
+     * { var_description }.
+     */
     String Mobilenumber;
+    /**
+     * Constructs the object.
+     *
+     * @param      a     { parameter_description }
+     * @param      b     { parameter_description }
+     */
     public Patron(final String a, final  String b) {
         this.Patronname = a;
         this.Mobilenumber = b;
