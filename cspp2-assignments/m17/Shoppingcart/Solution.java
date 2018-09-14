@@ -3,7 +3,7 @@ import java.io.*;
 
 class Item {
 	private String productName;
-	int quantity;
+	private int quantity;
 	private float unitPrice;
 	public String getProductName() {
 		return productName;
@@ -74,11 +74,12 @@ class ShoppingCart {
 	public void removeFromCart(Item item) {
 		for (int i = 0; i < cartSize; i++) {
 			if (cart[i].getProductName().equals(item.getProductName())) {
-				cart[i].setQuanity(cart[i].getQuantity() - item.getQuantity());
-				if (cart[i].getQuantity() == 0) {
-					cart[i] = cart[i + 1];
+				if (cart[i].getQuantity()==item.getQuantity()) {
+					for(int j=i;j<cartSize;j++)
+						cart[j] = cart[j + 1];
 					cartSize--;
 				}
+				cart[i].setQuanity(cart[i].getQuantity() - item.getQuantity());
 			}
 		}
 	}
