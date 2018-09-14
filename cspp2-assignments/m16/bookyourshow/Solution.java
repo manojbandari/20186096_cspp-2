@@ -7,7 +7,7 @@ class Show {
     String moviename;
     String timedate;
     String[] seats;
-    public Show(String a, String b, String[] c) {
+    public Show(final String a, final String b, final String[] c) {
         this.moviename = a;
         this.timedate = b;
         this.seats = c;
@@ -19,7 +19,7 @@ class Show {
 class Patron {
     String Patronname;
     String Mobilenumber;
-    public Patron(String a, String b) {
+    public Patron(final String a, final  String b) {
         this.Patronname = a;
         this.Mobilenumber = b;
     }
@@ -31,10 +31,10 @@ class BookYourShow {
     /**
      * Constructs the object.
      */
-    Show[] movielist;
-    Patron[] patronlist;
-    int size = 0;
-    int patronsize = 0;
+    private Show[] movielist;
+    private Patron[] patronlist;
+    private int size = 0;
+    private int patronsize = 0;
 
     /**
      * Constructs the object.
@@ -50,7 +50,7 @@ class BookYourShow {
      *
      * @param      k     { parameter_description }
      */
-    public void addAShow(Show k) {
+    public void addAShow(final Show k) {
         movielist[size++] = k;
     }
 
@@ -63,7 +63,7 @@ class BookYourShow {
      *
      * @return     A show.
      */
-    public Show getAShow(String a, String b) {
+    public Show getAShow(final String a, final  String b) {
         for (int i = 0; i < size; i++) {
             if ((movielist[i].moviename).equals(a)) {
                 if ((movielist[i].timedate).equals(b)) {
@@ -82,7 +82,7 @@ class BookYourShow {
      * @param      c     { parameter_description }
      * @param      d     { parameter_description }
      */
-    public void bookAShow(String a, String b, Patron c, String[] d) {
+    public void bookAShow(final String a, final String b, final  Patron c, final String[] d) {
         int cnt = 0;
         if (size == 0) {
             System.out.println("No show");
@@ -125,12 +125,14 @@ class BookYourShow {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean printTicket(String a, String b, String c) {
+    public boolean printTicket(final String a,final String b,final  String c) {
         for (int i = 0; i < patronsize; i++) {
             if (c.equals(patronlist[i].Mobilenumber)) {
                 for (int j = 0; j < size; j++) {
-                    if (b.equals(movielist[j].timedate) && a.equals(movielist[j].moviename)) {
-                        System.out.println(patronlist[i].Mobilenumber + " " + a + " " + b);
+                    if (b.equals(movielist[j].timedate) 
+                        && a.equals(movielist[j].moviename)) {
+                        System.out.println(patronlist[i].Mobilenumber 
+                                           + " " + a + " " + b);
                         return true;
                     }
                 }
@@ -165,7 +167,7 @@ class BookYourShow {
 /**
  * Class for solution.
  */
-class Solution {
+final class Solution {
     /**
      * Constructs the object.
      */
