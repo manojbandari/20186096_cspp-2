@@ -47,16 +47,14 @@ class Item {
     }
     /**
      * Sets the product name.
-     *
-     * @param      productName  The product name
+     * @param      productName1  The product name
      */
     public void setProductName(final String productName1) {
         this.productName = productName1;
     }
     /**
      * Sets the quanity.
-     *
-     * @param      quantity  The quantity
+     * @param      quantity1  The quantity
      */
     public void setQuanity(final int quantity1) {
         this.quantity = quantity1;
@@ -64,10 +62,9 @@ class Item {
     }
     /**
      * Constructs the object.
-     *
-     * @param      productName  The product name
-     * @param      quantity     The quantity
-     * @param      unitPrice    The unit price
+     * @param      productName1  The product name
+     * @param      quantity1     The quantity
+     * @param      unitPrice1    The unit price
      */
     Item(final String productName1,
         final int quantity1, final  float unitPrice1) {
@@ -78,7 +75,6 @@ class Item {
 
     /**
      * Returns a string representation of the object.
-     *
      * @return     String representation of the object.
      */
     public String toString() {
@@ -135,7 +131,6 @@ class ShoppingCart {
 
     /**
      * Adds to catalog.
-     *
      * @param      item  The item
      */
     public void addToCatalog(final Item item) {
@@ -144,7 +139,6 @@ class ShoppingCart {
 
     /**
      * Adds to cartesian.
-     *
      * @param      item  The item
      */
     public void addToCart(final Item item) {
@@ -190,8 +184,9 @@ class ShoppingCart {
         for (int i = 0; i < cartSize; i++) {
             if (cart[i].getProductName().equals(item.getProductName())) {
                 if (cart[i].getQuantity() == item.getQuantity()) {
-                    for (int j = i; j < cartSize; j++)
+                    for (int j = i; j < cartSize; j++) {
                         cart[j] = cart[j + 1];
+                    }
                     cartSize--;
                     return;
                 }
