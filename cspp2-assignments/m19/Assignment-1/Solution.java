@@ -189,7 +189,7 @@ public final class Solution {
                     System.out.println("Invalid penalty for "+tokens1[0]);
                     n=1;
                 } 
-            else if (tokens1.length<5&&tokens1[0]==null) {
+            else if (tokens1.length==4) {
                     System.out.println("Error! Malformed question");
                     n=1;
 
