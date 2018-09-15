@@ -176,15 +176,15 @@ public final class Solution {
                 System.out.println("Error! Correct answer choice number is out of range for question text 1");
                 n=1;
             }
-            if(choices.length==1) {
+            else if(choices.length==1) {
                 System.out.println(tokens1[0]+" does not have enough answer choices");
                 n=1;
             }
-            if(Integer.parseInt(tokens1[3])<0) {
+            else if(Integer.parseInt(tokens1[3])<0) {
                 System.out.println("Invalid max marks for "+tokens1[0]);
                 n=1;
             }
-            if (Integer.parseInt(tokens1[4])> 0){ 
+            else if (Integer.parseInt(tokens1[4])> 0){ 
                     System.out.println("Invalid penalty for "+tokens1[0]);
                     n=1;
                 } 
