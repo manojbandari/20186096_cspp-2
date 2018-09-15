@@ -37,6 +37,9 @@ class Quiz {
         add(answer);
     }
     public void score() {
+        if (numberOfQuestions==1) {
+            return;
+        }
         int value = 0;
         for (int i = 0; i < numberOfQuestions; i++) {
             System.out.println(questions[i].getQuestion());
