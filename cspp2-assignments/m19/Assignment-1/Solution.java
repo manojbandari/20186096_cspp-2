@@ -4,7 +4,6 @@ class Quiz {
     Question[] questions;
     int numberOfQuestions;
     String[] answers;
-    int totalScore;
     int size;
     /*Question[] choices;
     int numberOfChoices;*/
@@ -13,7 +12,6 @@ class Quiz {
         //choices=new String[100];
         answers = new String[4];
         numberOfQuestions = 0;
-        totalScore = 0;
         size = 0;
     }
 
@@ -37,6 +35,7 @@ class Quiz {
         add(answer);
     }
     public void score() {
+        int totalScore=0;
         if (numberOfQuestions==1) {
             return;
         }
