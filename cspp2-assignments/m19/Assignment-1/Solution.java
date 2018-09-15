@@ -136,11 +136,7 @@ public final class Solution {
                 System.out.println("|----------------|");
                 System.out.println("| Load Questions |");
                 System.out.println("|----------------|");
-                if (Integer.parseInt(tokens[1]) < 2) {
-                    System.out.println("Error! Malformed question");
-                } else {
                     loadQuestions(s, q, Integer.parseInt(tokens[1]));
-                }
                 break;
             case "START_QUIZ":
                 System.out.println("|------------|");
@@ -176,8 +172,16 @@ public final class Solution {
         for (int i = 0; i < questionCount; i++) {
             String[] tokens = s.nextLine().split(":");
             String[] choices = tokens[1].split(",");
+            if (Integer.parseInt(tokens[4]) > 1) {
+                    System.out.println("Invalid penalty for "+tokens[0]);
+                } 
+            else if (Integer.parseInt(tokens[1]) < 2) {
+                    System.out.println("Error! Malformed question");
+                }
+            else{
             quiz.addQuestion(new Question(tokens[0], choices, Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
-        }
+        
+        }}
         System.out.println(questionCount + " are added to the quiz");
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
