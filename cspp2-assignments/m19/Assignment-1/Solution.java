@@ -174,9 +174,11 @@ public final class Solution {
             String[] choices = tokens1[1].split(",");
             if (Integer.parseInt(tokens1[4])> 1){ 
                     System.out.println("Invalid penalty for "+tokens1[0]);
+                    break;
                 } 
             else if (questionCount < 2) {
                     System.out.println("Error! Malformed question");
+                    break;
                 }
             else{
             quiz.addQuestion(new Question(tokens1[0], choices, Integer.parseInt(tokens1[2]), Integer.parseInt(tokens1[3]), Integer.parseInt(tokens1[4])));
