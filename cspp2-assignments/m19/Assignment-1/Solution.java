@@ -172,6 +172,14 @@ public final class Solution {
         for (int i = 0; i < questionCount; i++) {
             String[] tokens1 = s.nextLine().split(":");
             String[] choices = tokens1[1].split(",");
+            if(Integer.parseInt(tokens1[2])>5) {
+                System.out.println("Error! Correct answer choice number is out of range for question text 1");
+                n=1;
+            }
+            if(choices.length==1) {
+                System.out.println(tokens1[0]+" does not have enough answer choices");
+                n=1;
+            }
             if(Integer.parseInt(tokens1[3])<0) {
                 System.out.println("Invalid max marks for "+tokens1[0]);
                 n=1;
