@@ -168,21 +168,28 @@ public final class Solution {
      */
     public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) {
         //Scanner console= new Scanner(System.in)
-
+        int n=0;
         for (int i = 0; i < questionCount; i++) {
             String[] tokens1 = s.nextLine().split(":");
             String[] choices = tokens1[1].split(",");
-            if (Integer.parseInt(tokens1[4])> 1){ 
+            if(Integer.parseInt(tokens1[3])<0) {
+                System.out.println("Invalid max marks for "+tokens1[0]);
+                n=1;
+            }
+            if (Integer.parseInt(tokens1[4])> 0){ 
                     System.out.println("Invalid penalty for "+tokens1[0]);
+                    n=1;
                 } 
-            else if (questionCount < 2) {
+            else if (tokens1.length<5) {
                     System.out.println("Error! Malformed question");
+                    n=1;
+
                 }
             else{
             quiz.addQuestion(new Question(tokens1[0], choices, Integer.parseInt(tokens1[2]), Integer.parseInt(tokens1[3]), Integer.parseInt(tokens1[4])));
         
         }}
-        if(questionCount>1) {
+        if(n!=1) {
         System.out.println(questionCount + " are added to the quiz");
         }
         // write your code here to read the questions from the console
