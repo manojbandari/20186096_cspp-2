@@ -58,7 +58,9 @@ class Quiz {
                 System.out.println("Wrong Answer");
             }
         }
+        if(numberOfQuestions!=1) {
         System.out.println("Total Score:" + totalScore);
+        }
     }
 }
 class Question {
