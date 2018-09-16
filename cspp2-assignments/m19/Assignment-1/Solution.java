@@ -189,7 +189,7 @@ public final class Solution {
                     System.out.println("Invalid penalty for "+tokens1[0]);
                     n=1;
                 } 
-            else if (tokens1.length<5) {
+            else if (tokens1[0].equals("")) {
                     System.out.println("Error! Malformed question");
                     n=1;
 
@@ -217,7 +217,6 @@ public final class Solution {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
-
         quiz.display();
         for (int i = 0; i < answerCount; i++) {
             quiz.storeAnswer(s.nextLine());
