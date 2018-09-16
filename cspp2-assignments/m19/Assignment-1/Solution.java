@@ -22,8 +22,9 @@ class Quiz {
         for (int i = 0; i < numberOfQuestions; i++) {
             System.out.println(questions[i].getQuestion() + "(" + questions[i].getMaximumMarks() + ")");
             String[] view = questions[i].getchoices();
+
             for (int j = 0; j < view.length; j++) {
-                System.out.print(view[i] + "  ");
+                System.out.print(view[j] + "  ");
             }
             System.out.println("\n");
         }
@@ -42,9 +43,11 @@ class Quiz {
         int value = 0;
         for (int i = 0; i < numberOfQuestions; i++) {
             System.out.println(questions[i].getQuestion());
-
+            //System.out.println(questions[i].getchoices());
             String[] view = questions[i].getchoices();
+            System.out.println(answers[i]);
             for (int j = 0; j < view.length; j++) {
+                //System.out.print(answers[i]);
                 if (answers[i].equals(view[j])) {
                     value = i;
                     break;
@@ -219,7 +222,9 @@ public final class Solution {
         // store the user respones in the quiz object
         quiz.display();
         for (int i = 0; i < answerCount; i++) {
-            quiz.storeAnswer(s.nextLine());
+            String line=s.nextLine();
+            System.out.println(line);
+            quiz.storeAnswer(line);
         }
     }
 
