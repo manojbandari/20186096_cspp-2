@@ -24,7 +24,7 @@ class Quiz {
             String[] view = questions[i].getchoices();
 
             for (int j = 0; j < view.length-1; j++) {
-                System.out.print(view[j] + "\t");
+                System.out.print(view[j] + "        ");
             }
             System.out.print(view[view.length-1]);
             System.out.println("\n");
@@ -39,11 +39,12 @@ class Quiz {
         }
        // answers[size++]=answer;
     }
-    public void score() {
+    public void score(int FLAG) {
 
        
         int totalScore = 0;
         int value = 0;
+        if(FLAG== 1) {
         for (int i = 0; i < numberOfQuestions; i++) {
             System.out.println(questions[i].getQuestion());
             //System.out.println(questions[i].getchoices());
@@ -67,8 +68,9 @@ class Quiz {
                 totalScore = totalScore+ questions[i].getPenalty();
             }
         }
-            System.out.println("Total Score: " + totalScore);
+        System.out.println("Total Score: " + totalScore);
         
+        }
     }
 }
 class Question {
@@ -120,6 +122,8 @@ public final class Solution {
     /**
     * Constructs the object.
     */
+     static int FLAG= 1;
+
     private Solution() {
         // leave this blank
     }
@@ -128,7 +132,7 @@ public final class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(final String[] args) {
+    public static void main(final String[] args) throws Exception {
         // instantiate this Quiz
         Quiz q = new Quiz();
         // code to read the test cases input file
@@ -145,7 +149,13 @@ public final class Solution {
                 System.out.println("|----------------|");
                 System.out.println("| Load Questions |");
                 System.out.println("|----------------|");
-                loadQuestions(s, q, Integer.parseInt(tokens[1]));
+                try {
+                    loadQuestions(s, q, Integer.parseInt(tokens[1]));
+                    System.out.println(Integer.parseInt(tokens[1]));
+                }catch(Exception e) {
+                    FLAG=0;
+                    System.out.println(e.getMessage());
+                }
                 break;
             case "START_QUIZ":
                 System.out.println("|------------|");
@@ -172,48 +182,34 @@ public final class Solution {
      * @param      quiz           The quiz object
      * @param      questionCount  The question count
      */
-    public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) {
+    public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) throws Exception {
         //Scanner console= new Scanner(System.in)
-        int n = 0;
          if(questionCount==0) {
-            System.out.println("Quiz does not have questions");
-            n=1;
-                }
+            throw new Exception("Quiz does not have questions");
+        }
         for (int i = 0; i < questionCount; i++) {
             String[] tokens1 = s.nextLine().split(":");
             String[] choices = tokens1[1].split(",");
             if (choices.length == 1) {
-                System.out.println(tokens1[0] + " does not have enough answer choices");
-                n = 1;
-            } 
-            else if (Integer.parseInt(tokens1[3]) < 0) {
-                System.out.println("Invalid max marks for " + tokens1[0]);
-                n = 1;
+                throw new Exception(tokens1[0] + " does not have enough answer choices");
+            } else if (Integer.parseInt(tokens1[2]) > 5) {
+                throw new Exception("Error! Correct answer choice number is out of range for question text 1");
             }
-            else if (tokens1.length<5) {
-                System.out.println("Error! Malformed question");
-                n = 1;
-                break;
-            }  
-            else if (Integer.parseInt(tokens1[4]) > 0) {
-                System.out.println("Invalid penalty for " + tokens1[0]);
-                n = 1;
-            } else if (tokens1[0].equals("")) {
-                System.out.println("Error! Malformed question");
-                n = 1; 
+            else if (Integer.parseInt(tokens1[3]) < 0) {
+                throw new Exception("Invalid max marks for " + tokens1[0]);
             } 
-                quiz.addQuestion(new Question(tokens1[0], choices, Integer.parseInt(tokens1[2]), Integer.parseInt(tokens1[3]), Integer.parseInt(tokens1[4])));
-
-            
-        }
-        if (n != 1) {
-            System.out.println(questionCount + " are added to the quiz");
+            else if (Integer.parseInt(tokens1[4]) > 0) {
+                throw new Exception("Invalid penalty for " + tokens1[0]);
+            }else if (tokens1[0].equals("")) {
+                throw new Exception("Error! Malformed question");
+            } 
+                quiz.addQuestion(new Question(tokens1[0], choices, Integer.parseInt(tokens1[2]), Integer.parseInt(tokens1[3]), Integer.parseInt(tokens1[4])));   
         }
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-    }
-
+    
+}
     /**
      * Starts a quiz.
      *
@@ -241,6 +237,6 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
-        quiz.score();
+        quiz.score(FLAG);
     }
 }
