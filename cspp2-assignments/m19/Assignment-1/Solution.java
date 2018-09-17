@@ -10,7 +10,7 @@ class Quiz {
     Quiz() {
         questions = new Question[100];
         //choices=new String[100];
-        answers= new String[4];
+        answers= new String[100];
         numberOfQuestions = 0;
         size = 0;
     }
@@ -65,7 +65,8 @@ class Quiz {
                 System.out.println(" Correct Answer! - Marks Awarded: " + questions[i].getMaximumMarks());
                 totalScore = totalScore + questions[i].getMaximumMarks();
             } else {
-                System.out.println("Wrong Answer");
+                System.out.println("Wrong Answer! - Penalty: "+questions[i].getPenalty());
+                totalScore = totalScore- questions[i].getPenalty();
             }
         }
         if (numberOfQuestions > 1) {
