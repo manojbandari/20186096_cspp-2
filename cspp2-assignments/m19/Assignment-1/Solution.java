@@ -26,7 +26,7 @@ class Quiz {
             for (int j = 0; j < view.length-1; j++) {
                 System.out.print(view[j] + "        ");
             }
-            System.out.println(view[view.length-1]);
+            System.out.print(view[view.length-1]);
             System.out.println("\n");
         }
     }
