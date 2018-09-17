@@ -61,7 +61,7 @@ class Quiz {
                 }
             }
             if (questions[i].getCorrectAnswer() == value) {
-                System.out.println("Correct Answer! - Marks Awarded: " + questions[i].getMaximumMarks());
+                System.out.println(" Correct Answer! - Marks Awarded: " + questions[i].getMaximumMarks());
                 totalScore = totalScore + questions[i].getMaximumMarks();
             } else {
                 System.out.println("Wrong Answer");
