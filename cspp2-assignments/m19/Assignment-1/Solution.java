@@ -10,7 +10,7 @@ class Quiz {
     /**
      * { var_description }.
      */
-    private final int TEMP = 100;
+    private static final int TEMP = 100;
     /**
      * { var_description }.
      */
@@ -98,10 +98,12 @@ class Quiz {
                 }
             }
             if (questions[i].getCorrectAnswer() == value) {
-                System.out.println(" Correct Answer! - Marks Awarded: " + questions[i].getMaximumMarks());
+                System.out.println(" Correct Answer! - Marks Awarded: "
+                                   + questions[i].getMaximumMarks());
                 totalScore = totalScore + questions[i].getMaximumMarks();
             } else {
-                System.out.println(" Wrong Answer! - Penalty: " + questions[i].getPenalty());
+                System.out.println(" Wrong Answer! - Penalty: "
+                                   + questions[i].getPenalty());
                 totalScore = totalScore + questions[i].getPenalty();
             }
         }
@@ -282,10 +284,11 @@ public final class Solution {
             String[] tokens1 = s.nextLine().split(":");
             String[] choices = tokens1[1].split(",");
             if (choices.length == 1) {
-                throw new Exception(tokens1[0] +
-                                    " does not have enough answer choices");
+                throw new Exception(tokens1[0]
+                                    +" does not have enough answer choices");
             } else if (Integer.parseInt(tokens1[2]) > TEMPO) {
-                throw new Exception("Error! Correct answer choice number is out of range for "
+                throw new Exception(
+                            "Error! Correct answer choice number is out of range for "
                                     + tokens1[0]);
             } else if (tokens1.length < 5) {
                 throw new Exception("Error! Malformed question");
