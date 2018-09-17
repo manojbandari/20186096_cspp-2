@@ -10,6 +10,10 @@ class Quiz {
     /**
      * { var_description }.
      */
+    private final int TEMP=100;
+    /**
+     * { var_description }.
+     */
     private Question[] questions;
     /**
      * { var_description }.
@@ -27,8 +31,8 @@ class Quiz {
      * Constructs the object.
      */
     Quiz() {
-        questions = new Question[100];
-        answers = new String[100];
+        questions = new Question[TEMP];
+        answers = new String[TEMP];
         numberOfQuestions = 0;
         size = 0;
     }
@@ -36,18 +40,19 @@ class Quiz {
     /**
      * Adds a question.
      *
-     * @param      question  The question
+     * @param      question  The question.
      */
     public void addQuestion(final Question question) {
         questions[numberOfQuestions++] = question;
     }
 
     /**
-     * { function_description }
+     * { function_description }.
      */
     public void  display() {
         for (int i = 0; i < numberOfQuestions; i++) {
-            System.out.println(questions[i].getQuestion() + "(" + questions[i].getMaximumMarks() + ")");
+            System.out.println(questions[i].getQuestion()
+                              + "(" + questions[i].getMaximumMarks() + ")");
             String[] view = questions[i].getchoices();
 
             for (int j = 0; j < view.length - 1; j++) {
@@ -59,7 +64,7 @@ class Quiz {
     }
 
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      value  The value
      */
@@ -78,7 +83,7 @@ class Quiz {
         }
     }
     /**
-     * { function_description }
+     * { function_description }.
      */
     public void score() {
         int totalScore = 0;
@@ -138,7 +143,8 @@ class Question {
      * @param      maximumMarks   The maximum marks
      * @param      penalty        The penalty
      */
-    Question(String questionText, String[] choices, int correctAnswer, int maximumMarks, int penalty) {
+    Question(final String questionText, final String[] choices,
+             final int correctAnswer, final int maximumMarks, final int penalty) {
         this.questionText = questionText;
         this.choices = choices;
         this.correctAnswer = correctAnswer;
@@ -258,7 +264,8 @@ public final class Solution {
      * @param      quiz           The quiz object
      * @param      questionCount  The question count
      */
-    public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) throws Exception {
+    public static void loadQuestions(final Scanner s, final Quiz quiz,
+                                     final int questionCount) throws Exception {
         //Scanner console= new Scanner(System.in)
         if (questionCount == 0) {
             throw new Exception("Quiz does not have questions");
@@ -279,7 +286,10 @@ public final class Solution {
             } else if (tokens1[0].equals("")) {
                 throw new Exception("Error! Malformed question");
             }
-            quiz.addQuestion(new Question(tokens1[0], choices, Integer.parseInt(tokens1[2]), Integer.parseInt(tokens1[3]), Integer.parseInt(tokens1[4])));
+            quiz.addQuestion(new Question(tokens1[0], choices,
+                                          Integer.parseInt(tokens1[2]),
+                                          Integer.parseInt(tokens1[3]),
+                                          Integer.parseInt(tokens1[4])));
         }
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
