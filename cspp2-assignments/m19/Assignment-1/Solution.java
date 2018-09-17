@@ -182,32 +182,33 @@ public final class Solution {
         for (int i = 0; i < questionCount; i++) {
             String[] tokens1 = s.nextLine().split(":");
             String[] choices = tokens1[1].split(",");
-            System.out.println(questionCount);
-            /*if (choices.length == 1) {
+            if (choices.length == 1) {
                 System.out.println(tokens1[0] + " does not have enough answer choices");
                 n = 1;
             } else if (Integer.parseInt(tokens1[2]) > 5) {
                 System.out.println("Error! Correct answer choice number is out of range for question text 1");
                 n = 1;
-            }*/
-           
-
-            /*else if (Integer.parseInt(tokens1[3]) < 0) {
+            }
+            else if (Integer.parseInt(tokens1[3]) < 0) {
                 System.out.println("Invalid max marks for " + tokens1[0]);
                 n = 1;
-            } else if (Integer.parseInt(tokens1[4]) > 0) {
+            }
+            else if (tokens1.length<5) {
+                System.out.println("Error! Malformed question");
+                n = 1;
+                break;
+            }  
+            else if (Integer.parseInt(tokens1[4]) > 0) {
                 System.out.println("Invalid penalty for " + tokens1[0]);
                 n = 1;
             } else if (tokens1[0].equals("")) {
                 System.out.println("Error! Malformed question");
-                n = 1;
-
-            }*/ 
+                n = 1; 
+            } 
                 quiz.addQuestion(new Question(tokens1[0], choices, Integer.parseInt(tokens1[2]), Integer.parseInt(tokens1[3]), Integer.parseInt(tokens1[4])));
 
             
         }
-        System.out.println(n);
         if (n != 1) {
             System.out.println(questionCount + " are added to the quiz");
         }
