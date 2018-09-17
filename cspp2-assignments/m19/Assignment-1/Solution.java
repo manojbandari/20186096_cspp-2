@@ -24,7 +24,7 @@ class Quiz {
             String[] view = questions[i].getchoices();
 
             for (int j = 0; j < view.length-1; j++) {
-                System.out.print(view[j] + "        ");
+                System.out.print(view[j] + "\t");
             }
             System.out.print(view[view.length-1]);
             System.out.println("\n");
