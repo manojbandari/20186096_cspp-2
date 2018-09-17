@@ -181,7 +181,7 @@ public final class Solution {
         for (int i = 0; i < questionCount; i++) {
             String[] tokens1 = s.nextLine().split(":");
             String[] choices = tokens1[1].split(",");
-            if (choices.length == 1) {
+            /*if (choices.length == 1) {
                 System.out.println(tokens1[0] + " does not have enough answer choices");
                 n = 1;
             } else if (Integer.parseInt(tokens1[2]) > 5) {
@@ -190,7 +190,7 @@ public final class Solution {
             }
              else if(questionCount==0) {
             System.out.println("Quiz does not have questions");
-            return;
+            n=1;
                 }
 
             else if (Integer.parseInt(tokens1[3]) < 0) {
@@ -203,10 +203,10 @@ public final class Solution {
                 System.out.println("Error! Malformed question");
                 n = 1;
 
-            } else {
+            }*/ 
                 quiz.addQuestion(new Question(tokens1[0], choices, Integer.parseInt(tokens1[2]), Integer.parseInt(tokens1[3]), Integer.parseInt(tokens1[4])));
 
-            }
+            
         }
         if (n != 1) {
             System.out.println(questionCount + " are added to the quiz");
