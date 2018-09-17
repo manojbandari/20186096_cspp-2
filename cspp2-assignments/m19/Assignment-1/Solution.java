@@ -42,9 +42,6 @@ class Quiz {
     public void score() {
        
         int totalScore = 0;
-        if (numberOfQuestions == 1) {
-            return;
-        }
         int value = 0;
         for (int i = 0; i < numberOfQuestions; i++) {
             System.out.println(questions[i].getQuestion());
@@ -69,9 +66,8 @@ class Quiz {
                 totalScore = totalScore+ questions[i].getPenalty();
             }
         }
-        if (numberOfQuestions > 1) {
             System.out.println("Total Score: " + totalScore);
-        }
+        
     }
 }
 class Question {
