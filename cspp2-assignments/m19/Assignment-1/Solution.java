@@ -66,7 +66,7 @@ class Quiz {
                 totalScore = totalScore + questions[i].getMaximumMarks();
             } else {
                 System.out.println("Wrong Answer! - Penalty: "+questions[i].getPenalty());
-                totalScore = totalScore- questions[i].getPenalty();
+                totalScore = totalScore+ questions[i].getPenalty();
             }
         }
         if (numberOfQuestions > 1) {
