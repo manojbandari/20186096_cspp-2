@@ -23,9 +23,10 @@ class Quiz {
             System.out.println(questions[i].getQuestion() + "(" + questions[i].getMaximumMarks() + ")");
             String[] view = questions[i].getchoices();
 
-            for (int j = 0; j < view.length; j++) {
+            for (int j = 0; j < view.length-1; j++) {
                 System.out.print(view[j] + "    ");
             }
+            System.out.println(view[view.length-1]);
             System.out.println("\n");
         }
     }
