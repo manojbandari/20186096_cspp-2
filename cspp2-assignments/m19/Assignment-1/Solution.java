@@ -195,6 +195,9 @@ public final class Solution {
             } else if (Integer.parseInt(tokens1[2]) > 5) {
                 throw new Exception("Error! Correct answer choice number is out of range for question text 1");
             }
+            else if(tokens1.length<5) {
+                throw new Exception("Error! Malformed question");
+            }
             else if (Integer.parseInt(tokens1[3]) < 0) {
                 throw new Exception("Invalid max marks for " + tokens1[0]);
             } 
