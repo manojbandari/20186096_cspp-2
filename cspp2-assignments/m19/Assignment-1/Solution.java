@@ -196,10 +196,12 @@ class Question {
  * Solution class for code-eval.
  */
 public final class Solution {
+    private static final int TEMP=100;
+    private static final int TEMPO=5;
     /**
      * { var_description }.
      */
-    static boolean flag = true;
+    private static boolean flag = true;
     /**
     * Constructs the object.
     */
@@ -275,21 +277,21 @@ public final class Solution {
             String[] choices = tokens1[1].split(",");
             if (choices.length == 1) {
                 throw new Exception(tokens1[0] + " does not have enough answer choices");
-            } else if (Integer.parseInt(tokens1[2]) > 5) {
+            } else if (Integer.parseInt(tokens1[2]) > TEMPO) {
                 throw new Exception("Error! Correct answer choice number is out of range for " + tokens1[0]);
             } else if (tokens1.length < 5) {
                 throw new Exception("Error! Malformed question");
-            } else if (Integer.parseInt(tokens1[3]) < 0) {
+            } else if (Integer.parseInt(tokens1[2+1]) < 0) {
                 throw new Exception("Invalid max marks for " + tokens1[0]);
-            } else if (Integer.parseInt(tokens1[4]) > 0) {
+            } else if (Integer.parseInt(tokens1[2+2]) > 0) {
                 throw new Exception("Invalid penalty for " + tokens1[0]);
             } else if (tokens1[0].equals("")) {
                 throw new Exception("Error! Malformed question");
             }
             quiz.addQuestion(new Question(tokens1[0], choices,
                                           Integer.parseInt(tokens1[2]),
-                                          Integer.parseInt(tokens1[3]),
-                                          Integer.parseInt(tokens1[4])));
+                                          Integer.parseInt(tokens1[2+1]),
+                                          Integer.parseInt(tokens1[2+2])));
         }
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
@@ -307,7 +309,7 @@ public final class Solution {
         // read the user responses from the console
         // store the user respones in the quiz object
         quiz.display();
-        String[] line = new String[100];
+        String[] line = new String[TEMP];
         for (int i = 0; i < answerCount; i++) {
             line[i] = s.nextLine();
         }
