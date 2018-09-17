@@ -24,7 +24,7 @@ class Quiz {
             String[] view = questions[i].getchoices();
 
             for (int j = 0; j < view.length-1; j++) {
-                System.out.print(view[j] + "        ");
+                System.out.print(view[j] + "\t");
             }
             System.out.print(view[view.length-1]);
             System.out.println("\n");
@@ -185,10 +185,7 @@ public final class Solution {
             if (choices.length == 1) {
                 System.out.println(tokens1[0] + " does not have enough answer choices");
                 n = 1;
-            } else if (Integer.parseInt(tokens1[2]) > 5) {
-                System.out.println("Error! Correct answer choice number is out of range for question text 1");
-                n = 1;
-            }
+            } 
             else if (Integer.parseInt(tokens1[3]) < 0) {
                 System.out.println("Invalid max marks for " + tokens1[0]);
                 n = 1;
