@@ -68,7 +68,7 @@ class Quiz {
             }
         }
         if (numberOfQuestions > 1) {
-            System.out.println("Total Score:" + totalScore);
+            System.out.println("Total Score: " + totalScore);
         }
     }
 }
