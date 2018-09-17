@@ -163,7 +163,7 @@ class Question {
         return questionText;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -217,10 +217,13 @@ public final class Solution {
     private Solution() {
         // leave this blank
     }
+
     /**
-     * main function to execute test cases.
+     * { function_description }.
      *
-     * @param      args  The arguments
+     * @param      args       The arguments
+     *
+     * @throws     Exception  { exception_description }
      */
     public static void main(final String[] args) throws Exception {
         // instantiate this Quiz
@@ -241,7 +244,8 @@ public final class Solution {
                 System.out.println("|----------------|");
                 try {
                     loadQuestions(s, q, Integer.parseInt(tokens[1]));
-                    System.out.println(Integer.parseInt(tokens[1]) + " are added to the quiz");
+                    System.out.println(Integer.parseInt(tokens[1])
+                                       + " are added to the quiz");
                 } catch (Exception e) {
                     flag = false;
                     System.out.println(e.getMessage());
@@ -268,12 +272,15 @@ public final class Solution {
             }
         }
     }
+
     /**
      * Loads questions.
      *
-     * @param      s              The scanner object for user input
-     * @param      quiz           The quiz object
+     * @param      s              { parameter_description }
+     * @param      quiz           The quiz
      * @param      questionCount  The question count
+     *
+     * @throws     Exception      { exception_description }
      */
     public static void loadQuestions(final Scanner s, final Quiz quiz,
                                      final int questionCount) throws Exception {
@@ -286,10 +293,10 @@ public final class Solution {
             String[] choices = tokens1[1].split(",");
             if (choices.length == 1) {
                 throw new Exception(
-                    tokens1[0]+" does not have enough answer choices");
+                    tokens1[0] + " does not have enough answer choices");
             } else if (Integer.parseInt(tokens1[2]) > TEMPO) {
-                throw new Exception(
-                            "Error! Correct answer choice number is out of range for "
+                throw new Exception("Error! Correct answer choice "
+                                    + "number is out of range for "
                                     + tokens1[0]);
             } else if (tokens1.length < TEMPO) {
                 throw new Exception("Error! Malformed question");
