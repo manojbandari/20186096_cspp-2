@@ -2,22 +2,32 @@
  * @author:manojbandari.
  */
 import java.util.Scanner;
-import java.util.Arrays;
 
 /**
  * Class for quiz.
  */
 class Quiz {
-    Question[] questions;
-    int numberOfQuestions;
-    String[] answers;
-    int size;
+    /**
+     * { var_description }.
+     */
+    private Question[] questions;
+    /**
+     * { var_description }.
+     */
+    private int numberOfQuestions;
+    /**
+     * { var_description }.
+     */
+    private String[] answers;
+    /**
+     * { var_description }.
+     */
+    private int size;
     /**
      * Constructs the object.
      */
     Quiz() {
         questions = new Question[100];
-        //choices=new String[100];
         answers = new String[100];
         numberOfQuestions = 0;
         size = 0;
@@ -66,7 +76,6 @@ class Quiz {
         for (int i = 0; i < answer.length; i++) {
             add(answer[i]);
         }
-        // answers[size++]=answer;
     }
     
     /**
@@ -74,21 +83,14 @@ class Quiz {
      *
      * @param      FLAG  The flag
      */
-    public void score(int FLAG) {
+    public void score() {
         int totalScore = 0;
         int value = 0;
-        if (FLAG == 1) {
             for (int i = 0; i < numberOfQuestions; i++) {
                 System.out.println(questions[i].getQuestion());
-                //System.out.println(questions[i].getchoices());
                 String[] view = questions[i].getchoices();
-                /*for(int k=0;k<view.length;k++)
-                    System.out.println(view[k]);
-                System.out.println(answers[i]);*/
                 for (int j = 0; j < view.length; j++) {
-                    //System.out.print(answers[i]);
                     if (answers[i].equals(view[j])) {
-                        //System.out.println(j);
                         value = j + 1;
                         break;
                     }
@@ -105,8 +107,6 @@ class Quiz {
 
         }
     }
-}
-
 /**
  * Class for question.
  */
@@ -114,23 +114,23 @@ class Question {
     /**
      * { var_description }.
      */
-    String questionText;
+    private String questionText;
     /**
      * { var_description }.
      */
-    String[] choices;
+    private String[] choices;
     /**
      * { var_description }.
      */
-    int maximumMarks;
+    private int maximumMarks;
     /**
      * { var_description }.
      */
-    int penalty;
+    private int penalty;
     /**
      * { var_description }.
      */
-    int correctAnswer;
+    private int correctAnswer;
     
     /**
      * Constructs the object.
@@ -188,19 +188,6 @@ class Question {
     public int getCorrectAnswer() {
         return correctAnswer;
     }
-    /*public int getNumberOfQuestions() {
-        return numberOfQuestions;
-    }
-    public void setNumberOfQuestions(int numberOfQuestions) {
-        this.numberOfQuestions=numberOfQuestions
-    }
-    public int getNumberOfChoices() {
-        return numberOfChoices
-    }
-    public int setNumberOfChoices(int numberOfChoices) {
-        this.numberOfChoices=numberOfChoices
-    }*/
-
 }
 /**
  * Solution class for code-eval.
@@ -209,7 +196,7 @@ public final class Solution {
     /**
      * { var_description }.
      */
-    static int FLAG = 1;
+    static boolean flag= true;
     /**
     * Constructs the object.
     */
@@ -242,7 +229,7 @@ public final class Solution {
                     loadQuestions(s, q, Integer.parseInt(tokens[1]));
                     System.out.println(Integer.parseInt(tokens[1]) + " are added to the quiz");
                 } catch (Exception e) {
-                    FLAG = 0;
+                    flag = false;
                     System.out.println(e.getMessage());
                 }
                 break;
@@ -250,14 +237,17 @@ public final class Solution {
                 System.out.println("|------------|");
                 System.out.println("| Start Quiz |");
                 System.out.println("|------------|");
-                startQuiz(s, q, Integer.parseInt(tokens[1]));
+                if(flag) {
+                    startQuiz(s, q, Integer.parseInt(tokens[1])); 
+                }
                 break;
             case "SCORE_REPORT":
                 System.out.println("|--------------|");
                 System.out.println("| Score Report |");
                 System.out.println("|--------------|");
-
-                displayScore(q);
+                if(flag) {
+                    displayScore(q);
+                }
                 break;
             default:
                 break;
@@ -282,7 +272,7 @@ public final class Solution {
             if (choices.length == 1) {
                 throw new Exception(tokens1[0] + " does not have enough answer choices");
             } else if (Integer.parseInt(tokens1[2]) > 5) {
-                throw new Exception("Error! Correct answer choice number is out of range for question text 1");
+                throw new Exception("Error! Correct answer choice number is out of range for "+tokens1[0]);
             } else if (tokens1.length < 5) {
                 throw new Exception("Error! Malformed question");
             } else if (Integer.parseInt(tokens1[3]) < 0) {
@@ -313,7 +303,6 @@ public final class Solution {
         String[] line = new String[100];
         for (int i = 0; i < answerCount; i++) {
             line[i] = s.nextLine();
-            //System.out.println(line);
         }
         quiz.storeAnswer(line);
     }
@@ -325,6 +314,6 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
-        quiz.score(FLAG);
+        quiz.score();
     }
 }
