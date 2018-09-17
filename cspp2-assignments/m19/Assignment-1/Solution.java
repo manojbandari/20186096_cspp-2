@@ -1,84 +1,146 @@
+/**
+ * @author:manojbandari.
+ */
 import java.util.Scanner;
 import java.util.Arrays;
+
+/**
+ * Class for quiz.
+ */
 class Quiz {
     Question[] questions;
     int numberOfQuestions;
     String[] answers;
     int size;
-    /*Question[] choices;
-    int numberOfChoices;*/
+    /**
+     * Constructs the object.
+     */
     Quiz() {
         questions = new Question[100];
         //choices=new String[100];
-        answers= new String[100];
+        answers = new String[100];
         numberOfQuestions = 0;
         size = 0;
     }
 
-    public void addQuestion(Question question) {
+    /**
+     * Adds a question.
+     *
+     * @param      question  The question
+     */
+    public void addQuestion(final Question question) {
         questions[numberOfQuestions++] = question;
     }
+
+    /**
+     * { function_description }
+     */
     public void  display() {
         for (int i = 0; i < numberOfQuestions; i++) {
             System.out.println(questions[i].getQuestion() + "(" + questions[i].getMaximumMarks() + ")");
             String[] view = questions[i].getchoices();
 
-            for (int j = 0; j < view.length-1; j++) {
+            for (int j = 0; j < view.length - 1; j++) {
                 System.out.print(view[j] + "\t");
             }
-            System.out.print(view[view.length-1]);
+            System.out.print(view[view.length - 1]);
             System.out.println("\n");
         }
     }
-    public void add(String value) {
+    
+    /**
+     * { function_description }
+     *
+     * @param      value  The value
+     */
+    public void add(final  String value) {
         answers[size++] = value;
     }
-    public void storeAnswer(String[] answer) {
-        for(int i=0;i<answer.length;i++) {
+    
+    /**
+     * Stores an answer.
+     *
+     * @param      answer  The answer
+     */
+    public void storeAnswer(final String[] answer) {
+        for (int i = 0; i < answer.length; i++) {
             add(answer[i]);
         }
-       // answers[size++]=answer;
+        // answers[size++]=answer;
     }
+    
+    /**
+     * { function_description }
+     *
+     * @param      FLAG  The flag
+     */
     public void score(int FLAG) {
-
-       
         int totalScore = 0;
         int value = 0;
-        if(FLAG== 1) {
-        for (int i = 0; i < numberOfQuestions; i++) {
-            System.out.println(questions[i].getQuestion());
-            //System.out.println(questions[i].getchoices());
-            String[] view = questions[i].getchoices();
-            /*for(int k=0;k<view.length;k++)
-                System.out.println(view[k]);
-            System.out.println(answers[i]);*/
-            for (int j = 0; j < view.length; j++) {
-                //System.out.print(answers[i]);
-                if (answers[i].equals(view[j])) {
-                    //System.out.println(j);
-                    value = j+1;
-                    break;
+        if (FLAG == 1) {
+            for (int i = 0; i < numberOfQuestions; i++) {
+                System.out.println(questions[i].getQuestion());
+                //System.out.println(questions[i].getchoices());
+                String[] view = questions[i].getchoices();
+                /*for(int k=0;k<view.length;k++)
+                    System.out.println(view[k]);
+                System.out.println(answers[i]);*/
+                for (int j = 0; j < view.length; j++) {
+                    //System.out.print(answers[i]);
+                    if (answers[i].equals(view[j])) {
+                        //System.out.println(j);
+                        value = j + 1;
+                        break;
+                    }
+                }
+                if (questions[i].getCorrectAnswer() == value) {
+                    System.out.println(" Correct Answer! - Marks Awarded: " + questions[i].getMaximumMarks());
+                    totalScore = totalScore + questions[i].getMaximumMarks();
+                } else {
+                    System.out.println(" Wrong Answer! - Penalty: " + questions[i].getPenalty());
+                    totalScore = totalScore + questions[i].getPenalty();
                 }
             }
-            if (questions[i].getCorrectAnswer() == value) {
-                System.out.println(" Correct Answer! - Marks Awarded: " + questions[i].getMaximumMarks());
-                totalScore = totalScore + questions[i].getMaximumMarks();
-            } else {
-                System.out.println(" Wrong Answer! - Penalty: "+questions[i].getPenalty());
-                totalScore = totalScore+ questions[i].getPenalty();
-            }
-        }
-        System.out.println("Total Score: " + totalScore);
-        
+            System.out.println("Total Score: " + totalScore);
+
         }
     }
 }
+
+/**
+ * Class for question.
+ */
 class Question {
+    /**
+     * { var_description }.
+     */
     String questionText;
+    /**
+     * { var_description }.
+     */
     String[] choices;
+    /**
+     * { var_description }.
+     */
     int maximumMarks;
+    /**
+     * { var_description }.
+     */
     int penalty;
+    /**
+     * { var_description }.
+     */
     int correctAnswer;
+    
+    /**
+     * Constructs the object.
+     *
+     * @param      questionText   The question text
+     * @param      choices        The choices
+     * @param      correctAnswer  The correct answer
+     * @param      maximumMarks   The maximum marks
+     * @param      penalty        The penalty
+     */
     Question(String questionText, String[] choices, int correctAnswer, int maximumMarks, int penalty) {
         this.questionText = questionText;
         this.choices = choices;
@@ -86,18 +148,43 @@ class Question {
         this.maximumMarks = maximumMarks;
         this.penalty = penalty;
     }
+    /**
+     * Gets the question.
+     *
+     * @return     The question.
+     */
     public String getQuestion() {
         return questionText;
     }
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String[] getchoices() {
         return choices;
     }
+    /**
+     * Gets the maximum marks.
+     *
+     * @return     The maximum marks.
+     */
     public int getMaximumMarks() {
         return maximumMarks;
     }
+    /**
+     * Gets the penalty.
+     *
+     * @return     The penalty.
+     */
     public int getPenalty() {
         return penalty;
     }
+    /**
+     * Gets the correct answer.
+     *
+     * @return     The correct answer.
+     */
     public int getCorrectAnswer() {
         return correctAnswer;
     }
@@ -120,10 +207,12 @@ class Question {
  */
 public final class Solution {
     /**
+     * { var_description }.
+     */
+    static int FLAG = 1;
+    /**
     * Constructs the object.
     */
-     static int FLAG= 1;
-
     private Solution() {
         // leave this blank
     }
@@ -151,9 +240,9 @@ public final class Solution {
                 System.out.println("|----------------|");
                 try {
                     loadQuestions(s, q, Integer.parseInt(tokens[1]));
-                    System.out.println(Integer.parseInt(tokens[1])+" are added to the quiz");
-                }catch(Exception e) {
-                    FLAG=0;
+                    System.out.println(Integer.parseInt(tokens[1]) + " are added to the quiz");
+                } catch (Exception e) {
+                    FLAG = 0;
                     System.out.println(e.getMessage());
                 }
                 break;
@@ -161,7 +250,7 @@ public final class Solution {
                 System.out.println("|------------|");
                 System.out.println("| Start Quiz |");
                 System.out.println("|------------|");
-                    startQuiz(s, q, Integer.parseInt(tokens[1]));
+                startQuiz(s, q, Integer.parseInt(tokens[1]));
                 break;
             case "SCORE_REPORT":
                 System.out.println("|--------------|");
@@ -184,7 +273,7 @@ public final class Solution {
      */
     public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) throws Exception {
         //Scanner console= new Scanner(System.in)
-         if(questionCount==0) {
+        if (questionCount == 0) {
             throw new Exception("Quiz does not have questions");
         }
         for (int i = 0; i < questionCount; i++) {
@@ -194,25 +283,21 @@ public final class Solution {
                 throw new Exception(tokens1[0] + " does not have enough answer choices");
             } else if (Integer.parseInt(tokens1[2]) > 5) {
                 throw new Exception("Error! Correct answer choice number is out of range for question text 1");
-            }
-            else if(tokens1.length<5) {
+            } else if (tokens1.length < 5) {
                 throw new Exception("Error! Malformed question");
-            }
-            else if (Integer.parseInt(tokens1[3]) < 0) {
+            } else if (Integer.parseInt(tokens1[3]) < 0) {
                 throw new Exception("Invalid max marks for " + tokens1[0]);
-            } 
-            else if (Integer.parseInt(tokens1[4]) > 0) {
+            } else if (Integer.parseInt(tokens1[4]) > 0) {
                 throw new Exception("Invalid penalty for " + tokens1[0]);
-            }else if (tokens1[0].equals("")) {
+            } else if (tokens1[0].equals("")) {
                 throw new Exception("Error! Malformed question");
-            } 
-                quiz.addQuestion(new Question(tokens1[0], choices, Integer.parseInt(tokens1[2]), Integer.parseInt(tokens1[3]), Integer.parseInt(tokens1[4])));   
+            }
+            quiz.addQuestion(new Question(tokens1[0], choices, Integer.parseInt(tokens1[2]), Integer.parseInt(tokens1[3]), Integer.parseInt(tokens1[4])));
         }
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-    
-}
+    }
     /**
      * Starts a quiz.
      *
@@ -225,12 +310,12 @@ public final class Solution {
         // read the user responses from the console
         // store the user respones in the quiz object
         quiz.display();
-        String[] line=new String[100];
+        String[] line = new String[100];
         for (int i = 0; i < answerCount; i++) {
             line[i] = s.nextLine();
             //System.out.println(line);
         }
-            quiz.storeAnswer(line);
+        quiz.storeAnswer(line);
     }
 
     /**
