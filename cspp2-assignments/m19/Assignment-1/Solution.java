@@ -227,7 +227,7 @@ public final class Solution {
         // read the user responses from the console
         // store the user respones in the quiz object
         quiz.display();
-        String[] line=new String[4];
+        String[] line=new String[100];
         for (int i = 0; i < answerCount; i++) {
             line[i] = s.nextLine();
             //System.out.println(line);
