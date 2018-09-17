@@ -63,7 +63,7 @@ class Quiz {
                 System.out.println(" Correct Answer! - Marks Awarded: " + questions[i].getMaximumMarks());
                 totalScore = totalScore + questions[i].getMaximumMarks();
             } else {
-                System.out.println("Wrong Answer! - Penalty: "+questions[i].getPenalty());
+                System.out.println(" Wrong Answer! - Penalty: "+questions[i].getPenalty());
                 totalScore = totalScore+ questions[i].getPenalty();
             }
         }
@@ -175,22 +175,24 @@ public final class Solution {
     public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) {
         //Scanner console= new Scanner(System.in)
         int n = 0;
+         if(questionCount==0) {
+            System.out.println("Quiz does not have questions");
+            n=1;
+                }
         for (int i = 0; i < questionCount; i++) {
             String[] tokens1 = s.nextLine().split(":");
             String[] choices = tokens1[1].split(",");
+            System.out.println(questionCount);
             /*if (choices.length == 1) {
                 System.out.println(tokens1[0] + " does not have enough answer choices");
                 n = 1;
             } else if (Integer.parseInt(tokens1[2]) > 5) {
                 System.out.println("Error! Correct answer choice number is out of range for question text 1");
                 n = 1;
-            }
-             else if(questionCount==0) {
-            System.out.println("Quiz does not have questions");
-            n=1;
-                }
+            }*/
+           
 
-            else if (Integer.parseInt(tokens1[3]) < 0) {
+            /*else if (Integer.parseInt(tokens1[3]) < 0) {
                 System.out.println("Invalid max marks for " + tokens1[0]);
                 n = 1;
             } else if (Integer.parseInt(tokens1[4]) > 0) {
@@ -205,6 +207,7 @@ public final class Solution {
 
             
         }
+        System.out.println(n);
         if (n != 1) {
             System.out.println(questionCount + " are added to the quiz");
         }
