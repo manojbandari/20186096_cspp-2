@@ -146,7 +146,8 @@ class Question {
      * @param      penalty        The penalty
      */
     Question(final String questionText, final String[] choices,
-             final int correctAnswer, final int maximumMarks, final int penalty) {
+             final int correctAnswer, final int maximumMarks,
+             final int penalty) {
         this.questionText = questionText;
         this.choices = choices;
         this.correctAnswer = correctAnswer;
@@ -284,13 +285,13 @@ public final class Solution {
             String[] tokens1 = s.nextLine().split(":");
             String[] choices = tokens1[1].split(",");
             if (choices.length == 1) {
-                throw new Exception(tokens1[0]
-                                    +" does not have enough answer choices");
+                throw new Exception(
+                    tokens1[0]+" does not have enough answer choices");
             } else if (Integer.parseInt(tokens1[2]) > TEMPO) {
                 throw new Exception(
                             "Error! Correct answer choice number is out of range for "
                                     + tokens1[0]);
-            } else if (tokens1.length < 5) {
+            } else if (tokens1.length < TEMPO) {
                 throw new Exception("Error! Malformed question");
             } else if (Integer.parseInt(tokens1[2 + 1]) < 0) {
                 throw new Exception("Invalid max marks for " + tokens1[0]);
@@ -315,7 +316,8 @@ public final class Solution {
      * @param      quiz         The quiz object
      * @param      answerCount  The answer count
      */
-    public static void startQuiz(final Scanner s, final Quiz quiz, final int answerCount) {
+    public static void startQuiz(final Scanner s, final Quiz quiz,
+                                 final int answerCount) {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
@@ -328,7 +330,7 @@ public final class Solution {
     }
 
     /**
-     * Displays the score report
+     * Displays the score report.
      *
      * @param      quiz     The quiz object
      */
