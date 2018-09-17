@@ -40,6 +40,10 @@ class Quiz {
        // answers[size++]=answer;
     }
     public void score() {
+        if(numberOfQuestions==0) {
+            System.out.println("Quiz does not have questions");
+            return;
+        }
        
         int totalScore = 0;
         int value = 0;
