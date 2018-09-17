@@ -145,14 +145,14 @@ class Question {
      * @param      maximumMarks   The maximum marks
      * @param      penalty        The penalty
      */
-    Question(final String questionText, final String[] choices,
-             final int correctAnswer, final int maximumMarks,
-             final int penalty) {
-        this.questionText = questionText;
-        this.choices = choices;
-        this.correctAnswer = correctAnswer;
-        this.maximumMarks = maximumMarks;
-        this.penalty = penalty;
+    Question(final String questionText1, final String[] choices1,
+             final int correctAnswer1, final int maximumMarks1,
+             final int penalty1) {
+        this.questionText = questionText1;
+        this.choices = choices1;
+        this.correctAnswer = correctAnswer1;
+        this.maximumMarks = maximumMarks1;
+        this.penalty = penalty1;
     }
     /**
      * Gets the question.
