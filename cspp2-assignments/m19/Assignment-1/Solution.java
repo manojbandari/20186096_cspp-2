@@ -139,11 +139,11 @@ class Question {
     /**
      * Constructs the object.
      *
-     * @param      questionText   The question text
-     * @param      choices        The choices
-     * @param      correctAnswer  The correct answer
-     * @param      maximumMarks   The maximum marks
-     * @param      penalty        The penalty
+     * @param      questionText1   The question text 1
+     * @param      choices1        The choices 1
+     * @param      correctAnswer1  The correct answer 1
+     * @param      maximumMarks1   The maximum marks 1
+     * @param      penalty1        The penalty 1
      */
     Question(final String questionText1, final String[] choices1,
              final int correctAnswer1, final int maximumMarks1,
