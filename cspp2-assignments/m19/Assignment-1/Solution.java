@@ -40,10 +40,7 @@ class Quiz {
        // answers[size++]=answer;
     }
     public void score() {
-        if(numberOfQuestions==0) {
-            System.out.println("Quiz does not have questions");
-            return;
-        }
+
        
         int totalScore = 0;
         int value = 0;
@@ -191,6 +188,10 @@ public final class Solution {
                 System.out.println("Error! Correct answer choice number is out of range for question text 1");
                 n = 1;
             }
+             else if(questionCount==0) {
+            System.out.println("Quiz does not have questions");
+            return;
+                }
 
             else if (Integer.parseInt(tokens1[3]) < 0) {
                 System.out.println("Invalid max marks for " + tokens1[0]);
