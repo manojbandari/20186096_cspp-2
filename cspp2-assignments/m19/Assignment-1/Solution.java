@@ -10,7 +10,7 @@ class Quiz {
     Quiz() {
         questions = new Question[100];
         //choices=new String[100];
-        answers = new String[4];
+        answers= new String[4];
         numberOfQuestions = 0;
         size = 0;
     }
@@ -32,10 +32,14 @@ class Quiz {
     public void add(String value) {
         answers[size++] = value;
     }
-    public void storeAnswer(String answer) {
-        add(answer);
+    public void storeAnswer(String[] answer) {
+        for(int i=0;i<answer.length;i++) {
+            add(answer[i]);
+        }
+       // answers[size++]=answer;
     }
     public void score() {
+       
         int totalScore = 0;
         if (numberOfQuestions == 1) {
             return;
@@ -45,11 +49,14 @@ class Quiz {
             System.out.println(questions[i].getQuestion());
             //System.out.println(questions[i].getchoices());
             String[] view = questions[i].getchoices();
-            System.out.println(answers[i]);
+            /*for(int k=0;k<view.length;k++)
+                System.out.println(view[k]);
+            System.out.println(answers[i]);*/
             for (int j = 0; j < view.length; j++) {
                 //System.out.print(answers[i]);
                 if (answers[i].equals(view[j])) {
-                    value = i;
+                    //System.out.println(j);
+                    value = j+1;
                     break;
                 }
             }
@@ -218,11 +225,12 @@ public final class Solution {
         // read the user responses from the console
         // store the user respones in the quiz object
         quiz.display();
+        String[] line=new String[4];
         for (int i = 0; i < answerCount; i++) {
-            String line = s.nextLine();
-            System.out.println(line);
-            quiz.storeAnswer(line);
+            line[i] = s.nextLine();
+            //System.out.println(line);
         }
+            quiz.storeAnswer(line);
     }
 
     /**
