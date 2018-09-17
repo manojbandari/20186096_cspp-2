@@ -10,7 +10,7 @@ class Quiz {
     /**
      * { var_description }.
      */
-    private final int TEMP=100;
+    private final int TEMP = 100;
     /**
      * { var_description }.
      */
@@ -52,7 +52,7 @@ class Quiz {
     public void  display() {
         for (int i = 0; i < numberOfQuestions; i++) {
             System.out.println(questions[i].getQuestion()
-                              + "(" + questions[i].getMaximumMarks() + ")");
+                               + "(" + questions[i].getMaximumMarks() + ")");
             String[] view = questions[i].getchoices();
 
             for (int j = 0; j < view.length - 1; j++) {
@@ -196,8 +196,14 @@ class Question {
  * Solution class for code-eval.
  */
 public final class Solution {
-    private static final int TEMP=100;
-    private static final int TEMPO=5;
+    /**
+     * { var_description }.
+     */
+    private static final int TEMP = 100;
+    /**
+     * { var_description }.
+     */
+    private static final int TEMPO = 5;
     /**
      * { var_description }.
      */
@@ -276,22 +282,24 @@ public final class Solution {
             String[] tokens1 = s.nextLine().split(":");
             String[] choices = tokens1[1].split(",");
             if (choices.length == 1) {
-                throw new Exception(tokens1[0] + " does not have enough answer choices");
+                throw new Exception(tokens1[0] +
+                                    " does not have enough answer choices");
             } else if (Integer.parseInt(tokens1[2]) > TEMPO) {
-                throw new Exception("Error! Correct answer choice number is out of range for " + tokens1[0]);
+                throw new Exception("Error! Correct answer choice number is out of range for "
+                                    + tokens1[0]);
             } else if (tokens1.length < 5) {
                 throw new Exception("Error! Malformed question");
-            } else if (Integer.parseInt(tokens1[2+1]) < 0) {
+            } else if (Integer.parseInt(tokens1[2 + 1]) < 0) {
                 throw new Exception("Invalid max marks for " + tokens1[0]);
-            } else if (Integer.parseInt(tokens1[2+2]) > 0) {
+            } else if (Integer.parseInt(tokens1[2 + 2]) > 0) {
                 throw new Exception("Invalid penalty for " + tokens1[0]);
             } else if (tokens1[0].equals("")) {
                 throw new Exception("Error! Malformed question");
             }
             quiz.addQuestion(new Question(tokens1[0], choices,
                                           Integer.parseInt(tokens1[2]),
-                                          Integer.parseInt(tokens1[2+1]),
-                                          Integer.parseInt(tokens1[2+2])));
+                                          Integer.parseInt(tokens1[2 + 1]),
+                                          Integer.parseInt(tokens1[2 + 2])));
         }
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
