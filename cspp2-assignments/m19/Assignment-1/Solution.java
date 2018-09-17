@@ -57,7 +57,7 @@ class Quiz {
             System.out.println("\n");
         }
     }
-    
+
     /**
      * { function_description }
      *
@@ -66,7 +66,7 @@ class Quiz {
     public void add(final  String value) {
         answers[size++] = value;
     }
-    
+
     /**
      * Stores an answer.
      *
@@ -77,36 +77,33 @@ class Quiz {
             add(answer[i]);
         }
     }
-    
     /**
      * { function_description }
-     *
-     * @param      FLAG  The flag
      */
     public void score() {
         int totalScore = 0;
         int value = 0;
-            for (int i = 0; i < numberOfQuestions; i++) {
-                System.out.println(questions[i].getQuestion());
-                String[] view = questions[i].getchoices();
-                for (int j = 0; j < view.length; j++) {
-                    if (answers[i].equals(view[j])) {
-                        value = j + 1;
-                        break;
-                    }
-                }
-                if (questions[i].getCorrectAnswer() == value) {
-                    System.out.println(" Correct Answer! - Marks Awarded: " + questions[i].getMaximumMarks());
-                    totalScore = totalScore + questions[i].getMaximumMarks();
-                } else {
-                    System.out.println(" Wrong Answer! - Penalty: " + questions[i].getPenalty());
-                    totalScore = totalScore + questions[i].getPenalty();
+        for (int i = 0; i < numberOfQuestions; i++) {
+            System.out.println(questions[i].getQuestion());
+            String[] view = questions[i].getchoices();
+            for (int j = 0; j < view.length; j++) {
+                if (answers[i].equals(view[j])) {
+                    value = j + 1;
+                    break;
                 }
             }
-            System.out.println("Total Score: " + totalScore);
-
+            if (questions[i].getCorrectAnswer() == value) {
+                System.out.println(" Correct Answer! - Marks Awarded: " + questions[i].getMaximumMarks());
+                totalScore = totalScore + questions[i].getMaximumMarks();
+            } else {
+                System.out.println(" Wrong Answer! - Penalty: " + questions[i].getPenalty());
+                totalScore = totalScore + questions[i].getPenalty();
+            }
         }
+        System.out.println("Total Score: " + totalScore);
+
     }
+}
 /**
  * Class for question.
  */
@@ -114,24 +111,24 @@ class Question {
     /**
      * { var_description }.
      */
-    private String questionText;
+    private final  String questionText;
     /**
      * { var_description }.
      */
-    private String[] choices;
+    private final String[] choices;
     /**
      * { var_description }.
      */
-    private int maximumMarks;
+    private final int maximumMarks;
     /**
      * { var_description }.
      */
-    private int penalty;
+    private final int penalty;
     /**
      * { var_description }.
      */
-    private int correctAnswer;
-    
+    private final int correctAnswer;
+
     /**
      * Constructs the object.
      *
@@ -196,7 +193,7 @@ public final class Solution {
     /**
      * { var_description }.
      */
-    static boolean flag= true;
+    static boolean flag = true;
     /**
     * Constructs the object.
     */
@@ -237,15 +234,15 @@ public final class Solution {
                 System.out.println("|------------|");
                 System.out.println("| Start Quiz |");
                 System.out.println("|------------|");
-                if(flag) {
-                    startQuiz(s, q, Integer.parseInt(tokens[1])); 
+                if (flag) {
+                    startQuiz(s, q, Integer.parseInt(tokens[1]));
                 }
                 break;
             case "SCORE_REPORT":
                 System.out.println("|--------------|");
                 System.out.println("| Score Report |");
                 System.out.println("|--------------|");
-                if(flag) {
+                if (flag) {
                     displayScore(q);
                 }
                 break;
@@ -272,7 +269,7 @@ public final class Solution {
             if (choices.length == 1) {
                 throw new Exception(tokens1[0] + " does not have enough answer choices");
             } else if (Integer.parseInt(tokens1[2]) > 5) {
-                throw new Exception("Error! Correct answer choice number is out of range for "+tokens1[0]);
+                throw new Exception("Error! Correct answer choice number is out of range for " + tokens1[0]);
             } else if (tokens1.length < 5) {
                 throw new Exception("Error! Malformed question");
             } else if (Integer.parseInt(tokens1[3]) < 0) {
