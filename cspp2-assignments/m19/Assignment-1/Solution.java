@@ -151,7 +151,7 @@ public final class Solution {
                 System.out.println("|----------------|");
                 try {
                     loadQuestions(s, q, Integer.parseInt(tokens[1]));
-                    System.out.println(Integer.parseInt(tokens[1]));
+                    System.out.println(Integer.parseInt(tokens[1])+" are added to the quiz");
                 }catch(Exception e) {
                     FLAG=0;
                     System.out.println(e.getMessage());
