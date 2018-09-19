@@ -340,59 +340,59 @@ class FitBit {
 }
 public class Solution {
     public static void main(final String[] args) {
-        Scanner sc =  new Scanner(System.in);
-        FitBit fb = new FitBit();
-        while (sc.hasNext()) {
-            String in = sc.nextLine();
-            String[] token = in.split(" ");
-            switch (token[0]) {
+        Scanner scan =  new Scanner(System.in);
+        FitBit ft = new FitBit();
+        while (scan.hasNext()) {
+            String in = scan.nextLine();
+            String[] tokens = in.split(" ");
+            switch (tokens[0]) {
             case "Food":
-                String[] loglist = token[1].split(",");
-                fb.food(loglist[0], loglist[1], loglist[2], loglist[3]);
+                String[] task = tokens[1].split(",");
+                ft.food(task[0], task[1], task[2], task[3]);
                 break;
             case "Water":
-                loglist = token[1].split(",");
-                fb.water(loglist[0], loglist[1], loglist[2]);
+                task = tokens[1].split(",");
+                ft.water(task[0], task[1], task[2]);
                 break;
             case "PhysicalActivity":
-                loglist = token[1].split(",");
-                fb.physical(loglist[0], loglist[1], loglist[2], loglist[3], loglist[4]);
+                task = tokens[1].split(",");
+                ft.physical(task[0], task[1], task[2], task[3], task[4]);
                 break;
             case "Weight":
-                loglist = token[1].split(",");
-                fb.weight(loglist[0], loglist[1], loglist[2], loglist[3]);
+                task = tokens[1].split(",");
+                ft.weight(task[0], task[1], task[2], task[3]);
                 break;
             case "Sleep":
-                loglist = token[1].split(",");
-                fb.sleep(loglist[0], loglist[1], loglist[2]);
+                task = tokens[1].split(",");
+                ft.sleep(task[0], task[1], task[2]);
                 break;
             case "Foodlog":
                 System.out.println();
-                fb.Foodlog();
+                ft.Foodlog();
                 System.out.println();
                 break;
             case "Waterlog":
-                fb.Waterlog();
+                ft.Waterlog();
                 System.out.println();
                 break;
             case "PhysicalActivitylog":
-                fb.PhysicalActivitylog();
+                ft.PhysicalActivitylog();
                 System.out.println();
                 break;
             case "Weightlog":
-                fb.Weightlog();
+                ft.Weightlog();
                 System.out.println();
                 break;
             case "Sleeplog":
-                fb.Sleeplog();
+                ft.Sleeplog();
                 System.out.println();
                 break;
             case "Summary":
-                if (token.length == 2) {
+                if (tokens.length == 2) {
                     System.out.println();
-                    fb.printall(token[1]);
+                    ft.printall(tokens[1]);
                 } else {
-                    fb.printall();
+                    ft.printall();
                 }
                 break;
             default:
