@@ -46,11 +46,11 @@ class Task {
      * @param      important1       The important 1
      * @param      urgent1          The urgent 1
      * @param      status1          The status 1
-     * @throws
+     * @throws     Exception  { exception_description }
      */
     Task(final String title1, final String assignedTo1,
          final int timeToComplete1, final boolean important1,
-         final boolean urgent1 , final String status1) throws Exception {
+         final boolean urgent1, final String status1) throws Exception {
         if (title1.equals("")) {
             throw new Exception("Title not provided");
         }
@@ -248,7 +248,7 @@ class Todoist {
 /**
  * Class for todoist main.
  */
-public class TodoistMain {
+class TodoistMain {
     /**
      * Constructs the object.
      */
