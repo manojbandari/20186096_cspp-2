@@ -248,7 +248,7 @@ class Todoist {
 /**
  * Class for todoist main.
  */
-class TodoistMain {
+final class TodoistMain {
     /**
      * Constructs the object.
      */
@@ -347,3 +347,4 @@ class TodoistMain {
         startTest();
     }
 }
+
