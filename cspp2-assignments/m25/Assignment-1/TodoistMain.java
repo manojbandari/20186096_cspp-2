@@ -98,8 +98,10 @@ class Todoist {
         return null;
     }
     public Task[] getNextTask(String nextTask, int count) {
-
-        return null;
+        Task[] tas=new Task[3];
+        for(int i=0;i<tasks.size();i++)
+            tas[i]=getNextTask(nextTask);
+        return tas;
     }
     public int totalTime4Completion() {
         int count = 0;
