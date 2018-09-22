@@ -98,7 +98,7 @@ class Todoist {
         return null;
     }
     public Task[] getNextTask(String nextTask, int count) {
-        Task[] tas=new Task[3];
+        Task[] tas=new Task[count];
         for(int i=0;i<tasks.size();i++)
             tas[i]=getNextTask(nextTask);
         return tas;
