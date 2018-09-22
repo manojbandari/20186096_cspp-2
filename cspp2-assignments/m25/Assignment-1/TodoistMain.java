@@ -10,94 +10,104 @@ import java.util.*;
  * Class for todoist main.
  */
 class Task {
-	String title;
-	String assignedTo;
-	int timeToComplete;
-	String important;
-	String urgent;
-	String status;
-	Task(String title1, String assignedTo1, int timeToComplete1,boolean important1,boolean urgent1 ,String status1) throws Exception{
-		if(title1.equals(""))
-			throw new Exception("Title not provided");
-		if(timeToComplete1<0)
-			throw new Exception("Invalid timeToComplete "+timeToComplete1);
-		if(!(status1.equals("todo") || status1.equals("done"))) {
-			throw new Exception("Invalid status "+status1);
-		}
-		this.title=title1;
-		this.assignedTo=assignedTo1;
-		this.timeToComplete=timeToComplete1;
-		if(important1) {
-			this.important="Important";
-		}
-		else{
-			this.important="Not Important";
-		}
-		if(urgent1) { 
-			this.urgent="Urgent";
-		}
-		else {
-			this.urgent="Not Urgent";
-		}
-		this.status= status1;
+    String title;
+    String assignedTo;
+    int timeToComplete;
+    String important;
+    String urgent;
+    String status;
+    Task(String title1, String assignedTo1, int timeToComplete1, boolean important1, boolean urgent1 , String status1) throws Exception {
+        if (title1.equals(""))
+            throw new Exception("Title not provided");
+        if (timeToComplete1 < 0)
+            throw new Exception("Invalid timeToComplete " + timeToComplete1);
+        if (!(status1.equals("todo") || status1.equals("done"))) {
+            throw new Exception("Invalid status " + status1);
+        }
+        this.title = title1;
+        this.assignedTo = assignedTo1;
+        this.timeToComplete = timeToComplete1;
+        if (important1) {
+            this.important = "Important";
+        } else {
+            this.important = "Not Important";
+        }
+        if (urgent1) {
+            this.urgent = "Urgent";
+        } else {
+            this.urgent = "Not Urgent";
+        }
+        this.status = status1;
 
-	}
-	public String getName() {
-		return assignedTo;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public int getTimeToComplete() {
-		return timeToComplete;
-	}
-	public String toString() {
-		String a=title+", "+assignedTo+", "+timeToComplete+", "+important+", "+urgent+", "+status;
-		return a;
-	}
+    }
+    public String getName() {
+        return assignedTo;
+    }
+    public String getStatus() {
+        return status;
+    }
+    public int getTimeToComplete() {
+        return timeToComplete;
+    }
+    public String getImportant() {
+        return important;
+    }
+    public String getUrgent() {
+        return urgent;
+    }
+    public String toString() {
+        String a = title + ", " + assignedTo + ", " + timeToComplete + ", " + important + ", " + urgent + ", " + status;
+        return a;
+    }
 }
-class Todoist{
-	ArrayList<Task> tasks;
-	Todoist() {
-		tasks= new ArrayList<Task>();
-	}
-	public void addTask(Task task) {
-		tasks.add(task);
-	}
-	public String toString() {
-		String m="";
-		for(Task s: tasks) {
-			m+=s;
-			m+="\n";
-		}
-		return m;
-	}
-	public Task getNextTask(String nextTask) {
-		int count=0;
-		for(int i=0;i<tasks.size();i++) {
-			if(tasks.get(i).getName().equals(nextTask)) {
-				count+=1;
-				if(count>1) {
-					if(tasks.get(i).getStatus().equals("todo")){
-						return tasks.get(i);
-					}
-				}
-			}
-		}
-		return null;
-	}
-	public Task[] getNextTask(String nextTask,int count){
-		return null;
-	}
-	public int totalTime4Completion() {
-		int count=0;
-		for(int i=0;i<tasks.size();i++) {
-			if(tasks.get(i).getStatus().equals("todo")){
-				count+= tasks.get(i).getTimeToComplete();
-			}
-		}
-		return count;
-	}
+class Todoist {
+    ArrayList<Task> tasks;
+    Todoist() {
+        tasks = new ArrayList<Task>();
+    }
+    public void addTask(Task task) {
+        tasks.add(task);
+    }
+    public String toString() {
+        String m = "";
+        for (Task s : tasks) {
+            m += s;
+            m += "\n";
+        }
+        return m;
+    }
+    public Task getNextTask(String nextTask) {
+        int count = 0;
+        for (int i = 0; i < tasks.size(); i++) {
+            if (tasks.get(i).getName().equals(nextTask)) {
+                count += 1;
+                if (count > 1) {
+                    if (tasks.get(i).getStatus().equals("todo")) {
+                        if (tasks.get(i).getImportant().equals("Important") && tasks.get(i).getUrgent().equals("Not Urgent")) {
+                            return tasks.get(i);
+                        }
+                        if (tasks.get(i).getImportant().equals("Important") && tasks.get(i).getUrgent().equals("Urgent")) {
+                            return tasks.get(i);
+                        }
+                    }
+
+                }
+            }
+        }
+        return null;
+    }
+    public Task[] getNextTask(String nextTask, int count) {
+        return null;
+    }
+    public int totalTime4Completion() {
+        int count = 0;
+        for (int i = 0; i < tasks.size(); i++) {
+            if (tasks.get(i).getStatus().equals("todo")) {
+                count += tasks.get(i).getTimeToComplete();
+            }
+        }
+        return count;
+    }
 }
 public class TodoistMain {
 
@@ -110,27 +120,27 @@ public class TodoistMain {
         while (s.hasNext()) {
             String[] tokens = s.nextLine().split(",");
             switch (tokens[0]) {
-                case "task":
-                    testTask(tokens);
+            case "task":
+                testTask(tokens);
                 break;
-                case "add-task":
-                    testAddTask(todo, tokens);
+            case "add-task":
+                testAddTask(todo, tokens);
                 break;
-                case "print-todoist":
-                    System.out.println(todo);
+            case "print-todoist":
+                System.out.println(todo);
                 break;
-                case "get-next":
-                    System.out.println(todo.getNextTask(tokens[1]));
+            case "get-next":
+                System.out.println(todo.getNextTask(tokens[1]));
                 break;
-                case "get-next-n":
-                    int n = Integer.parseInt(tokens[2]);
-                    Task[] tasks = todo.getNextTask(tokens[1], n);
-                    System.out.println(Arrays.deepToString(tasks));
+            case "get-next-n":
+                int n = Integer.parseInt(tokens[2]);
+                Task[] tasks = todo.getNextTask(tokens[1], n);
+                System.out.println(Arrays.deepToString(tasks));
                 break;
-                case "total-time":
-                    System.out.println(todo.totalTime4Completion());
+            case "total-time":
+                System.out.println(todo.totalTime4Completion());
                 break;
-                default:
+            default:
                 break;
             }
         }
@@ -180,7 +190,7 @@ public class TodoistMain {
         boolean urgent = tokens[5].equals("y");
         String status = tokens[6];
         return new Task(
-            title, assignedTo, timeToComplete, important, urgent, status);
+                   title, assignedTo, timeToComplete, important, urgent, status);
     }
 
     /**
