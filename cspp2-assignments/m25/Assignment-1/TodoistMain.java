@@ -73,10 +73,14 @@ class Todoist{
 		return m;
 	}
 	public Task getNextTask(String nextTask) {
+		int count=0;
 		for(int i=0;i<tasks.size();i++) {
 			if(tasks.get(i).getName().equals(nextTask)) {
-				if(tasks.get(i).getStatus().equals("todo")){
-					return tasks.get(i);
+				count+=1;
+				if(count>1) {
+					if(tasks.get(i).getStatus().equals("todo")){
+						return tasks.get(i);
+					}
 				}
 			}
 		}
