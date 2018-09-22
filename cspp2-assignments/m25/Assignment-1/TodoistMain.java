@@ -46,9 +46,11 @@ class Task {
      * @param      important1       The important 1
      * @param      urgent1          The urgent 1
      * @param      status1          The status 1
-     * @throws     <exception_object> { exception_description }.
+     * @throws     
      */
-    Task(final String title1, final String assignedTo1, final int timeToComplete1, final boolean important1, final boolean urgent1 , final String status1) throws Exception {
+    Task(final String title1, final String assignedTo1,
+        final int timeToComplete1, final boolean important1,
+        final boolean urgent1 , final String status1) throws Exception {
         if (title1.equals("")) {
             throw new Exception("Title not provided");
         }
@@ -327,10 +329,10 @@ public class TodoistMain {
     public static Task createTask(final String[] tokens) throws Exception {
         String title = tokens[1];
         String assignedTo = tokens[2];
-        int timeToComplete = Integer.parseInt(tokens[3]);
-        boolean important = tokens[4].equals("y");
-        boolean urgent = tokens[5].equals("y");
-        String status = tokens[6];
+        int timeToComplete = Integer.parseInt(tokens[2+1]);
+        boolean important = tokens[2+2].equals("y");
+        boolean urgent = tokens[2+2+1].equals("y");
+        String status = tokens[2+2+2];
         return new Task(
                    title, assignedTo, timeToComplete,
                    important, urgent, status);
