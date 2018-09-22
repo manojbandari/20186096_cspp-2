@@ -16,27 +16,27 @@ class Task {
     /**
      * { var_description }.
      */
-    String title;
+    private String title;
     /**
      * { var_description }.
      */
-    String assignedTo;
+    private String assignedTo;
     /**
      * { var_description }.
      */
-    int timeToComplete;
+    private int timeToComplete;
     /**
      * { var_description }.
      */
-    String important;
+    private String important;
     /**
      * { var_description }.
      */
-    String urgent;
+    private String urgent;
     /**
      * { var_description }.
      */
-    String status;
+    private String status;
 
     /**
      * Constructs the object.
@@ -48,11 +48,13 @@ class Task {
      * @param      urgent1          The urgent 1
      * @param      status1          The status 1
      */
-    Task(String title1, String assignedTo1, int timeToComplete1, boolean important1, boolean urgent1 , String status1) throws Exception {
-        if (title1.equals(""))
+    Task(final String title1, final String assignedTo1, final int timeToComplete1, final boolean important1, final boolean urgent1 , final String status1) throws Exception {
+        if (title1.equals("")) {
             throw new Exception("Title not provided");
-        if (timeToComplete1 < 0)
+        }
+        if (timeToComplete1 < 0) {
             throw new Exception("Invalid timeToComplete " + timeToComplete1);
+        }
         if (!(status1.equals("todo") || status1.equals("done"))) {
             throw new Exception("Invalid status " + status1);
         }
@@ -118,7 +120,9 @@ class Task {
      * @return     String representation of the object.
      */
     public String toString() {
-        String a = title + ", " + assignedTo + ", " + timeToComplete + ", " + important + ", " + urgent + ", " + status;
+        String a = title + ", " + assignedTo +
+                   ", " + timeToComplete + ", " +
+                   important + ", " + urgent + ", " + status;
         return a;
     }
 }
@@ -141,7 +145,7 @@ class Todoist {
      *
      * @param      task  The task
      */
-    public void addTask(Task task) {
+    public void addTask(final Task task) {
         tasks.add(task);
     }
     /**
@@ -164,11 +168,12 @@ class Todoist {
      *
      * @return     The next task.
      */
-    public Task getNextTask(String nextTask) {
+    public Task getNextTask(final String nextTask) {
         for (int i = 0; i < tasks.size(); i++) {
             if (tasks.get(i).getName().equals(nextTask)) {
                 if (tasks.get(i).getStatus().equals("todo")) {
-                    if (tasks.get(i).getImportant().equals("Important") && tasks.get(i).getUrgent().equals("Not Urgent")) {
+                    if (tasks.get(i).getImportant().equals("Important") &&
+                            tasks.get(i).getUrgent().equals("Not Urgent")) {
                         return tasks.get(i);
                     }
                 }
@@ -177,7 +182,8 @@ class Todoist {
         for (int i = 0; i < tasks.size(); i++) {
             if (tasks.get(i).getName().equals(nextTask)) {
                 if (tasks.get(i).getStatus().equals("todo")) {
-                    if (tasks.get(i).getImportant().equals("Important") && tasks.get(i).getUrgent().equals("Urgent")) {
+                    if (tasks.get(i).getImportant().equals("Important") &&
+                            tasks.get(i).getUrgent().equals("Urgent")) {
                         return tasks.get(i);
                     }
                 }
@@ -193,13 +199,14 @@ class Todoist {
      *
      * @return     The next task.
      */
-    public Task[] getNextTask(String nextTask, int count) {
+    public Task[] getNextTask(final String nextTask, final int count) {
         Task[] tas = new Task[count];
         int temp = 0;
         for (int i = 0; i < tasks.size(); i++) {
             if (tasks.get(i).getName().equals(nextTask)) {
                 if (tasks.get(i).getStatus().equals("todo")) {
-                    if (tasks.get(i).getImportant().equals("Important") && tasks.get(i).getUrgent().equals("Not Urgent")) {
+                    if (tasks.get(i).getImportant().equals("Important") &&
+                            tasks.get(i).getUrgent().equals("Not Urgent")) {
                         if (temp < 3)
                             tas[temp++] = tasks.get(i);
                     }
@@ -209,7 +216,8 @@ class Todoist {
         for (int i = 0; i < tasks.size(); i++) {
             if (tasks.get(i).getName().equals(nextTask)) {
                 if (tasks.get(i).getStatus().equals("todo")) {
-                    if (tasks.get(i).getImportant().equals("Important") && tasks.get(i).getUrgent().equals("Urgent")) {
+                    if (tasks.get(i).getImportant().equals("Important") &&
+                            tasks.get(i).getUrgent().equals("Urgent")) {
                         if (temp < 3)
                             tas[temp++] = tasks.get(i);
                     }
