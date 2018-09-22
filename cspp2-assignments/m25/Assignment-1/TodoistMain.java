@@ -48,6 +48,9 @@ class Task {
 	public String getStatus() {
 		return status;
 	}
+	public int getTimeToComplete() {
+		return timeToComplete;
+	}
 	public String toString() {
 		String a=title+", "+assignedTo+", "+timeToComplete+", "+important+", "+urgent+", "+status;
 		return a;
@@ -83,7 +86,13 @@ class Todoist{
 		return null;
 	}
 	public int totalTime4Completion() {
-		return 0;
+		int count=0;
+		for(int i=0;i<tasks.size();i++) {
+			if(tasks.get(i).getStatus().equals("todo")){
+				count+= tasks.get(i).getTimeToComplete();
+			}
+		}
+		return count;
 	}
 }
 public class TodoistMain {
