@@ -46,7 +46,7 @@ class Task {
      * @param      important1       The important 1
      * @param      urgent1          The urgent 1
      * @param      status1          The status 1
-     * @throws  
+     * @throws
      */
     Task(final String title1, final String assignedTo1,
          final int timeToComplete1, final boolean important1,
@@ -122,9 +122,9 @@ class Task {
      * @return     String representation of the object.
      */
     public String toString() {
-        String a = title + ", " + assignedTo +
-                   ", " + timeToComplete + ", " +
-                   important + ", " + urgent + ", " + status;
+        String a = title + ", " + assignedTo
+                   + ", " + timeToComplete + ", "
+                   + important + ", " + urgent + ", " + status;
         return a;
     }
 }
@@ -209,7 +209,7 @@ class Todoist {
                 if (tasks.get(i).getStatus().equals("todo")) {
                     if (tasks.get(i).getImportant().equals("Important")
                             && tasks.get(i).getUrgent().equals("Not Urgent")) {
-                        if (temp < 3) {
+                        if (temp < count) {
                             tas[temp++] = tasks.get(i);
                         }
                     }
@@ -221,7 +221,7 @@ class Todoist {
                 if (tasks.get(i).getStatus().equals("todo")) {
                     if (tasks.get(i).getImportant().equals("Important")
                             && tasks.get(i).getUrgent().equals("Urgent")) {
-                        if (temp < 3) {
+                        if (temp < count) {
                             tas[temp++] = tasks.get(i);
                         }
                     }
@@ -248,7 +248,7 @@ class Todoist {
 /**
  * Class for todoist main.
  */
-final public class TodoistMain {
+public class TodoistMain {
     /**
      * Constructs the object.
      */
