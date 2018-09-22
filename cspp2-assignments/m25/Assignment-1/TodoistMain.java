@@ -42,6 +42,12 @@ class Task {
 		this.status= status1;
 
 	}
+	public String getName() {
+		return assignedTo;
+	}
+	public String getStatus() {
+		return status;
+	}
 	public String toString() {
 		String a=title+", "+assignedTo+", "+timeToComplete+", "+important+", "+urgent+", "+status;
 		return a;
@@ -64,6 +70,13 @@ class Todoist{
 		return m;
 	}
 	public Task getNextTask(String nextTask) {
+		for(int i=0;i<tasks.size();i++) {
+			if(tasks.get(i).getName().equals(nextTask)) {
+				if(tasks.get(i).getStatus().equals("todo")){
+					return tasks.get(i);
+				}
+			}
+		}
 		return null;
 	}
 	public Task[] getNextTask(String nextTask,int count){
