@@ -77,11 +77,9 @@ class Todoist {
         return m;
     }
     public Task getNextTask(String nextTask) {
-        int count = 0;
+        //int count = 0;
         for (int i = 0; i < tasks.size(); i++) {
             if (tasks.get(i).getName().equals(nextTask)) {
-                count += 1;
-                if (count > 1) {
                     if (tasks.get(i).getStatus().equals("todo")) {
                         if (tasks.get(i).getImportant().equals("Important") && tasks.get(i).getUrgent().equals("Not Urgent")) {
                             return tasks.get(i);
@@ -91,7 +89,7 @@ class Todoist {
                         }
                     }
 
-                }
+                
             }
         }
         return null;
