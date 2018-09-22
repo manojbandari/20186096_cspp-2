@@ -13,8 +13,8 @@ class Task {
 	String title;
 	String assignedTo;
 	int timeToComplete;
-	boolean important;
-	boolean urgent;
+	String important;
+	String urgent;
 	String status;
 	Task(String title1, String assignedTo1, int timeToComplete1,boolean important1,boolean urgent1 ,String status1) throws Exception{
 		if(title1.equals(""))
@@ -27,13 +27,24 @@ class Task {
 		this.title=title1;
 		this.assignedTo=assignedTo1;
 		this.timeToComplete=timeToComplete1;
-		this.important=important1;
-		this.urgent=urgent1;
+		if(important1) {
+			this.important="Important";
+		}
+		else{
+			this.important="Not Important";
+		}
+		if(urgent1) { 
+			this.urgent="Urgent";
+		}
+		else {
+			this.urgent="Not Urgent";
+		}
 		this.status= status1;
 
 	}
 	public String toString() {
-		return title+", "+assignedTo+", "+timeToComplete+", "+important+", "+urgent+", "+status;
+		String a=title+", "+assignedTo+", "+timeToComplete+", "+important+", "+urgent+", "+status;
+		return a;
 	}
 }
 class Todoist{
