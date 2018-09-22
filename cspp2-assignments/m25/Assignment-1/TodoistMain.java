@@ -77,24 +77,28 @@ class Todoist {
         return m;
     }
     public Task getNextTask(String nextTask) {
-        //int count = 0;
         for (int i = 0; i < tasks.size(); i++) {
             if (tasks.get(i).getName().equals(nextTask)) {
                     if (tasks.get(i).getStatus().equals("todo")) {
                         if (tasks.get(i).getImportant().equals("Important") && tasks.get(i).getUrgent().equals("Not Urgent")) {
                             return tasks.get(i);
                         }
+                    }
+            }
+        }
+        for (int i = 0; i < tasks.size(); i++) {
+            if (tasks.get(i).getName().equals(nextTask)) {
+                    if (tasks.get(i).getStatus().equals("todo")) {
                         if (tasks.get(i).getImportant().equals("Important") && tasks.get(i).getUrgent().equals("Urgent")) {
                             return tasks.get(i);
                         }
                     }
-
-                
-            }
+                }
         }
         return null;
     }
     public Task[] getNextTask(String nextTask, int count) {
+
         return null;
     }
     public int totalTime4Completion() {
