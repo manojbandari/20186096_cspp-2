@@ -56,14 +56,14 @@ class Todoist{
 		tasks.add(task);
 	}
 	public String toString() {
-		String m=" ";
+		String m="";
 		for(Task s: tasks) {
 			m+=s;
 			m+="\n";
 		}
 		return m;
 	}
-	public String getNextTask(String nextTask) {
+	public Task getNextTask(String nextTask) {
 		return null;
 	}
 	public Task[] getNextTask(String nextTask,int count){
