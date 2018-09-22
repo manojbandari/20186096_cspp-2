@@ -99,8 +99,24 @@ class Todoist {
     }
     public Task[] getNextTask(String nextTask, int count) {
         Task[] tas=new Task[count];
-        for(int i=0;i<count;i++)
-            tas[i]=getNextTask(nextTask);
+        for (int i = 0; i < tasks.size(); i++) {
+            if (tasks.get(i).getName().equals(nextTask)) {
+                    if (tasks.get(i).getStatus().equals("todo")) {
+                        if (tasks.get(i).getImportant().equals("Important") && tasks.get(i).getUrgent().equals("Not Urgent")) {
+                            tas[i]=tasks.get(i);
+                        }
+                    }
+            }
+        }
+        for (int i = 0; i < tasks.size(); i++) {
+            if (tasks.get(i).getName().equals(nextTask)) {
+                    if (tasks.get(i).getStatus().equals("todo")) {
+                        if (tasks.get(i).getImportant().equals("Important") && tasks.get(i).getUrgent().equals("Urgent")) {
+                            tas[i]= tasks.get(i);
+                        }
+                    }
+                }
+        }
         return tas;
     }
     public int totalTime4Completion() {
