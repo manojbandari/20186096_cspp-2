@@ -1,0 +1,1 @@
+{"version": "1", "message": "ERROR: Hidden Testcases server unreachable.", "problem_id": "cspp2_m10_a1_1", "user_id": "manojbandari", "score": {"sample": {"0": {"execution_time": 0.34407997131347656, "passed": false}, "1": {"execution_time": 0.31016993522644043, "passed": false}, "2": {"execution_time": 0.42685985565185547, "passed": false}}}, "check_style_score": "0/1"}
