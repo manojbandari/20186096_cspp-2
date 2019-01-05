@@ -73,7 +73,7 @@ class Question{
 	}
 	String commonSelectedOption() {
 
-		return options[setOptionVotes(1)+1];
+		return options[setOptionVotes(2)+1];
 
 	}
 	int indexOf(String op) {
